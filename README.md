@@ -1,5 +1,5 @@
-"# Bakery"
-## App "Bakery" was created with C#. It uses Access for DB.
+# Bakery
+## App "Bakery" was created with C#. It uses MS Access for DB.
 
 Password for DB in this developement version: 203040;
 
