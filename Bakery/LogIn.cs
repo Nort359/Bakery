@@ -24,13 +24,23 @@ namespace Bakery
 
         private void btnLogIn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Вы успешно вошли в систему как Администратор.\nДобро пожаловать!", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            string login = txtNLogin.Text;
+            string password = txtPassword.Text;
 
-            Program.Context.MainForm = new ManagerMainForm();
+            if (login == "admin" && password == "1234")
+            {
+                MessageBox.Show("Вы успешно вошли в систему как Администратор.\nДобро пожаловать!", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            Close();
+                Program.Context.MainForm = new ManagerMainForm();
 
-            Program.Context.MainForm.Show();
+                Close();
+
+                Program.Context.MainForm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Такого пользователя не существует", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

@@ -28,6 +28,8 @@ C:\Users\Nort3\Desktop\Bakery\Bakery\obj\Debug\Bakery.csproj.CoreCompileInputs.c
 C:\Users\Nort3\Desktop\Bakery\Bakery\obj\Debug\Bakery.csproj.CopyComplete
 C:\Users\Nort3\Desktop\Bakery\Bakery\obj\Debug\Bakery.exe
 C:\Users\Nort3\Desktop\Bakery\Bakery\obj\Debug\Bakery.pdb
-C:\Users\Nort3\Desktop\Bakery\Bakery\obj\Debug\Bakery.AddEmployee.resources
 C:\Users\Nort3\Desktop\Bakery\Bakery\bin\Debug\itextsharp.dll
 C:\Users\Nort3\Desktop\Bakery\Bakery\bin\Debug\itextsharp.xml
+C:\Users\Nort3\Desktop\Bakery\Bakery\obj\Debug\Bakery.AddChangeEmployee.resources
+C:\Users\Nort3\Desktop\Bakery\Bakery\obj\Debug\Bakery.AddChangeProduct.resources
+C:\Users\Nort3\Desktop\Bakery\Bakery\obj\Debug\Bakery.AddChangeMadeProduct.resources
