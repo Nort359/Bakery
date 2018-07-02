@@ -30,14 +30,14 @@
         {
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.tabControll = new MetroFramework.Controls.MetroTabControl();
-            this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
+            this.tabEmployees = new MetroFramework.Controls.MetroTabPage();
             this.txtSearchEmployee = new MetroFramework.Controls.MetroTextBox();
             this.btnReportEmployee = new System.Windows.Forms.Button();
             this.btnDeleteEmployee = new System.Windows.Forms.Button();
             this.btnChangeEmployee = new System.Windows.Forms.Button();
             this.btnAddEmployee = new System.Windows.Forms.Button();
             this.dataGridEmployee = new System.Windows.Forms.DataGridView();
-            this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
+            this.tabProducts = new MetroFramework.Controls.MetroTabPage();
             this.groupBoxFilter = new System.Windows.Forms.GroupBox();
             this.groupBoxWeight = new System.Windows.Forms.GroupBox();
             this.txtToWeightProduct = new MetroFramework.Controls.MetroTextBox();
@@ -54,87 +54,118 @@
             this.btnChangeProduct = new System.Windows.Forms.Button();
             this.btnAddProduct = new System.Windows.Forms.Button();
             this.dataGridProduct = new System.Windows.Forms.DataGridView();
-            this.metroTabPage4 = new MetroFramework.Controls.MetroTabPage();
+            this.tabMadeProducts = new MetroFramework.Controls.MetroTabPage();
+            this.metroUserControl1 = new MetroFramework.Controls.MetroUserControl();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.groupBoxFilterMadeProduct = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBoxTimeNoMadeProduct = new MetroFramework.Controls.MetroCheckBox();
+            this.checkBoxTimeLessMadeProduct = new MetroFramework.Controls.MetroCheckBox();
+            this.checkBoxTimeIsMadeProduct = new MetroFramework.Controls.MetroCheckBox();
             this.groupBoxCountMadeProduct = new System.Windows.Forms.GroupBox();
             this.txtToCountMadeProduct = new MetroFramework.Controls.MetroTextBox();
             this.txtFromCountMadeProduct = new MetroFramework.Controls.MetroTextBox();
             this.txtSearchMadeProduct = new MetroFramework.Controls.MetroTextBox();
             this.btnReportMadeProduct = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.btnDeleteMadeProduct = new System.Windows.Forms.Button();
             this.btnChangeMadeProduct = new System.Windows.Forms.Button();
             this.btnAddMadeProduct = new System.Windows.Forms.Button();
             this.dataGridMadeProduct = new System.Windows.Forms.DataGridView();
-            this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
+            this.tabCustomer = new MetroFramework.Controls.MetroTabPage();
+            this.txtSearchCustomer = new MetroFramework.Controls.MetroTextBox();
+            this.btnReportCustomer = new System.Windows.Forms.Button();
+            this.btnDeleteCustomer = new System.Windows.Forms.Button();
+            this.btnChangeCustomer = new System.Windows.Forms.Button();
+            this.btnAddCustomer = new System.Windows.Forms.Button();
+            this.dataGridCustomer = new System.Windows.Forms.DataGridView();
+            this.tabOrders = new MetroFramework.Controls.MetroTabPage();
+            this.groupBoxFilterOrders = new System.Windows.Forms.GroupBox();
+            this.groupBoxPriceOrders = new System.Windows.Forms.GroupBox();
+            this.txtToPriceOrders = new MetroFramework.Controls.MetroTextBox();
+            this.txtFromPriceOrders = new MetroFramework.Controls.MetroTextBox();
+            this.groupBoxCountOrders = new System.Windows.Forms.GroupBox();
+            this.txtToCountOrders = new MetroFramework.Controls.MetroTextBox();
+            this.txtFromCountOrders = new MetroFramework.Controls.MetroTextBox();
+            this.txtSearchOrders = new MetroFramework.Controls.MetroTextBox();
+            this.btnReportOrders = new System.Windows.Forms.Button();
+            this.btnDeleteOrders = new System.Windows.Forms.Button();
+            this.btnAddOrders = new System.Windows.Forms.Button();
+            this.dataGridOrders = new System.Windows.Forms.DataGridView();
+            this.tabAdminPanel = new MetroFramework.Controls.MetroTabPage();
+            this.btnGetDBFromCopy = new System.Windows.Forms.Button();
             this.btnMakeBackUpBD = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.помощьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.metroUserControl1 = new MetroFramework.Controls.MetroUserControl();
-            this.checkBoxTimeIsMadeProduct = new MetroFramework.Controls.MetroCheckBox();
-            this.checkBoxTimeLessMadeProduct = new MetroFramework.Controls.MetroCheckBox();
-            this.checkBoxTimeNoMadeProduct = new MetroFramework.Controls.MetroCheckBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tabControll.SuspendLayout();
-            this.metroTabPage1.SuspendLayout();
+            this.tabEmployees.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridEmployee)).BeginInit();
-            this.metroTabPage2.SuspendLayout();
+            this.tabProducts.SuspendLayout();
             this.groupBoxFilter.SuspendLayout();
             this.groupBoxWeight.SuspendLayout();
             this.groupBoxRealPrice.SuspendLayout();
             this.groupBoxOptimalPrice.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProduct)).BeginInit();
-            this.metroTabPage4.SuspendLayout();
+            this.tabMadeProducts.SuspendLayout();
             this.groupBoxFilterMadeProduct.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.groupBoxCountMadeProduct.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridMadeProduct)).BeginInit();
-            this.metroTabPage3.SuspendLayout();
+            this.tabCustomer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridCustomer)).BeginInit();
+            this.tabOrders.SuspendLayout();
+            this.groupBoxFilterOrders.SuspendLayout();
+            this.groupBoxPriceOrders.SuspendLayout();
+            this.groupBoxCountOrders.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridOrders)).BeginInit();
+            this.tabAdminPanel.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControll
             // 
-            this.tabControll.Controls.Add(this.metroTabPage1);
-            this.tabControll.Controls.Add(this.metroTabPage2);
-            this.tabControll.Controls.Add(this.metroTabPage4);
-            this.tabControll.Controls.Add(this.metroTabPage3);
+            this.tabControll.Controls.Add(this.tabEmployees);
+            this.tabControll.Controls.Add(this.tabProducts);
+            this.tabControll.Controls.Add(this.tabMadeProducts);
+            this.tabControll.Controls.Add(this.tabCustomer);
+            this.tabControll.Controls.Add(this.tabOrders);
+            this.tabControll.Controls.Add(this.tabAdminPanel);
             this.tabControll.Location = new System.Drawing.Point(33, 85);
             this.tabControll.Name = "tabControll";
-            this.tabControll.SelectedIndex = 2;
+            this.tabControll.SelectedIndex = 4;
             this.tabControll.Size = new System.Drawing.Size(956, 472);
             this.tabControll.Style = MetroFramework.MetroColorStyle.Orange;
             this.tabControll.TabIndex = 0;
             this.tabControll.UseSelectable = true;
             // 
-            // metroTabPage1
+            // tabEmployees
             // 
-            this.metroTabPage1.Controls.Add(this.txtSearchEmployee);
-            this.metroTabPage1.Controls.Add(this.btnReportEmployee);
-            this.metroTabPage1.Controls.Add(this.btnDeleteEmployee);
-            this.metroTabPage1.Controls.Add(this.btnChangeEmployee);
-            this.metroTabPage1.Controls.Add(this.btnAddEmployee);
-            this.metroTabPage1.Controls.Add(this.dataGridEmployee);
-            this.metroTabPage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.metroTabPage1.HorizontalScrollbarBarColor = true;
-            this.metroTabPage1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage1.HorizontalScrollbarSize = 10;
-            this.metroTabPage1.Location = new System.Drawing.Point(4, 38);
-            this.metroTabPage1.Name = "metroTabPage1";
-            this.metroTabPage1.Size = new System.Drawing.Size(951, 440);
-            this.metroTabPage1.TabIndex = 0;
-            this.metroTabPage1.Text = "Сотрудники";
-            this.metroTabPage1.VerticalScrollbarBarColor = true;
-            this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage1.VerticalScrollbarSize = 10;
+            this.tabEmployees.Controls.Add(this.txtSearchEmployee);
+            this.tabEmployees.Controls.Add(this.btnReportEmployee);
+            this.tabEmployees.Controls.Add(this.btnDeleteEmployee);
+            this.tabEmployees.Controls.Add(this.btnChangeEmployee);
+            this.tabEmployees.Controls.Add(this.btnAddEmployee);
+            this.tabEmployees.Controls.Add(this.dataGridEmployee);
+            this.tabEmployees.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tabEmployees.HorizontalScrollbarBarColor = true;
+            this.tabEmployees.HorizontalScrollbarHighlightOnWheel = false;
+            this.tabEmployees.HorizontalScrollbarSize = 10;
+            this.tabEmployees.Location = new System.Drawing.Point(4, 38);
+            this.tabEmployees.Name = "tabEmployees";
+            this.tabEmployees.Size = new System.Drawing.Size(948, 430);
+            this.tabEmployees.TabIndex = 0;
+            this.tabEmployees.Text = "Сотрудники";
+            this.tabEmployees.VerticalScrollbarBarColor = true;
+            this.tabEmployees.VerticalScrollbarHighlightOnWheel = false;
+            this.tabEmployees.VerticalScrollbarSize = 10;
             // 
             // txtSearchEmployee
             // 
@@ -249,27 +280,27 @@
             this.dataGridEmployee.TabIndex = 4;
             this.dataGridEmployee.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // metroTabPage2
+            // tabProducts
             // 
-            this.metroTabPage2.Controls.Add(this.groupBoxFilter);
-            this.metroTabPage2.Controls.Add(this.txtSearchProduct);
-            this.metroTabPage2.Controls.Add(this.btnReportProduct);
-            this.metroTabPage2.Controls.Add(this.btnDeleteProduct);
-            this.metroTabPage2.Controls.Add(this.btnChangeProduct);
-            this.metroTabPage2.Controls.Add(this.btnAddProduct);
-            this.metroTabPage2.Controls.Add(this.dataGridProduct);
-            this.metroTabPage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.metroTabPage2.HorizontalScrollbarBarColor = true;
-            this.metroTabPage2.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage2.HorizontalScrollbarSize = 10;
-            this.metroTabPage2.Location = new System.Drawing.Point(4, 38);
-            this.metroTabPage2.Name = "metroTabPage2";
-            this.metroTabPage2.Size = new System.Drawing.Size(948, 430);
-            this.metroTabPage2.TabIndex = 1;
-            this.metroTabPage2.Text = "Продукция";
-            this.metroTabPage2.VerticalScrollbarBarColor = true;
-            this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage2.VerticalScrollbarSize = 10;
+            this.tabProducts.Controls.Add(this.groupBoxFilter);
+            this.tabProducts.Controls.Add(this.txtSearchProduct);
+            this.tabProducts.Controls.Add(this.btnReportProduct);
+            this.tabProducts.Controls.Add(this.btnDeleteProduct);
+            this.tabProducts.Controls.Add(this.btnChangeProduct);
+            this.tabProducts.Controls.Add(this.btnAddProduct);
+            this.tabProducts.Controls.Add(this.dataGridProduct);
+            this.tabProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tabProducts.HorizontalScrollbarBarColor = true;
+            this.tabProducts.HorizontalScrollbarHighlightOnWheel = false;
+            this.tabProducts.HorizontalScrollbarSize = 10;
+            this.tabProducts.Location = new System.Drawing.Point(4, 38);
+            this.tabProducts.Name = "tabProducts";
+            this.tabProducts.Size = new System.Drawing.Size(948, 430);
+            this.tabProducts.TabIndex = 1;
+            this.tabProducts.Text = "Продукция";
+            this.tabProducts.VerticalScrollbarBarColor = true;
+            this.tabProducts.VerticalScrollbarHighlightOnWheel = false;
+            this.tabProducts.VerticalScrollbarSize = 10;
             // 
             // groupBoxFilter
             // 
@@ -641,35 +672,103 @@
             this.dataGridProduct.TabIndex = 23;
             this.dataGridProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridProduct_CellClick);
             // 
-            // metroTabPage4
+            // tabMadeProducts
             // 
-            this.metroTabPage4.Controls.Add(this.metroUserControl1);
-            this.metroTabPage4.Controls.Add(this.label4);
-            this.metroTabPage4.Controls.Add(this.label3);
-            this.metroTabPage4.Controls.Add(this.panel3);
-            this.metroTabPage4.Controls.Add(this.label1);
-            this.metroTabPage4.Controls.Add(this.label2);
-            this.metroTabPage4.Controls.Add(this.panel2);
-            this.metroTabPage4.Controls.Add(this.groupBoxFilterMadeProduct);
-            this.metroTabPage4.Controls.Add(this.txtSearchMadeProduct);
-            this.metroTabPage4.Controls.Add(this.btnReportMadeProduct);
-            this.metroTabPage4.Controls.Add(this.panel1);
-            this.metroTabPage4.Controls.Add(this.btnDeleteMadeProduct);
-            this.metroTabPage4.Controls.Add(this.btnChangeMadeProduct);
-            this.metroTabPage4.Controls.Add(this.btnAddMadeProduct);
-            this.metroTabPage4.Controls.Add(this.dataGridMadeProduct);
-            this.metroTabPage4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.metroTabPage4.HorizontalScrollbarBarColor = true;
-            this.metroTabPage4.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage4.HorizontalScrollbarSize = 10;
-            this.metroTabPage4.Location = new System.Drawing.Point(4, 38);
-            this.metroTabPage4.Name = "metroTabPage4";
-            this.metroTabPage4.Size = new System.Drawing.Size(948, 430);
-            this.metroTabPage4.TabIndex = 3;
-            this.metroTabPage4.Text = "Приготовление";
-            this.metroTabPage4.VerticalScrollbarBarColor = true;
-            this.metroTabPage4.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage4.VerticalScrollbarSize = 10;
+            this.tabMadeProducts.Controls.Add(this.metroUserControl1);
+            this.tabMadeProducts.Controls.Add(this.label4);
+            this.tabMadeProducts.Controls.Add(this.label3);
+            this.tabMadeProducts.Controls.Add(this.panel3);
+            this.tabMadeProducts.Controls.Add(this.label1);
+            this.tabMadeProducts.Controls.Add(this.label2);
+            this.tabMadeProducts.Controls.Add(this.panel2);
+            this.tabMadeProducts.Controls.Add(this.groupBoxFilterMadeProduct);
+            this.tabMadeProducts.Controls.Add(this.txtSearchMadeProduct);
+            this.tabMadeProducts.Controls.Add(this.btnReportMadeProduct);
+            this.tabMadeProducts.Controls.Add(this.panel1);
+            this.tabMadeProducts.Controls.Add(this.btnDeleteMadeProduct);
+            this.tabMadeProducts.Controls.Add(this.btnChangeMadeProduct);
+            this.tabMadeProducts.Controls.Add(this.btnAddMadeProduct);
+            this.tabMadeProducts.Controls.Add(this.dataGridMadeProduct);
+            this.tabMadeProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tabMadeProducts.HorizontalScrollbarBarColor = true;
+            this.tabMadeProducts.HorizontalScrollbarHighlightOnWheel = false;
+            this.tabMadeProducts.HorizontalScrollbarSize = 10;
+            this.tabMadeProducts.Location = new System.Drawing.Point(4, 38);
+            this.tabMadeProducts.Name = "tabMadeProducts";
+            this.tabMadeProducts.Size = new System.Drawing.Size(948, 430);
+            this.tabMadeProducts.TabIndex = 3;
+            this.tabMadeProducts.Text = "Приготовление";
+            this.tabMadeProducts.VerticalScrollbarBarColor = true;
+            this.tabMadeProducts.VerticalScrollbarHighlightOnWheel = false;
+            this.tabMadeProducts.VerticalScrollbarSize = 10;
+            // 
+            // metroUserControl1
+            // 
+            this.metroUserControl1.Location = new System.Drawing.Point(788, 417);
+            this.metroUserControl1.Name = "metroUserControl1";
+            this.metroUserControl1.Size = new System.Drawing.Size(150, 150);
+            this.metroUserControl1.TabIndex = 40;
+            this.metroUserControl1.UseSelectable = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(-4, 39);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(219, 20);
+            this.label4.TabIndex = 39;
+            this.label4.Text = "Пояснение (срок годности):";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(572, 39);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(74, 20);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Окончен";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Crimson;
+            this.panel3.Location = new System.Drawing.Point(546, 39);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(20, 20);
+            this.panel3.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(404, 39);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(136, 20);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Вот-вот истечёт";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(240, 39);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(132, 20);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Ещё есть время";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Orange;
+            this.panel2.Location = new System.Drawing.Point(378, 39);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(20, 20);
+            this.panel2.TabIndex = 1;
             // 
             // groupBoxFilterMadeProduct
             // 
@@ -683,6 +782,66 @@
             this.groupBoxFilterMadeProduct.TabIndex = 38;
             this.groupBoxFilterMadeProduct.TabStop = false;
             this.groupBoxFilterMadeProduct.Text = "Фильтрация";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.checkBoxTimeNoMadeProduct);
+            this.groupBox1.Controls.Add(this.checkBoxTimeLessMadeProduct);
+            this.groupBox1.Controls.Add(this.checkBoxTimeIsMadeProduct);
+            this.groupBox1.Location = new System.Drawing.Point(0, 133);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(227, 122);
+            this.groupBox1.TabIndex = 42;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Срок годности:";
+            // 
+            // checkBoxTimeNoMadeProduct
+            // 
+            this.checkBoxTimeNoMadeProduct.AutoSize = true;
+            this.checkBoxTimeNoMadeProduct.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.checkBoxTimeNoMadeProduct.DisplayFocus = true;
+            this.checkBoxTimeNoMadeProduct.FontSize = MetroFramework.MetroCheckBoxSize.Tall;
+            this.checkBoxTimeNoMadeProduct.Location = new System.Drawing.Point(6, 74);
+            this.checkBoxTimeNoMadeProduct.Name = "checkBoxTimeNoMadeProduct";
+            this.checkBoxTimeNoMadeProduct.Size = new System.Drawing.Size(101, 25);
+            this.checkBoxTimeNoMadeProduct.Style = MetroFramework.MetroColorStyle.Orange;
+            this.checkBoxTimeNoMadeProduct.TabIndex = 2;
+            this.checkBoxTimeNoMadeProduct.Text = "Окончен";
+            this.checkBoxTimeNoMadeProduct.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBoxTimeNoMadeProduct.UseSelectable = true;
+            this.checkBoxTimeNoMadeProduct.Click += new System.EventHandler(this.txtSearchMadeProduct_TextChanged);
+            // 
+            // checkBoxTimeLessMadeProduct
+            // 
+            this.checkBoxTimeLessMadeProduct.AutoSize = true;
+            this.checkBoxTimeLessMadeProduct.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.checkBoxTimeLessMadeProduct.DisplayFocus = true;
+            this.checkBoxTimeLessMadeProduct.FontSize = MetroFramework.MetroCheckBoxSize.Tall;
+            this.checkBoxTimeLessMadeProduct.Location = new System.Drawing.Point(6, 50);
+            this.checkBoxTimeLessMadeProduct.Name = "checkBoxTimeLessMadeProduct";
+            this.checkBoxTimeLessMadeProduct.Size = new System.Drawing.Size(156, 25);
+            this.checkBoxTimeLessMadeProduct.Style = MetroFramework.MetroColorStyle.Orange;
+            this.checkBoxTimeLessMadeProduct.TabIndex = 1;
+            this.checkBoxTimeLessMadeProduct.Text = "Вот-вот истечёт";
+            this.checkBoxTimeLessMadeProduct.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBoxTimeLessMadeProduct.UseSelectable = true;
+            this.checkBoxTimeLessMadeProduct.Click += new System.EventHandler(this.txtSearchMadeProduct_TextChanged);
+            // 
+            // checkBoxTimeIsMadeProduct
+            // 
+            this.checkBoxTimeIsMadeProduct.AutoSize = true;
+            this.checkBoxTimeIsMadeProduct.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.checkBoxTimeIsMadeProduct.DisplayFocus = true;
+            this.checkBoxTimeIsMadeProduct.FontSize = MetroFramework.MetroCheckBoxSize.Tall;
+            this.checkBoxTimeIsMadeProduct.Location = new System.Drawing.Point(6, 25);
+            this.checkBoxTimeIsMadeProduct.Name = "checkBoxTimeIsMadeProduct";
+            this.checkBoxTimeIsMadeProduct.Size = new System.Drawing.Size(156, 25);
+            this.checkBoxTimeIsMadeProduct.Style = MetroFramework.MetroColorStyle.Orange;
+            this.checkBoxTimeIsMadeProduct.TabIndex = 0;
+            this.checkBoxTimeIsMadeProduct.Text = "Ещё есть время";
+            this.checkBoxTimeIsMadeProduct.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBoxTimeIsMadeProduct.UseSelectable = true;
+            this.checkBoxTimeIsMadeProduct.Click += new System.EventHandler(this.txtSearchMadeProduct_TextChanged);
             // 
             // groupBoxCountMadeProduct
             // 
@@ -810,8 +969,17 @@
             this.btnReportMadeProduct.TabIndex = 36;
             this.btnReportMadeProduct.Text = "Отчёт";
             this.btnReportMadeProduct.UseVisualStyleBackColor = false;
+            this.btnReportMadeProduct.Click += new System.EventHandler(this.btnReportMadeProduct_Click);
             this.btnReportMadeProduct.MouseLeave += new System.EventHandler(this.btnAddEmployee_MouseLeave);
             this.btnReportMadeProduct.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnAddEmployee_MouseMove);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Chartreuse;
+            this.panel1.Location = new System.Drawing.Point(214, 39);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(20, 20);
+            this.panel1.TabIndex = 0;
             // 
             // btnDeleteMadeProduct
             // 
@@ -877,21 +1045,445 @@
             this.dataGridMadeProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridMadeProduct_CellClick);
             this.dataGridMadeProduct.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dataGridMadeProduct_RowPrePaint);
             // 
-            // metroTabPage3
+            // tabCustomer
             // 
-            this.metroTabPage3.Controls.Add(this.btnMakeBackUpBD);
-            this.metroTabPage3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.metroTabPage3.HorizontalScrollbarBarColor = true;
-            this.metroTabPage3.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage3.HorizontalScrollbarSize = 10;
-            this.metroTabPage3.Location = new System.Drawing.Point(4, 38);
-            this.metroTabPage3.Name = "metroTabPage3";
-            this.metroTabPage3.Size = new System.Drawing.Size(951, 440);
-            this.metroTabPage3.TabIndex = 2;
-            this.metroTabPage3.Text = "Админ панель";
-            this.metroTabPage3.VerticalScrollbarBarColor = true;
-            this.metroTabPage3.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage3.VerticalScrollbarSize = 10;
+            this.tabCustomer.Controls.Add(this.txtSearchCustomer);
+            this.tabCustomer.Controls.Add(this.btnReportCustomer);
+            this.tabCustomer.Controls.Add(this.btnDeleteCustomer);
+            this.tabCustomer.Controls.Add(this.btnChangeCustomer);
+            this.tabCustomer.Controls.Add(this.btnAddCustomer);
+            this.tabCustomer.Controls.Add(this.dataGridCustomer);
+            this.tabCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tabCustomer.HorizontalScrollbarBarColor = true;
+            this.tabCustomer.HorizontalScrollbarHighlightOnWheel = false;
+            this.tabCustomer.HorizontalScrollbarSize = 10;
+            this.tabCustomer.Location = new System.Drawing.Point(4, 38);
+            this.tabCustomer.Name = "tabCustomer";
+            this.tabCustomer.Size = new System.Drawing.Size(948, 430);
+            this.tabCustomer.TabIndex = 4;
+            this.tabCustomer.Text = "Заказчики";
+            this.tabCustomer.VerticalScrollbarBarColor = true;
+            this.tabCustomer.VerticalScrollbarHighlightOnWheel = false;
+            this.tabCustomer.VerticalScrollbarSize = 10;
+            // 
+            // txtSearchCustomer
+            // 
+            // 
+            // 
+            // 
+            this.txtSearchCustomer.CustomButton.Image = null;
+            this.txtSearchCustomer.CustomButton.Location = new System.Drawing.Point(879, 2);
+            this.txtSearchCustomer.CustomButton.Name = "";
+            this.txtSearchCustomer.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.txtSearchCustomer.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtSearchCustomer.CustomButton.TabIndex = 1;
+            this.txtSearchCustomer.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtSearchCustomer.CustomButton.UseSelectable = true;
+            this.txtSearchCustomer.CustomButton.Visible = false;
+            this.txtSearchCustomer.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.txtSearchCustomer.Lines = new string[0];
+            this.txtSearchCustomer.Location = new System.Drawing.Point(0, 10);
+            this.txtSearchCustomer.MaxLength = 32767;
+            this.txtSearchCustomer.Name = "txtSearchCustomer";
+            this.txtSearchCustomer.PasswordChar = '\0';
+            this.txtSearchCustomer.PromptText = "Поиск";
+            this.txtSearchCustomer.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtSearchCustomer.SelectedText = "";
+            this.txtSearchCustomer.SelectionLength = 0;
+            this.txtSearchCustomer.SelectionStart = 0;
+            this.txtSearchCustomer.ShortcutsEnabled = true;
+            this.txtSearchCustomer.Size = new System.Drawing.Size(907, 30);
+            this.txtSearchCustomer.TabIndex = 28;
+            this.txtSearchCustomer.UseSelectable = true;
+            this.txtSearchCustomer.WaterMark = "Поиск";
+            this.txtSearchCustomer.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtSearchCustomer.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtSearchCustomer.TextChanged += new System.EventHandler(this.txtSearchCustomer_TextChanged);
+            // 
+            // btnReportCustomer
+            // 
+            this.btnReportCustomer.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnReportCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReportCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnReportCustomer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btnReportCustomer.Location = new System.Drawing.Point(699, 353);
+            this.btnReportCustomer.Name = "btnReportCustomer";
+            this.btnReportCustomer.Size = new System.Drawing.Size(208, 48);
+            this.btnReportCustomer.TabIndex = 27;
+            this.btnReportCustomer.Text = "Отчёт";
+            this.btnReportCustomer.UseVisualStyleBackColor = false;
+            this.btnReportCustomer.Click += new System.EventHandler(this.btnReportCustomer_Click);
+            // 
+            // btnDeleteCustomer
+            // 
+            this.btnDeleteCustomer.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnDeleteCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeleteCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnDeleteCustomer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btnDeleteCustomer.Location = new System.Drawing.Point(466, 353);
+            this.btnDeleteCustomer.Name = "btnDeleteCustomer";
+            this.btnDeleteCustomer.Size = new System.Drawing.Size(227, 48);
+            this.btnDeleteCustomer.TabIndex = 26;
+            this.btnDeleteCustomer.Text = "Удалить";
+            this.btnDeleteCustomer.UseVisualStyleBackColor = false;
+            this.btnDeleteCustomer.Click += new System.EventHandler(this.btnDeleteCustomer_Click);
+            // 
+            // btnChangeCustomer
+            // 
+            this.btnChangeCustomer.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnChangeCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnChangeCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangeCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnChangeCustomer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btnChangeCustomer.Location = new System.Drawing.Point(233, 353);
+            this.btnChangeCustomer.Name = "btnChangeCustomer";
+            this.btnChangeCustomer.Size = new System.Drawing.Size(227, 48);
+            this.btnChangeCustomer.TabIndex = 25;
+            this.btnChangeCustomer.Text = "Изменить";
+            this.btnChangeCustomer.UseVisualStyleBackColor = false;
+            this.btnChangeCustomer.Click += new System.EventHandler(this.btnChangeCustomer_Click);
+            // 
+            // btnAddCustomer
+            // 
+            this.btnAddCustomer.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAddCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnAddCustomer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btnAddCustomer.Location = new System.Drawing.Point(0, 353);
+            this.btnAddCustomer.Name = "btnAddCustomer";
+            this.btnAddCustomer.Size = new System.Drawing.Size(227, 48);
+            this.btnAddCustomer.TabIndex = 24;
+            this.btnAddCustomer.Text = "Добавить";
+            this.btnAddCustomer.UseVisualStyleBackColor = false;
+            this.btnAddCustomer.Click += new System.EventHandler(this.btnAddCustomer_Click);
+            // 
+            // dataGridCustomer
+            // 
+            this.dataGridCustomer.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dataGridCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridCustomer.Location = new System.Drawing.Point(0, 46);
+            this.dataGridCustomer.Name = "dataGridCustomer";
+            this.dataGridCustomer.ReadOnly = true;
+            this.dataGridCustomer.Size = new System.Drawing.Size(907, 301);
+            this.dataGridCustomer.TabIndex = 23;
+            this.dataGridCustomer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridCustomer_CellClick);
+            // 
+            // tabOrders
+            // 
+            this.tabOrders.Controls.Add(this.groupBoxFilterOrders);
+            this.tabOrders.Controls.Add(this.txtSearchOrders);
+            this.tabOrders.Controls.Add(this.btnReportOrders);
+            this.tabOrders.Controls.Add(this.btnDeleteOrders);
+            this.tabOrders.Controls.Add(this.btnAddOrders);
+            this.tabOrders.Controls.Add(this.dataGridOrders);
+            this.tabOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tabOrders.HorizontalScrollbarBarColor = true;
+            this.tabOrders.HorizontalScrollbarHighlightOnWheel = false;
+            this.tabOrders.HorizontalScrollbarSize = 10;
+            this.tabOrders.Location = new System.Drawing.Point(4, 38);
+            this.tabOrders.Name = "tabOrders";
+            this.tabOrders.Size = new System.Drawing.Size(948, 430);
+            this.tabOrders.TabIndex = 5;
+            this.tabOrders.Text = "Заказы";
+            this.tabOrders.VerticalScrollbarBarColor = true;
+            this.tabOrders.VerticalScrollbarHighlightOnWheel = false;
+            this.tabOrders.VerticalScrollbarSize = 10;
+            // 
+            // groupBoxFilterOrders
+            // 
+            this.groupBoxFilterOrders.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.groupBoxFilterOrders.Controls.Add(this.groupBoxPriceOrders);
+            this.groupBoxFilterOrders.Controls.Add(this.groupBoxCountOrders);
+            this.groupBoxFilterOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBoxFilterOrders.Location = new System.Drawing.Point(699, 13);
+            this.groupBoxFilterOrders.Name = "groupBoxFilterOrders";
+            this.groupBoxFilterOrders.Size = new System.Drawing.Size(227, 337);
+            this.groupBoxFilterOrders.TabIndex = 38;
+            this.groupBoxFilterOrders.TabStop = false;
+            this.groupBoxFilterOrders.Text = "Фильтрация";
+            // 
+            // groupBoxPriceOrders
+            // 
+            this.groupBoxPriceOrders.Controls.Add(this.txtToPriceOrders);
+            this.groupBoxPriceOrders.Controls.Add(this.txtFromPriceOrders);
+            this.groupBoxPriceOrders.Location = new System.Drawing.Point(0, 141);
+            this.groupBoxPriceOrders.Name = "groupBoxPriceOrders";
+            this.groupBoxPriceOrders.Size = new System.Drawing.Size(227, 99);
+            this.groupBoxPriceOrders.TabIndex = 42;
+            this.groupBoxPriceOrders.TabStop = false;
+            this.groupBoxPriceOrders.Text = "По стоимости:";
+            // 
+            // txtToPriceOrders
+            // 
+            // 
+            // 
+            // 
+            this.txtToPriceOrders.CustomButton.Image = null;
+            this.txtToPriceOrders.CustomButton.Location = new System.Drawing.Point(166, 2);
+            this.txtToPriceOrders.CustomButton.Name = "";
+            this.txtToPriceOrders.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.txtToPriceOrders.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtToPriceOrders.CustomButton.TabIndex = 1;
+            this.txtToPriceOrders.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtToPriceOrders.CustomButton.UseSelectable = true;
+            this.txtToPriceOrders.CustomButton.Visible = false;
+            this.txtToPriceOrders.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.txtToPriceOrders.Lines = new string[0];
+            this.txtToPriceOrders.Location = new System.Drawing.Point(6, 61);
+            this.txtToPriceOrders.MaxLength = 32767;
+            this.txtToPriceOrders.Name = "txtToPriceOrders";
+            this.txtToPriceOrders.PasswordChar = '\0';
+            this.txtToPriceOrders.PromptText = "Максимум";
+            this.txtToPriceOrders.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtToPriceOrders.SelectedText = "";
+            this.txtToPriceOrders.SelectionLength = 0;
+            this.txtToPriceOrders.SelectionStart = 0;
+            this.txtToPriceOrders.ShortcutsEnabled = true;
+            this.txtToPriceOrders.Size = new System.Drawing.Size(194, 30);
+            this.txtToPriceOrders.TabIndex = 40;
+            this.txtToPriceOrders.UseSelectable = true;
+            this.txtToPriceOrders.WaterMark = "Максимум";
+            this.txtToPriceOrders.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtToPriceOrders.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtToPriceOrders.TextChanged += new System.EventHandler(this.txtSearchOrders_TextChanged);
+            // 
+            // txtFromPriceOrders
+            // 
+            // 
+            // 
+            // 
+            this.txtFromPriceOrders.CustomButton.Image = null;
+            this.txtFromPriceOrders.CustomButton.Location = new System.Drawing.Point(166, 2);
+            this.txtFromPriceOrders.CustomButton.Name = "";
+            this.txtFromPriceOrders.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.txtFromPriceOrders.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtFromPriceOrders.CustomButton.TabIndex = 1;
+            this.txtFromPriceOrders.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtFromPriceOrders.CustomButton.UseSelectable = true;
+            this.txtFromPriceOrders.CustomButton.Visible = false;
+            this.txtFromPriceOrders.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.txtFromPriceOrders.Lines = new string[0];
+            this.txtFromPriceOrders.Location = new System.Drawing.Point(6, 25);
+            this.txtFromPriceOrders.MaxLength = 32767;
+            this.txtFromPriceOrders.Name = "txtFromPriceOrders";
+            this.txtFromPriceOrders.PasswordChar = '\0';
+            this.txtFromPriceOrders.PromptText = "Минимум";
+            this.txtFromPriceOrders.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtFromPriceOrders.SelectedText = "";
+            this.txtFromPriceOrders.SelectionLength = 0;
+            this.txtFromPriceOrders.SelectionStart = 0;
+            this.txtFromPriceOrders.ShortcutsEnabled = true;
+            this.txtFromPriceOrders.Size = new System.Drawing.Size(194, 30);
+            this.txtFromPriceOrders.TabIndex = 39;
+            this.txtFromPriceOrders.UseSelectable = true;
+            this.txtFromPriceOrders.WaterMark = "Минимум";
+            this.txtFromPriceOrders.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtFromPriceOrders.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtFromPriceOrders.TextChanged += new System.EventHandler(this.txtSearchOrders_TextChanged);
+            // 
+            // groupBoxCountOrders
+            // 
+            this.groupBoxCountOrders.Controls.Add(this.txtToCountOrders);
+            this.groupBoxCountOrders.Controls.Add(this.txtFromCountOrders);
+            this.groupBoxCountOrders.Location = new System.Drawing.Point(0, 36);
+            this.groupBoxCountOrders.Name = "groupBoxCountOrders";
+            this.groupBoxCountOrders.Size = new System.Drawing.Size(227, 99);
+            this.groupBoxCountOrders.TabIndex = 0;
+            this.groupBoxCountOrders.TabStop = false;
+            this.groupBoxCountOrders.Text = "По количеству:";
+            // 
+            // txtToCountOrders
+            // 
+            // 
+            // 
+            // 
+            this.txtToCountOrders.CustomButton.Image = null;
+            this.txtToCountOrders.CustomButton.Location = new System.Drawing.Point(166, 2);
+            this.txtToCountOrders.CustomButton.Name = "";
+            this.txtToCountOrders.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.txtToCountOrders.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtToCountOrders.CustomButton.TabIndex = 1;
+            this.txtToCountOrders.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtToCountOrders.CustomButton.UseSelectable = true;
+            this.txtToCountOrders.CustomButton.Visible = false;
+            this.txtToCountOrders.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.txtToCountOrders.Lines = new string[0];
+            this.txtToCountOrders.Location = new System.Drawing.Point(6, 61);
+            this.txtToCountOrders.MaxLength = 32767;
+            this.txtToCountOrders.Name = "txtToCountOrders";
+            this.txtToCountOrders.PasswordChar = '\0';
+            this.txtToCountOrders.PromptText = "Максимум";
+            this.txtToCountOrders.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtToCountOrders.SelectedText = "";
+            this.txtToCountOrders.SelectionLength = 0;
+            this.txtToCountOrders.SelectionStart = 0;
+            this.txtToCountOrders.ShortcutsEnabled = true;
+            this.txtToCountOrders.Size = new System.Drawing.Size(194, 30);
+            this.txtToCountOrders.TabIndex = 40;
+            this.txtToCountOrders.UseSelectable = true;
+            this.txtToCountOrders.WaterMark = "Максимум";
+            this.txtToCountOrders.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtToCountOrders.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtToCountOrders.TextChanged += new System.EventHandler(this.txtSearchOrders_TextChanged);
+            // 
+            // txtFromCountOrders
+            // 
+            // 
+            // 
+            // 
+            this.txtFromCountOrders.CustomButton.Image = null;
+            this.txtFromCountOrders.CustomButton.Location = new System.Drawing.Point(166, 2);
+            this.txtFromCountOrders.CustomButton.Name = "";
+            this.txtFromCountOrders.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.txtFromCountOrders.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtFromCountOrders.CustomButton.TabIndex = 1;
+            this.txtFromCountOrders.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtFromCountOrders.CustomButton.UseSelectable = true;
+            this.txtFromCountOrders.CustomButton.Visible = false;
+            this.txtFromCountOrders.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.txtFromCountOrders.Lines = new string[0];
+            this.txtFromCountOrders.Location = new System.Drawing.Point(6, 25);
+            this.txtFromCountOrders.MaxLength = 32767;
+            this.txtFromCountOrders.Name = "txtFromCountOrders";
+            this.txtFromCountOrders.PasswordChar = '\0';
+            this.txtFromCountOrders.PromptText = "Минимум";
+            this.txtFromCountOrders.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtFromCountOrders.SelectedText = "";
+            this.txtFromCountOrders.SelectionLength = 0;
+            this.txtFromCountOrders.SelectionStart = 0;
+            this.txtFromCountOrders.ShortcutsEnabled = true;
+            this.txtFromCountOrders.Size = new System.Drawing.Size(194, 30);
+            this.txtFromCountOrders.TabIndex = 39;
+            this.txtFromCountOrders.UseSelectable = true;
+            this.txtFromCountOrders.WaterMark = "Минимум";
+            this.txtFromCountOrders.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtFromCountOrders.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtFromCountOrders.TextChanged += new System.EventHandler(this.txtSearchOrders_TextChanged);
+            // 
+            // txtSearchOrders
+            // 
+            // 
+            // 
+            // 
+            this.txtSearchOrders.CustomButton.Image = null;
+            this.txtSearchOrders.CustomButton.Location = new System.Drawing.Point(665, 2);
+            this.txtSearchOrders.CustomButton.Name = "";
+            this.txtSearchOrders.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.txtSearchOrders.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtSearchOrders.CustomButton.TabIndex = 1;
+            this.txtSearchOrders.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtSearchOrders.CustomButton.UseSelectable = true;
+            this.txtSearchOrders.CustomButton.Visible = false;
+            this.txtSearchOrders.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.txtSearchOrders.Lines = new string[0];
+            this.txtSearchOrders.Location = new System.Drawing.Point(0, 13);
+            this.txtSearchOrders.MaxLength = 32767;
+            this.txtSearchOrders.Name = "txtSearchOrders";
+            this.txtSearchOrders.PasswordChar = '\0';
+            this.txtSearchOrders.PromptText = "Поиск";
+            this.txtSearchOrders.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtSearchOrders.SelectedText = "";
+            this.txtSearchOrders.SelectionLength = 0;
+            this.txtSearchOrders.SelectionStart = 0;
+            this.txtSearchOrders.ShortcutsEnabled = true;
+            this.txtSearchOrders.Size = new System.Drawing.Size(693, 30);
+            this.txtSearchOrders.TabIndex = 37;
+            this.txtSearchOrders.UseSelectable = true;
+            this.txtSearchOrders.WaterMark = "Поиск";
+            this.txtSearchOrders.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtSearchOrders.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtSearchOrders.TextChanged += new System.EventHandler(this.txtSearchOrders_TextChanged);
+            // 
+            // btnReportOrders
+            // 
+            this.btnReportOrders.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnReportOrders.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReportOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnReportOrders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btnReportOrders.Location = new System.Drawing.Point(466, 356);
+            this.btnReportOrders.Name = "btnReportOrders";
+            this.btnReportOrders.Size = new System.Drawing.Size(227, 48);
+            this.btnReportOrders.TabIndex = 36;
+            this.btnReportOrders.Text = "Отчёт";
+            this.btnReportOrders.UseVisualStyleBackColor = false;
+            this.btnReportOrders.Click += new System.EventHandler(this.btnReportOrders_Click);
+            // 
+            // btnDeleteOrders
+            // 
+            this.btnDeleteOrders.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnDeleteOrders.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeleteOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnDeleteOrders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btnDeleteOrders.Location = new System.Drawing.Point(233, 356);
+            this.btnDeleteOrders.Name = "btnDeleteOrders";
+            this.btnDeleteOrders.Size = new System.Drawing.Size(227, 48);
+            this.btnDeleteOrders.TabIndex = 35;
+            this.btnDeleteOrders.Text = "Удалить";
+            this.btnDeleteOrders.UseVisualStyleBackColor = false;
+            this.btnDeleteOrders.Click += new System.EventHandler(this.btnDeleteOrders_Click);
+            // 
+            // btnAddOrders
+            // 
+            this.btnAddOrders.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAddOrders.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnAddOrders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btnAddOrders.Location = new System.Drawing.Point(0, 356);
+            this.btnAddOrders.Name = "btnAddOrders";
+            this.btnAddOrders.Size = new System.Drawing.Size(227, 48);
+            this.btnAddOrders.TabIndex = 33;
+            this.btnAddOrders.Text = "Добавить";
+            this.btnAddOrders.UseVisualStyleBackColor = false;
+            this.btnAddOrders.Click += new System.EventHandler(this.btnAddOrders_Click);
+            // 
+            // dataGridOrders
+            // 
+            this.dataGridOrders.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dataGridOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridOrders.Location = new System.Drawing.Point(0, 49);
+            this.dataGridOrders.Name = "dataGridOrders";
+            this.dataGridOrders.ReadOnly = true;
+            this.dataGridOrders.Size = new System.Drawing.Size(693, 301);
+            this.dataGridOrders.TabIndex = 32;
+            this.dataGridOrders.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridOrders_CellClick);
+            // 
+            // tabAdminPanel
+            // 
+            this.tabAdminPanel.Controls.Add(this.btnGetDBFromCopy);
+            this.tabAdminPanel.Controls.Add(this.btnMakeBackUpBD);
+            this.tabAdminPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tabAdminPanel.HorizontalScrollbarBarColor = true;
+            this.tabAdminPanel.HorizontalScrollbarHighlightOnWheel = false;
+            this.tabAdminPanel.HorizontalScrollbarSize = 10;
+            this.tabAdminPanel.Location = new System.Drawing.Point(4, 38);
+            this.tabAdminPanel.Name = "tabAdminPanel";
+            this.tabAdminPanel.Size = new System.Drawing.Size(948, 430);
+            this.tabAdminPanel.TabIndex = 2;
+            this.tabAdminPanel.Text = "Админ панель";
+            this.tabAdminPanel.VerticalScrollbarBarColor = true;
+            this.tabAdminPanel.VerticalScrollbarHighlightOnWheel = false;
+            this.tabAdminPanel.VerticalScrollbarSize = 10;
+            // 
+            // btnGetDBFromCopy
+            // 
+            this.btnGetDBFromCopy.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnGetDBFromCopy.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGetDBFromCopy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGetDBFromCopy.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnGetDBFromCopy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btnGetDBFromCopy.Location = new System.Drawing.Point(3, 81);
+            this.btnGetDBFromCopy.Name = "btnGetDBFromCopy";
+            this.btnGetDBFromCopy.Size = new System.Drawing.Size(208, 48);
+            this.btnGetDBFromCopy.TabIndex = 21;
+            this.btnGetDBFromCopy.Text = "Востановление БД";
+            this.btnGetDBFromCopy.UseVisualStyleBackColor = false;
+            this.btnGetDBFromCopy.Click += new System.EventHandler(this.btnGetDBFromCopy_Click);
             // 
             // btnMakeBackUpBD
             // 
@@ -935,138 +1527,9 @@
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click);
             // 
-            // groupBox1
+            // openFileDialog1
             // 
-            this.groupBox1.Controls.Add(this.checkBoxTimeNoMadeProduct);
-            this.groupBox1.Controls.Add(this.checkBoxTimeLessMadeProduct);
-            this.groupBox1.Controls.Add(this.checkBoxTimeIsMadeProduct);
-            this.groupBox1.Location = new System.Drawing.Point(0, 133);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(227, 122);
-            this.groupBox1.TabIndex = 42;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Срок годности:";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Chartreuse;
-            this.panel1.Location = new System.Drawing.Point(214, 39);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(20, 20);
-            this.panel1.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Orange;
-            this.panel2.Location = new System.Drawing.Point(378, 39);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(20, 20);
-            this.panel2.TabIndex = 1;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Crimson;
-            this.panel3.Location = new System.Drawing.Point(546, 39);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(20, 20);
-            this.panel3.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(404, 39);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(136, 20);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Вот-вот истечёт";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(240, 39);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(132, 20);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Ещё есть время";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(572, 39);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 20);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Окончен";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(-4, 39);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(219, 20);
-            this.label4.TabIndex = 39;
-            this.label4.Text = "Пояснение (срок годности):";
-            // 
-            // metroUserControl1
-            // 
-            this.metroUserControl1.Location = new System.Drawing.Point(788, 417);
-            this.metroUserControl1.Name = "metroUserControl1";
-            this.metroUserControl1.Size = new System.Drawing.Size(150, 150);
-            this.metroUserControl1.TabIndex = 40;
-            this.metroUserControl1.UseSelectable = true;
-            // 
-            // checkBoxTimeIsMadeProduct
-            // 
-            this.checkBoxTimeIsMadeProduct.AutoSize = true;
-            this.checkBoxTimeIsMadeProduct.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.checkBoxTimeIsMadeProduct.DisplayFocus = true;
-            this.checkBoxTimeIsMadeProduct.FontSize = MetroFramework.MetroCheckBoxSize.Tall;
-            this.checkBoxTimeIsMadeProduct.Location = new System.Drawing.Point(6, 25);
-            this.checkBoxTimeIsMadeProduct.Name = "checkBoxTimeIsMadeProduct";
-            this.checkBoxTimeIsMadeProduct.Size = new System.Drawing.Size(156, 25);
-            this.checkBoxTimeIsMadeProduct.Style = MetroFramework.MetroColorStyle.Orange;
-            this.checkBoxTimeIsMadeProduct.TabIndex = 0;
-            this.checkBoxTimeIsMadeProduct.Text = "Ещё есть время";
-            this.checkBoxTimeIsMadeProduct.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkBoxTimeIsMadeProduct.UseSelectable = true;
-            // 
-            // checkBoxTimeLessMadeProduct
-            // 
-            this.checkBoxTimeLessMadeProduct.AutoSize = true;
-            this.checkBoxTimeLessMadeProduct.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.checkBoxTimeLessMadeProduct.DisplayFocus = true;
-            this.checkBoxTimeLessMadeProduct.FontSize = MetroFramework.MetroCheckBoxSize.Tall;
-            this.checkBoxTimeLessMadeProduct.Location = new System.Drawing.Point(6, 50);
-            this.checkBoxTimeLessMadeProduct.Name = "checkBoxTimeLessMadeProduct";
-            this.checkBoxTimeLessMadeProduct.Size = new System.Drawing.Size(156, 25);
-            this.checkBoxTimeLessMadeProduct.Style = MetroFramework.MetroColorStyle.Orange;
-            this.checkBoxTimeLessMadeProduct.TabIndex = 1;
-            this.checkBoxTimeLessMadeProduct.Text = "Вот-вот истечёт";
-            this.checkBoxTimeLessMadeProduct.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkBoxTimeLessMadeProduct.UseSelectable = true;
-            // 
-            // checkBoxTimeNoMadeProduct
-            // 
-            this.checkBoxTimeNoMadeProduct.AutoSize = true;
-            this.checkBoxTimeNoMadeProduct.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.checkBoxTimeNoMadeProduct.DisplayFocus = true;
-            this.checkBoxTimeNoMadeProduct.FontSize = MetroFramework.MetroCheckBoxSize.Tall;
-            this.checkBoxTimeNoMadeProduct.Location = new System.Drawing.Point(6, 74);
-            this.checkBoxTimeNoMadeProduct.Name = "checkBoxTimeNoMadeProduct";
-            this.checkBoxTimeNoMadeProduct.Size = new System.Drawing.Size(101, 25);
-            this.checkBoxTimeNoMadeProduct.Style = MetroFramework.MetroColorStyle.Orange;
-            this.checkBoxTimeNoMadeProduct.TabIndex = 2;
-            this.checkBoxTimeNoMadeProduct.Text = "Окончен";
-            this.checkBoxTimeNoMadeProduct.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkBoxTimeNoMadeProduct.UseSelectable = true;
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // ManagerMainForm
             // 
@@ -1084,24 +1547,31 @@
             this.Style = MetroFramework.MetroColorStyle.Orange;
             this.Text = "Таблицы";
             this.tabControll.ResumeLayout(false);
-            this.metroTabPage1.ResumeLayout(false);
+            this.tabEmployees.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridEmployee)).EndInit();
-            this.metroTabPage2.ResumeLayout(false);
+            this.tabProducts.ResumeLayout(false);
             this.groupBoxFilter.ResumeLayout(false);
             this.groupBoxWeight.ResumeLayout(false);
             this.groupBoxRealPrice.ResumeLayout(false);
             this.groupBoxOptimalPrice.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProduct)).EndInit();
-            this.metroTabPage4.ResumeLayout(false);
-            this.metroTabPage4.PerformLayout();
+            this.tabMadeProducts.ResumeLayout(false);
+            this.tabMadeProducts.PerformLayout();
             this.groupBoxFilterMadeProduct.ResumeLayout(false);
-            this.groupBoxCountMadeProduct.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridMadeProduct)).EndInit();
-            this.metroTabPage3.ResumeLayout(false);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBoxCountMadeProduct.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridMadeProduct)).EndInit();
+            this.tabCustomer.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridCustomer)).EndInit();
+            this.tabOrders.ResumeLayout(false);
+            this.groupBoxFilterOrders.ResumeLayout(false);
+            this.groupBoxPriceOrders.ResumeLayout(false);
+            this.groupBoxCountOrders.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridOrders)).EndInit();
+            this.tabAdminPanel.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1110,12 +1580,12 @@
         #endregion
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private MetroFramework.Controls.MetroTabControl tabControll;
-        private MetroFramework.Controls.MetroTabPage metroTabPage1;
+        private MetroFramework.Controls.MetroTabPage tabEmployees;
         private System.Windows.Forms.DataGridView dataGridEmployee;
         private System.Windows.Forms.Button btnDeleteEmployee;
         private System.Windows.Forms.Button btnChangeEmployee;
         private System.Windows.Forms.Button btnAddEmployee;
-        private MetroFramework.Controls.MetroTabPage metroTabPage2;
+        private MetroFramework.Controls.MetroTabPage tabProducts;
         private System.Windows.Forms.Button btnReportEmployee;
         private MetroFramework.Controls.MetroTextBox txtSearchEmployee;
         private System.Windows.Forms.MenuStrip menuStrip1;
@@ -1127,7 +1597,7 @@
         private System.Windows.Forms.Button btnChangeProduct;
         private System.Windows.Forms.Button btnAddProduct;
         private System.Windows.Forms.DataGridView dataGridProduct;
-        private MetroFramework.Controls.MetroTabPage metroTabPage3;
+        private MetroFramework.Controls.MetroTabPage tabAdminPanel;
         private System.Windows.Forms.Button btnMakeBackUpBD;
         private System.Windows.Forms.GroupBox groupBoxFilter;
         private System.Windows.Forms.GroupBox groupBoxOptimalPrice;
@@ -1140,7 +1610,7 @@
         private MetroFramework.Controls.MetroTextBox txtFromRealPriceProduct;
         private MetroFramework.Controls.MetroTextBox txtToOptimalPriceProduct;
         private MetroFramework.Controls.MetroTextBox txtFromOptimalPriceProduct;
-        private MetroFramework.Controls.MetroTabPage metroTabPage4;
+        private MetroFramework.Controls.MetroTabPage tabMadeProducts;
         private System.Windows.Forms.GroupBox groupBoxFilterMadeProduct;
         private System.Windows.Forms.GroupBox groupBoxCountMadeProduct;
         private MetroFramework.Controls.MetroTextBox txtToCountMadeProduct;
@@ -1163,5 +1633,27 @@
         private MetroFramework.Controls.MetroCheckBox checkBoxTimeIsMadeProduct;
         private MetroFramework.Controls.MetroCheckBox checkBoxTimeNoMadeProduct;
         private MetroFramework.Controls.MetroCheckBox checkBoxTimeLessMadeProduct;
+        private MetroFramework.Controls.MetroTabPage tabCustomer;
+        private MetroFramework.Controls.MetroTextBox txtSearchCustomer;
+        private System.Windows.Forms.Button btnReportCustomer;
+        private System.Windows.Forms.Button btnDeleteCustomer;
+        private System.Windows.Forms.Button btnChangeCustomer;
+        private System.Windows.Forms.Button btnAddCustomer;
+        private System.Windows.Forms.DataGridView dataGridCustomer;
+        private MetroFramework.Controls.MetroTabPage tabOrders;
+        private System.Windows.Forms.GroupBox groupBoxFilterOrders;
+        private System.Windows.Forms.GroupBox groupBoxPriceOrders;
+        private MetroFramework.Controls.MetroTextBox txtToPriceOrders;
+        private MetroFramework.Controls.MetroTextBox txtFromPriceOrders;
+        private System.Windows.Forms.GroupBox groupBoxCountOrders;
+        private MetroFramework.Controls.MetroTextBox txtToCountOrders;
+        private MetroFramework.Controls.MetroTextBox txtFromCountOrders;
+        private MetroFramework.Controls.MetroTextBox txtSearchOrders;
+        private System.Windows.Forms.Button btnReportOrders;
+        private System.Windows.Forms.Button btnDeleteOrders;
+        private System.Windows.Forms.Button btnAddOrders;
+        private System.Windows.Forms.DataGridView dataGridOrders;
+        private System.Windows.Forms.Button btnGetDBFromCopy;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

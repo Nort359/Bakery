@@ -57,11 +57,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddChangeCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddChangeCustomer.Designer.cs">
+      <DependentUpon>AddChangeCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddChangeMadeProduct.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AddChangeMadeProduct.Designer.cs">
       <DependentUpon>AddChangeMadeProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddChangeOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddChangeOrder.Designer.cs">
+      <DependentUpon>AddChangeOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="AddChangeProduct.cs">
       <SubType>Form</SubType>
@@ -76,6 +88,7 @@
     <Compile Include="AddChangeEmployee.Designer.cs">
       <DependentUpon>AddChangeEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helper.cs" />
     <Compile Include="LogIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,11 +103,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddChangeCustomer.resx">
+      <DependentUpon>AddChangeCustomer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddChangeEmployee.resx">
       <DependentUpon>AddChangeEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddChangeMadeProduct.resx">
       <DependentUpon>AddChangeMadeProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddChangeOrder.resx">
+      <DependentUpon>AddChangeOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddChangeProduct.resx">
       <DependentUpon>AddChangeProduct.cs</DependentUpon>
