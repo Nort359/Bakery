@@ -69,6 +69,12 @@
     <Compile Include="AddChangeMadeProduct.Designer.cs">
       <DependentUpon>AddChangeMadeProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddChangeMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddChangeMaterial.Designer.cs">
+      <DependentUpon>AddChangeMaterial.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddChangeOrder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddChangeMadeProduct.resx">
       <DependentUpon>AddChangeMadeProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddChangeMaterial.resx">
+      <DependentUpon>AddChangeMaterial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddChangeOrder.resx">
       <DependentUpon>AddChangeOrder.cs</DependentUpon>

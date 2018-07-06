@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.OleDb;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Bakery
 {
@@ -33,6 +35,18 @@ namespace Bakery
             int.TryParse(id, out countryEmployeeId);
 
             return countryEmployeeId;
+        }
+
+        public static void PaintLabelUp(Control lbl)
+        {
+            lbl.ForeColor = Color.FromArgb(133, 156, 42);
+            lbl.Font = new Font("Microsoft Sans Serif", 12, FontStyle.Italic);
+        }
+
+        public static void PaintLabelDown(Control lbl)
+        {
+            lbl.ForeColor = Color.FromArgb(41, 39, 40);
+            lbl.Font = new Font("Microsoft Sans Serif", 11, FontStyle.Regular);
         }
     }
 }

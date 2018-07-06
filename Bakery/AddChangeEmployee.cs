@@ -54,6 +54,18 @@ namespace Bakery
                 comboBoxPositionEmployee.Items.Add(selectReaderPosition[0]);
             }
 
+            // Заполнение comboBox образованием
+            string selectQueryEducation = @"SELECT Название FROM Образование";
+
+            OleDbCommand selectCommandEducation = new OleDbCommand(selectQueryEducation, Connection.getConnection());
+
+            OleDbDataReader selectReaderEducation = selectCommandEducation.ExecuteReader();
+
+            while (selectReaderEducation.Read())
+            {
+                txtEducationEmployee.Items.Add(selectReaderEducation[0]);
+            }
+
             // Заполнение comboBox странами
             string selectQueryCountry = @"SELECT Название FROM Страны";
 
@@ -78,23 +90,32 @@ namespace Bakery
                 lblMainEmployee.Text = "Исправьте все необходимые данные о сотруднике:";
 
                 // Получение выбранного сотрудника
-                string selectQuery = @"SELECT Код_личного_дела, Фамилия, Имя, Отчество,
-                                                Должности.Должность,
-                                                Дата_рождения AS `Дата рождения`,
-                                                Номер_паспорта AS `Номер паспорта`,
-                                                Серия_паспорта AS `Серия паспорта`, ИНН,
-                                                Стаж_работы AS `Стаж работы`, Образование,
-                                                Телефон, Страны.Название AS `Страна`,
-                                                Города.Название AS `Город`, Сотрудники.Адрес
-                                            FROM Сотрудники, Должности, Страны, Города
-                                                WHERE
-                                                    (Сотрудники.Должность = Должности.Код_должности)
-                                                        AND
-                                                    (Сотрудники.Код_страны = Страны.Код)
-                                                        AND
-                                                    (Сотрудники.Код_города = Города.Код)
-                                                        AND
-                                                    (Сотрудники.Код_личного_дела = " + ManagerMainForm.idCurrentRowEmployee + ")";
+                string selectQuery = @"SELECT Код_личного_дела,
+                                              Фамилия,
+                                              Имя,
+                                              Отчество,
+                                              Должности.Должность,
+                                              Дата_рождения AS `Дата рождения`,
+                                              Номер_паспорта AS `Номер паспорта`,
+                                              Серия_паспорта AS `Серия паспорта`,
+                                              ИНН,
+                                              Стаж_работы AS `Стаж работы`,
+                                              Образование.Название AS `Образование`,
+                                              Телефон,
+                                              Страны.Название AS `Страна`,
+                                              Города.Название AS `Город`,
+                                              Сотрудники.Адрес
+                                        FROM Сотрудники, Должности, Страны, Города, Образование
+                                            WHERE
+                                                (Сотрудники.Должность = Должности.Код_должности)
+                                                    AND
+                                                (Сотрудники.Код_образования = Образование.Код)
+                                                    AND 
+                                                (Сотрудники.Код_страны = Страны.Код)
+                                                    AND
+                                                (Сотрудники.Код_города = Города.Код)
+                                                    AND
+                                                (Сотрудники.Код_личного_дела = " + ManagerMainForm.idCurrentRowEmployee + ")";
 
                 OleDbCommand command = new OleDbCommand(selectQuery, Connection.getConnection());
 
@@ -170,11 +191,20 @@ namespace Bakery
 
                 int cityEmployeeId = getId(selectQueryGetCityId);
 
+                // Получение id выбранного образования
+                string eduEmployeeText = txtEducationEmployee.Text;
+
+                string selectQueryGetEduId = @"SELECT Код
+                                                    FROM Образование
+                                                        WHERE Название = '" + eduEmployeeText + "'";
+
+                int eduEmployeeId = getId(selectQueryGetEduId);
+
                 // Вставка данных
-                string insertQuery = @"INSERT INTO Сотрудники (Фамилия, Имя, Отчество, Должность, Дата_рождения, Номер_паспорта, Серия_паспорта, ИНН, Стаж_работы, Образование, Телефон, Код_страны, Код_города, Адрес)
+                string insertQuery = @"INSERT INTO Сотрудники (Фамилия, Имя, Отчество, Должность, Дата_рождения, Номер_паспорта, Серия_паспорта, ИНН, Стаж_работы, Код_образования, Телефон, Код_страны, Код_города, Адрес)
                                         VALUES ('" + surname + "', '" + name + "', '" + middleName +
                                             "', " + positionEmployeeId + ", '" + birthDay + "', " + passportNumber + ", " + passportSerial + "" +
-                                            ", " + INN + ", '" + expirience + "', '" + education + "', '" + phoneNumber + "', " +
+                                            ", " + INN + ", '" + expirience + "', " + eduEmployeeId + ", '" + phoneNumber + "', " +
                                             "" + countryEmployeeId + ", " + cityEmployeeId + ", '" + address + "')";
 
                 OleDbCommand insertCommand = new OleDbCommand(insertQuery, Connection.getConnection());
@@ -325,23 +355,32 @@ namespace Bakery
 
                 int cityEmployeeId = getId(selectQueryGetCityId);
 
+                // Получение id выбранного образования
+                string eduEmployeeText = txtEducationEmployee.Text;
+
+                string selectQueryGetEduId = @"SELECT Код
+                                                    FROM Образование
+                                                        WHERE Название = '" + eduEmployeeText + "'";
+
+                int eduEmployeeId = getId(selectQueryGetEduId);
+
                 // Обновление данных
                 string updateQuery = @"UPDATE Сотрудники SET
-                                            Фамилия = '" + surname + "', " +
-                                            "Имя = '" + name + "', " +
-                                            "Отчество = '" + middleName + "', " +
-                                            "Должность = '" + positionEmployeeId + "', " +
-                                            "Дата_рождения = '" + birthDay + "', " +
-                                            "Номер_паспорта = " + passportNumber + ", " +
-                                            "Серия_паспорта = " + passportSerial + ", " +
-                                            "ИНН = " + INN + ", " +
-                                            "Стаж_работы = '" + expirience + "', " +
-                                            "Образование = '" + education + "', " +
-                                            "Телефон = '" + phoneNumber + "', " +
-                                            "Код_страны = " + countryEmployeeId + ", " +
-                                            "Код_города = " + cityEmployeeId + ", " +
-                                            "Адрес = '" + address + "'" +
-                                            "   WHERE Код_личного_дела = " + ManagerMainForm.idCurrentRowEmployee;
+                                              Фамилия = '" + surname + "', " +
+                                              "Имя = '" + name + "', " +
+                                              "Отчество = '" + middleName + "', " +
+                                              "Должность = '" + positionEmployeeId + "', " +
+                                              "Дата_рождения = '" + birthDay + "', " +
+                                              "Номер_паспорта = " + passportNumber + ", " +
+                                              "Серия_паспорта = " + passportSerial + ", " +
+                                              "ИНН = " + INN + ", " +
+                                              "Стаж_работы = '" + expirience + "', " +
+                                              "Код_образования = " + eduEmployeeId + ", " +
+                                              "Телефон = '" + phoneNumber + "', " +
+                                              "Код_страны = " + countryEmployeeId + ", " +
+                                              "Код_города = " + cityEmployeeId + ", " +
+                                              "Адрес = '" + address + "'" +
+                                              "   WHERE Код_личного_дела = " + ManagerMainForm.idCurrentRowEmployee;
 
                 OleDbCommand updateCommand = new OleDbCommand(updateQuery, Connection.getConnection());
 
@@ -369,5 +408,49 @@ namespace Bakery
                 MessageBox.Show("Не все данные были введены.\nПожалуйста, проверьте поля ввода и повторите снова.", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        #region Styles
+        private void txtNameEmployee_Enter(object sender, EventArgs e)
+        {
+            try
+            {
+                Control control = (Control)sender;
+
+                int index = 0;
+                int.TryParse(control.TabIndex.ToString(), out index);
+
+                Control next = Controls.OfType<Control>()
+                                       .Where(c => c.TabIndex == index + 1)
+                                       .First();
+
+                Helper.PaintLabelUp(next);
+            }
+            catch(Exception ex)
+            {
+                //MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void txtNameEmployee_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                Control control = (Control)sender;
+
+                int index = 0;
+                int.TryParse(control.TabIndex.ToString(), out index);
+
+                Control next = Controls.OfType<Control>()
+                                       .Where(c => c.TabIndex == index + 1)
+                                       .First();
+
+                Helper.PaintLabelDown(next);
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show(ex.Message);
+            }
+        }
+        #endregion
     }
 }

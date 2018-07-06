@@ -313,5 +313,47 @@ namespace Bakery
             txtPrice.Text = globalPrice.ToString();
             txtWeight.Text = (oneWeight * count).ToString();
         }
+
+        private void comboBoxProduct_Enter(object sender, EventArgs e)
+        {
+            try
+            {
+                Control control = (Control)sender;
+
+                int index = 0;
+                int.TryParse(control.TabIndex.ToString(), out index);
+
+                Control next = Controls.OfType<Control>()
+                                       .Where(c => c.TabIndex == index + 1)
+                                       .First();
+
+                Helper.PaintLabelUp(next);
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void comboBoxProduct_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                Control control = (Control)sender;
+
+                int index = 0;
+                int.TryParse(control.TabIndex.ToString(), out index);
+
+                Control next = Controls.OfType<Control>()
+                                       .Where(c => c.TabIndex == index + 1)
+                                       .First();
+
+                Helper.PaintLabelDown(next);
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

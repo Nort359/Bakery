@@ -31,13 +31,33 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.tabControll = new MetroFramework.Controls.MetroTabControl();
             this.tabEmployees = new MetroFramework.Controls.MetroTabPage();
+            this.label6 = new System.Windows.Forms.Label();
+            this.comboBoxSearchEmployee = new MetroFramework.Controls.MetroComboBox();
             this.txtSearchEmployee = new MetroFramework.Controls.MetroTextBox();
             this.btnReportEmployee = new System.Windows.Forms.Button();
             this.btnDeleteEmployee = new System.Windows.Forms.Button();
             this.btnChangeEmployee = new System.Windows.Forms.Button();
             this.btnAddEmployee = new System.Windows.Forms.Button();
             this.dataGridEmployee = new System.Windows.Forms.DataGridView();
+            this.tabMaterial = new MetroFramework.Controls.MetroTabPage();
+            this.label5 = new System.Windows.Forms.Label();
+            this.comboBoxSearchMaterial = new MetroFramework.Controls.MetroComboBox();
+            this.groupBoxFilterMaterial = new System.Windows.Forms.GroupBox();
+            this.groupBoxPriceMaterial = new System.Windows.Forms.GroupBox();
+            this.txtToPriceMaterial = new MetroFramework.Controls.MetroTextBox();
+            this.txtFromPriceMaterial = new MetroFramework.Controls.MetroTextBox();
+            this.groupBoxCountMaterial = new System.Windows.Forms.GroupBox();
+            this.txtToCountMaterial = new MetroFramework.Controls.MetroTextBox();
+            this.txtFromCountMaterial = new MetroFramework.Controls.MetroTextBox();
+            this.txtSearchMaterial = new MetroFramework.Controls.MetroTextBox();
+            this.btnReportMaterial = new System.Windows.Forms.Button();
+            this.btnDeleteMaterial = new System.Windows.Forms.Button();
+            this.btnChangeMaterial = new System.Windows.Forms.Button();
+            this.btnAddMaterial = new System.Windows.Forms.Button();
+            this.dataGridMaterial = new System.Windows.Forms.DataGridView();
             this.tabProducts = new MetroFramework.Controls.MetroTabPage();
+            this.label7 = new System.Windows.Forms.Label();
+            this.comboBoxSearchProduct = new MetroFramework.Controls.MetroComboBox();
             this.groupBoxFilter = new System.Windows.Forms.GroupBox();
             this.groupBoxWeight = new System.Windows.Forms.GroupBox();
             this.txtToWeightProduct = new MetroFramework.Controls.MetroTextBox();
@@ -55,6 +75,8 @@
             this.btnAddProduct = new System.Windows.Forms.Button();
             this.dataGridProduct = new System.Windows.Forms.DataGridView();
             this.tabMadeProducts = new MetroFramework.Controls.MetroTabPage();
+            this.label8 = new System.Windows.Forms.Label();
+            this.comboBoxSearchMadeProduct = new MetroFramework.Controls.MetroComboBox();
             this.metroUserControl1 = new MetroFramework.Controls.MetroUserControl();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -78,6 +100,8 @@
             this.btnAddMadeProduct = new System.Windows.Forms.Button();
             this.dataGridMadeProduct = new System.Windows.Forms.DataGridView();
             this.tabCustomer = new MetroFramework.Controls.MetroTabPage();
+            this.label9 = new System.Windows.Forms.Label();
+            this.comboBoxSearchCustomers = new MetroFramework.Controls.MetroComboBox();
             this.txtSearchCustomer = new MetroFramework.Controls.MetroTextBox();
             this.btnReportCustomer = new System.Windows.Forms.Button();
             this.btnDeleteCustomer = new System.Windows.Forms.Button();
@@ -85,6 +109,8 @@
             this.btnAddCustomer = new System.Windows.Forms.Button();
             this.dataGridCustomer = new System.Windows.Forms.DataGridView();
             this.tabOrders = new MetroFramework.Controls.MetroTabPage();
+            this.label10 = new System.Windows.Forms.Label();
+            this.comboBoxSearchOrders = new MetroFramework.Controls.MetroComboBox();
             this.groupBoxFilterOrders = new System.Windows.Forms.GroupBox();
             this.groupBoxPriceOrders = new System.Windows.Forms.GroupBox();
             this.txtToPriceOrders = new MetroFramework.Controls.MetroTextBox();
@@ -108,6 +134,11 @@
             this.tabControll.SuspendLayout();
             this.tabEmployees.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridEmployee)).BeginInit();
+            this.tabMaterial.SuspendLayout();
+            this.groupBoxFilterMaterial.SuspendLayout();
+            this.groupBoxPriceMaterial.SuspendLayout();
+            this.groupBoxCountMaterial.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridMaterial)).BeginInit();
             this.tabProducts.SuspendLayout();
             this.groupBoxFilter.SuspendLayout();
             this.groupBoxWeight.SuspendLayout();
@@ -133,6 +164,7 @@
             // tabControll
             // 
             this.tabControll.Controls.Add(this.tabEmployees);
+            this.tabControll.Controls.Add(this.tabMaterial);
             this.tabControll.Controls.Add(this.tabProducts);
             this.tabControll.Controls.Add(this.tabMadeProducts);
             this.tabControll.Controls.Add(this.tabCustomer);
@@ -140,14 +172,16 @@
             this.tabControll.Controls.Add(this.tabAdminPanel);
             this.tabControll.Location = new System.Drawing.Point(33, 85);
             this.tabControll.Name = "tabControll";
-            this.tabControll.SelectedIndex = 4;
+            this.tabControll.SelectedIndex = 0;
             this.tabControll.Size = new System.Drawing.Size(956, 472);
-            this.tabControll.Style = MetroFramework.MetroColorStyle.Orange;
+            this.tabControll.Style = MetroFramework.MetroColorStyle.Lime;
             this.tabControll.TabIndex = 0;
             this.tabControll.UseSelectable = true;
             // 
             // tabEmployees
             // 
+            this.tabEmployees.Controls.Add(this.label6);
+            this.tabEmployees.Controls.Add(this.comboBoxSearchEmployee);
             this.tabEmployees.Controls.Add(this.txtSearchEmployee);
             this.tabEmployees.Controls.Add(this.btnReportEmployee);
             this.tabEmployees.Controls.Add(this.btnDeleteEmployee);
@@ -167,13 +201,41 @@
             this.tabEmployees.VerticalScrollbarHighlightOnWheel = false;
             this.tabEmployees.VerticalScrollbarSize = 10;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.label6.Location = new System.Drawing.Point(593, 16);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(81, 20);
+            this.label6.TabIndex = 75;
+            this.label6.Text = "Поиск по:";
+            // 
+            // comboBoxSearchEmployee
+            // 
+            this.comboBoxSearchEmployee.ItemHeight = 23;
+            this.comboBoxSearchEmployee.Items.AddRange(new object[] {
+            "Общий поиск",
+            "Фамилия",
+            "Имя",
+            "Отчество"});
+            this.comboBoxSearchEmployee.Location = new System.Drawing.Point(680, 11);
+            this.comboBoxSearchEmployee.Name = "comboBoxSearchEmployee";
+            this.comboBoxSearchEmployee.Size = new System.Drawing.Size(227, 29);
+            this.comboBoxSearchEmployee.Style = MetroFramework.MetroColorStyle.Lime;
+            this.comboBoxSearchEmployee.TabIndex = 74;
+            this.comboBoxSearchEmployee.UseSelectable = true;
+            this.comboBoxSearchEmployee.SelectedIndexChanged += new System.EventHandler(this.txtNameEmployee_TextChanged);
+            // 
             // txtSearchEmployee
             // 
             // 
             // 
             // 
             this.txtSearchEmployee.CustomButton.Image = null;
-            this.txtSearchEmployee.CustomButton.Location = new System.Drawing.Point(879, 2);
+            this.txtSearchEmployee.CustomButton.Location = new System.Drawing.Point(559, 2);
             this.txtSearchEmployee.CustomButton.Name = "";
             this.txtSearchEmployee.CustomButton.Size = new System.Drawing.Size(25, 25);
             this.txtSearchEmployee.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -193,7 +255,7 @@
             this.txtSearchEmployee.SelectionLength = 0;
             this.txtSearchEmployee.SelectionStart = 0;
             this.txtSearchEmployee.ShortcutsEnabled = true;
-            this.txtSearchEmployee.Size = new System.Drawing.Size(907, 30);
+            this.txtSearchEmployee.Size = new System.Drawing.Size(587, 30);
             this.txtSearchEmployee.TabIndex = 22;
             this.txtSearchEmployee.UseSelectable = true;
             this.txtSearchEmployee.WaterMark = "Поиск";
@@ -280,8 +342,340 @@
             this.dataGridEmployee.TabIndex = 4;
             this.dataGridEmployee.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
+            // tabMaterial
+            // 
+            this.tabMaterial.Controls.Add(this.label5);
+            this.tabMaterial.Controls.Add(this.comboBoxSearchMaterial);
+            this.tabMaterial.Controls.Add(this.groupBoxFilterMaterial);
+            this.tabMaterial.Controls.Add(this.txtSearchMaterial);
+            this.tabMaterial.Controls.Add(this.btnReportMaterial);
+            this.tabMaterial.Controls.Add(this.btnDeleteMaterial);
+            this.tabMaterial.Controls.Add(this.btnChangeMaterial);
+            this.tabMaterial.Controls.Add(this.btnAddMaterial);
+            this.tabMaterial.Controls.Add(this.dataGridMaterial);
+            this.tabMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tabMaterial.HorizontalScrollbarBarColor = true;
+            this.tabMaterial.HorizontalScrollbarHighlightOnWheel = false;
+            this.tabMaterial.HorizontalScrollbarSize = 10;
+            this.tabMaterial.Location = new System.Drawing.Point(4, 38);
+            this.tabMaterial.Name = "tabMaterial";
+            this.tabMaterial.Size = new System.Drawing.Size(948, 430);
+            this.tabMaterial.TabIndex = 6;
+            this.tabMaterial.Text = "Сырьё";
+            this.tabMaterial.VerticalScrollbarBarColor = true;
+            this.tabMaterial.VerticalScrollbarHighlightOnWheel = false;
+            this.tabMaterial.VerticalScrollbarSize = 10;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.label5.Location = new System.Drawing.Point(379, 22);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(81, 20);
+            this.label5.TabIndex = 73;
+            this.label5.Text = "Поиск по:";
+            // 
+            // comboBoxSearchMaterial
+            // 
+            this.comboBoxSearchMaterial.ItemHeight = 23;
+            this.comboBoxSearchMaterial.Items.AddRange(new object[] {
+            "Общий поиск",
+            "Наименование",
+            "Количеству",
+            "Срок годности в днях",
+            "Общая стоимость",
+            "Дата заказа"});
+            this.comboBoxSearchMaterial.Location = new System.Drawing.Point(466, 17);
+            this.comboBoxSearchMaterial.Name = "comboBoxSearchMaterial";
+            this.comboBoxSearchMaterial.Size = new System.Drawing.Size(227, 29);
+            this.comboBoxSearchMaterial.Style = MetroFramework.MetroColorStyle.Lime;
+            this.comboBoxSearchMaterial.TabIndex = 72;
+            this.comboBoxSearchMaterial.UseSelectable = true;
+            this.comboBoxSearchMaterial.SelectedValueChanged += new System.EventHandler(this.txtSearchMaterial_TextChanged);
+            // 
+            // groupBoxFilterMaterial
+            // 
+            this.groupBoxFilterMaterial.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.groupBoxFilterMaterial.Controls.Add(this.groupBoxPriceMaterial);
+            this.groupBoxFilterMaterial.Controls.Add(this.groupBoxCountMaterial);
+            this.groupBoxFilterMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBoxFilterMaterial.Location = new System.Drawing.Point(699, 17);
+            this.groupBoxFilterMaterial.Name = "groupBoxFilterMaterial";
+            this.groupBoxFilterMaterial.Size = new System.Drawing.Size(227, 337);
+            this.groupBoxFilterMaterial.TabIndex = 38;
+            this.groupBoxFilterMaterial.TabStop = false;
+            this.groupBoxFilterMaterial.Text = "Фильтрация";
+            // 
+            // groupBoxPriceMaterial
+            // 
+            this.groupBoxPriceMaterial.Controls.Add(this.txtToPriceMaterial);
+            this.groupBoxPriceMaterial.Controls.Add(this.txtFromPriceMaterial);
+            this.groupBoxPriceMaterial.Location = new System.Drawing.Point(0, 141);
+            this.groupBoxPriceMaterial.Name = "groupBoxPriceMaterial";
+            this.groupBoxPriceMaterial.Size = new System.Drawing.Size(227, 99);
+            this.groupBoxPriceMaterial.TabIndex = 41;
+            this.groupBoxPriceMaterial.TabStop = false;
+            this.groupBoxPriceMaterial.Text = "По общей цене:";
+            // 
+            // txtToPriceMaterial
+            // 
+            // 
+            // 
+            // 
+            this.txtToPriceMaterial.CustomButton.Image = null;
+            this.txtToPriceMaterial.CustomButton.Location = new System.Drawing.Point(166, 2);
+            this.txtToPriceMaterial.CustomButton.Name = "";
+            this.txtToPriceMaterial.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.txtToPriceMaterial.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtToPriceMaterial.CustomButton.TabIndex = 1;
+            this.txtToPriceMaterial.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtToPriceMaterial.CustomButton.UseSelectable = true;
+            this.txtToPriceMaterial.CustomButton.Visible = false;
+            this.txtToPriceMaterial.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.txtToPriceMaterial.Lines = new string[0];
+            this.txtToPriceMaterial.Location = new System.Drawing.Point(6, 61);
+            this.txtToPriceMaterial.MaxLength = 32767;
+            this.txtToPriceMaterial.Name = "txtToPriceMaterial";
+            this.txtToPriceMaterial.PasswordChar = '\0';
+            this.txtToPriceMaterial.PromptText = "Максимум";
+            this.txtToPriceMaterial.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtToPriceMaterial.SelectedText = "";
+            this.txtToPriceMaterial.SelectionLength = 0;
+            this.txtToPriceMaterial.SelectionStart = 0;
+            this.txtToPriceMaterial.ShortcutsEnabled = true;
+            this.txtToPriceMaterial.Size = new System.Drawing.Size(194, 30);
+            this.txtToPriceMaterial.TabIndex = 40;
+            this.txtToPriceMaterial.UseSelectable = true;
+            this.txtToPriceMaterial.WaterMark = "Максимум";
+            this.txtToPriceMaterial.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtToPriceMaterial.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtToPriceMaterial.TextChanged += new System.EventHandler(this.txtSearchMaterial_TextChanged);
+            // 
+            // txtFromPriceMaterial
+            // 
+            // 
+            // 
+            // 
+            this.txtFromPriceMaterial.CustomButton.Image = null;
+            this.txtFromPriceMaterial.CustomButton.Location = new System.Drawing.Point(166, 2);
+            this.txtFromPriceMaterial.CustomButton.Name = "";
+            this.txtFromPriceMaterial.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.txtFromPriceMaterial.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtFromPriceMaterial.CustomButton.TabIndex = 1;
+            this.txtFromPriceMaterial.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtFromPriceMaterial.CustomButton.UseSelectable = true;
+            this.txtFromPriceMaterial.CustomButton.Visible = false;
+            this.txtFromPriceMaterial.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.txtFromPriceMaterial.Lines = new string[0];
+            this.txtFromPriceMaterial.Location = new System.Drawing.Point(6, 25);
+            this.txtFromPriceMaterial.MaxLength = 32767;
+            this.txtFromPriceMaterial.Name = "txtFromPriceMaterial";
+            this.txtFromPriceMaterial.PasswordChar = '\0';
+            this.txtFromPriceMaterial.PromptText = "Минимум";
+            this.txtFromPriceMaterial.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtFromPriceMaterial.SelectedText = "";
+            this.txtFromPriceMaterial.SelectionLength = 0;
+            this.txtFromPriceMaterial.SelectionStart = 0;
+            this.txtFromPriceMaterial.ShortcutsEnabled = true;
+            this.txtFromPriceMaterial.Size = new System.Drawing.Size(194, 30);
+            this.txtFromPriceMaterial.TabIndex = 39;
+            this.txtFromPriceMaterial.UseSelectable = true;
+            this.txtFromPriceMaterial.WaterMark = "Минимум";
+            this.txtFromPriceMaterial.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtFromPriceMaterial.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtFromPriceMaterial.TextChanged += new System.EventHandler(this.txtSearchMaterial_TextChanged);
+            // 
+            // groupBoxCountMaterial
+            // 
+            this.groupBoxCountMaterial.Controls.Add(this.txtToCountMaterial);
+            this.groupBoxCountMaterial.Controls.Add(this.txtFromCountMaterial);
+            this.groupBoxCountMaterial.Location = new System.Drawing.Point(0, 36);
+            this.groupBoxCountMaterial.Name = "groupBoxCountMaterial";
+            this.groupBoxCountMaterial.Size = new System.Drawing.Size(227, 99);
+            this.groupBoxCountMaterial.TabIndex = 0;
+            this.groupBoxCountMaterial.TabStop = false;
+            this.groupBoxCountMaterial.Text = "По количеству:";
+            // 
+            // txtToCountMaterial
+            // 
+            // 
+            // 
+            // 
+            this.txtToCountMaterial.CustomButton.Image = null;
+            this.txtToCountMaterial.CustomButton.Location = new System.Drawing.Point(166, 2);
+            this.txtToCountMaterial.CustomButton.Name = "";
+            this.txtToCountMaterial.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.txtToCountMaterial.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtToCountMaterial.CustomButton.TabIndex = 1;
+            this.txtToCountMaterial.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtToCountMaterial.CustomButton.UseSelectable = true;
+            this.txtToCountMaterial.CustomButton.Visible = false;
+            this.txtToCountMaterial.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.txtToCountMaterial.Lines = new string[0];
+            this.txtToCountMaterial.Location = new System.Drawing.Point(6, 61);
+            this.txtToCountMaterial.MaxLength = 32767;
+            this.txtToCountMaterial.Name = "txtToCountMaterial";
+            this.txtToCountMaterial.PasswordChar = '\0';
+            this.txtToCountMaterial.PromptText = "Максимум";
+            this.txtToCountMaterial.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtToCountMaterial.SelectedText = "";
+            this.txtToCountMaterial.SelectionLength = 0;
+            this.txtToCountMaterial.SelectionStart = 0;
+            this.txtToCountMaterial.ShortcutsEnabled = true;
+            this.txtToCountMaterial.Size = new System.Drawing.Size(194, 30);
+            this.txtToCountMaterial.TabIndex = 40;
+            this.txtToCountMaterial.UseSelectable = true;
+            this.txtToCountMaterial.WaterMark = "Максимум";
+            this.txtToCountMaterial.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtToCountMaterial.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtToCountMaterial.TextChanged += new System.EventHandler(this.txtSearchMaterial_TextChanged);
+            // 
+            // txtFromCountMaterial
+            // 
+            // 
+            // 
+            // 
+            this.txtFromCountMaterial.CustomButton.Image = null;
+            this.txtFromCountMaterial.CustomButton.Location = new System.Drawing.Point(166, 2);
+            this.txtFromCountMaterial.CustomButton.Name = "";
+            this.txtFromCountMaterial.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.txtFromCountMaterial.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtFromCountMaterial.CustomButton.TabIndex = 1;
+            this.txtFromCountMaterial.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtFromCountMaterial.CustomButton.UseSelectable = true;
+            this.txtFromCountMaterial.CustomButton.Visible = false;
+            this.txtFromCountMaterial.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.txtFromCountMaterial.Lines = new string[0];
+            this.txtFromCountMaterial.Location = new System.Drawing.Point(6, 25);
+            this.txtFromCountMaterial.MaxLength = 32767;
+            this.txtFromCountMaterial.Name = "txtFromCountMaterial";
+            this.txtFromCountMaterial.PasswordChar = '\0';
+            this.txtFromCountMaterial.PromptText = "Минимум";
+            this.txtFromCountMaterial.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtFromCountMaterial.SelectedText = "";
+            this.txtFromCountMaterial.SelectionLength = 0;
+            this.txtFromCountMaterial.SelectionStart = 0;
+            this.txtFromCountMaterial.ShortcutsEnabled = true;
+            this.txtFromCountMaterial.Size = new System.Drawing.Size(194, 30);
+            this.txtFromCountMaterial.TabIndex = 39;
+            this.txtFromCountMaterial.UseSelectable = true;
+            this.txtFromCountMaterial.WaterMark = "Минимум";
+            this.txtFromCountMaterial.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtFromCountMaterial.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtFromCountMaterial.TextChanged += new System.EventHandler(this.txtSearchMaterial_TextChanged);
+            // 
+            // txtSearchMaterial
+            // 
+            // 
+            // 
+            // 
+            this.txtSearchMaterial.CustomButton.Image = null;
+            this.txtSearchMaterial.CustomButton.Location = new System.Drawing.Point(345, 2);
+            this.txtSearchMaterial.CustomButton.Name = "";
+            this.txtSearchMaterial.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.txtSearchMaterial.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtSearchMaterial.CustomButton.TabIndex = 1;
+            this.txtSearchMaterial.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtSearchMaterial.CustomButton.UseSelectable = true;
+            this.txtSearchMaterial.CustomButton.Visible = false;
+            this.txtSearchMaterial.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.txtSearchMaterial.Lines = new string[0];
+            this.txtSearchMaterial.Location = new System.Drawing.Point(0, 17);
+            this.txtSearchMaterial.MaxLength = 32767;
+            this.txtSearchMaterial.Name = "txtSearchMaterial";
+            this.txtSearchMaterial.PasswordChar = '\0';
+            this.txtSearchMaterial.PromptText = "Поиск";
+            this.txtSearchMaterial.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtSearchMaterial.SelectedText = "";
+            this.txtSearchMaterial.SelectionLength = 0;
+            this.txtSearchMaterial.SelectionStart = 0;
+            this.txtSearchMaterial.ShortcutsEnabled = true;
+            this.txtSearchMaterial.Size = new System.Drawing.Size(373, 30);
+            this.txtSearchMaterial.TabIndex = 37;
+            this.txtSearchMaterial.UseSelectable = true;
+            this.txtSearchMaterial.WaterMark = "Поиск";
+            this.txtSearchMaterial.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtSearchMaterial.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtSearchMaterial.TextChanged += new System.EventHandler(this.txtSearchMaterial_TextChanged);
+            // 
+            // btnReportMaterial
+            // 
+            this.btnReportMaterial.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnReportMaterial.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReportMaterial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnReportMaterial.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btnReportMaterial.Location = new System.Drawing.Point(699, 360);
+            this.btnReportMaterial.Name = "btnReportMaterial";
+            this.btnReportMaterial.Size = new System.Drawing.Size(227, 48);
+            this.btnReportMaterial.TabIndex = 36;
+            this.btnReportMaterial.Text = "Отчёт";
+            this.btnReportMaterial.UseVisualStyleBackColor = false;
+            this.btnReportMaterial.Click += new System.EventHandler(this.btnReportMaterial_Click);
+            // 
+            // btnDeleteMaterial
+            // 
+            this.btnDeleteMaterial.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnDeleteMaterial.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeleteMaterial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnDeleteMaterial.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btnDeleteMaterial.Location = new System.Drawing.Point(466, 360);
+            this.btnDeleteMaterial.Name = "btnDeleteMaterial";
+            this.btnDeleteMaterial.Size = new System.Drawing.Size(227, 48);
+            this.btnDeleteMaterial.TabIndex = 35;
+            this.btnDeleteMaterial.Text = "Удалить";
+            this.btnDeleteMaterial.UseVisualStyleBackColor = false;
+            this.btnDeleteMaterial.Click += new System.EventHandler(this.btnDeleteMaterial_Click);
+            // 
+            // btnChangeMaterial
+            // 
+            this.btnChangeMaterial.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnChangeMaterial.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnChangeMaterial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangeMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnChangeMaterial.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btnChangeMaterial.Location = new System.Drawing.Point(233, 360);
+            this.btnChangeMaterial.Name = "btnChangeMaterial";
+            this.btnChangeMaterial.Size = new System.Drawing.Size(227, 48);
+            this.btnChangeMaterial.TabIndex = 34;
+            this.btnChangeMaterial.Text = "Изменить";
+            this.btnChangeMaterial.UseVisualStyleBackColor = false;
+            this.btnChangeMaterial.Click += new System.EventHandler(this.btnChangeMaterial_Click);
+            // 
+            // btnAddMaterial
+            // 
+            this.btnAddMaterial.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAddMaterial.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddMaterial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnAddMaterial.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btnAddMaterial.Location = new System.Drawing.Point(0, 360);
+            this.btnAddMaterial.Name = "btnAddMaterial";
+            this.btnAddMaterial.Size = new System.Drawing.Size(227, 48);
+            this.btnAddMaterial.TabIndex = 33;
+            this.btnAddMaterial.Text = "Добавить";
+            this.btnAddMaterial.UseVisualStyleBackColor = false;
+            this.btnAddMaterial.Click += new System.EventHandler(this.btnAddMaterial_Click);
+            // 
+            // dataGridMaterial
+            // 
+            this.dataGridMaterial.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dataGridMaterial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridMaterial.Location = new System.Drawing.Point(0, 53);
+            this.dataGridMaterial.Name = "dataGridMaterial";
+            this.dataGridMaterial.ReadOnly = true;
+            this.dataGridMaterial.Size = new System.Drawing.Size(693, 301);
+            this.dataGridMaterial.TabIndex = 32;
+            this.dataGridMaterial.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridMaterial_CellClick);
+            // 
             // tabProducts
             // 
+            this.tabProducts.Controls.Add(this.label7);
+            this.tabProducts.Controls.Add(this.comboBoxSearchProduct);
             this.tabProducts.Controls.Add(this.groupBoxFilter);
             this.tabProducts.Controls.Add(this.txtSearchProduct);
             this.tabProducts.Controls.Add(this.btnReportProduct);
@@ -301,6 +695,35 @@
             this.tabProducts.VerticalScrollbarBarColor = true;
             this.tabProducts.VerticalScrollbarHighlightOnWheel = false;
             this.tabProducts.VerticalScrollbarSize = 10;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.label7.Location = new System.Drawing.Point(379, 18);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(81, 20);
+            this.label7.TabIndex = 77;
+            this.label7.Text = "Поиск по:";
+            // 
+            // comboBoxSearchProduct
+            // 
+            this.comboBoxSearchProduct.ItemHeight = 23;
+            this.comboBoxSearchProduct.Items.AddRange(new object[] {
+            "Общий поиск",
+            "Наименование продукции",
+            "Фамилия",
+            "Имя",
+            "Отчество"});
+            this.comboBoxSearchProduct.Location = new System.Drawing.Point(466, 13);
+            this.comboBoxSearchProduct.Name = "comboBoxSearchProduct";
+            this.comboBoxSearchProduct.Size = new System.Drawing.Size(227, 29);
+            this.comboBoxSearchProduct.Style = MetroFramework.MetroColorStyle.Lime;
+            this.comboBoxSearchProduct.TabIndex = 76;
+            this.comboBoxSearchProduct.UseSelectable = true;
+            this.comboBoxSearchProduct.SelectedIndexChanged += new System.EventHandler(this.txtFromOptimalPriceProduct_TextChanged);
             // 
             // groupBoxFilter
             // 
@@ -565,7 +988,7 @@
             // 
             // 
             this.txtSearchProduct.CustomButton.Image = null;
-            this.txtSearchProduct.CustomButton.Location = new System.Drawing.Point(665, 2);
+            this.txtSearchProduct.CustomButton.Location = new System.Drawing.Point(345, 2);
             this.txtSearchProduct.CustomButton.Name = "";
             this.txtSearchProduct.CustomButton.Size = new System.Drawing.Size(25, 25);
             this.txtSearchProduct.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -585,7 +1008,7 @@
             this.txtSearchProduct.SelectionLength = 0;
             this.txtSearchProduct.SelectionStart = 0;
             this.txtSearchProduct.ShortcutsEnabled = true;
-            this.txtSearchProduct.Size = new System.Drawing.Size(693, 30);
+            this.txtSearchProduct.Size = new System.Drawing.Size(373, 30);
             this.txtSearchProduct.TabIndex = 29;
             this.txtSearchProduct.UseSelectable = true;
             this.txtSearchProduct.WaterMark = "Поиск";
@@ -674,6 +1097,8 @@
             // 
             // tabMadeProducts
             // 
+            this.tabMadeProducts.Controls.Add(this.label8);
+            this.tabMadeProducts.Controls.Add(this.comboBoxSearchMadeProduct);
             this.tabMadeProducts.Controls.Add(this.metroUserControl1);
             this.tabMadeProducts.Controls.Add(this.label4);
             this.tabMadeProducts.Controls.Add(this.label3);
@@ -701,6 +1126,35 @@
             this.tabMadeProducts.VerticalScrollbarBarColor = true;
             this.tabMadeProducts.VerticalScrollbarHighlightOnWheel = false;
             this.tabMadeProducts.VerticalScrollbarSize = 10;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.label8.Location = new System.Drawing.Point(379, 9);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(81, 20);
+            this.label8.TabIndex = 79;
+            this.label8.Text = "Поиск по:";
+            // 
+            // comboBoxSearchMadeProduct
+            // 
+            this.comboBoxSearchMadeProduct.ItemHeight = 23;
+            this.comboBoxSearchMadeProduct.Items.AddRange(new object[] {
+            "Общий поиск",
+            "Наименование продукции",
+            "Фамилия",
+            "Имя",
+            "Отчество"});
+            this.comboBoxSearchMadeProduct.Location = new System.Drawing.Point(466, 4);
+            this.comboBoxSearchMadeProduct.Name = "comboBoxSearchMadeProduct";
+            this.comboBoxSearchMadeProduct.Size = new System.Drawing.Size(227, 29);
+            this.comboBoxSearchMadeProduct.Style = MetroFramework.MetroColorStyle.Lime;
+            this.comboBoxSearchMadeProduct.TabIndex = 78;
+            this.comboBoxSearchMadeProduct.UseSelectable = true;
+            this.comboBoxSearchMadeProduct.SelectedIndexChanged += new System.EventHandler(this.txtSearchMadeProduct_TextChanged);
             // 
             // metroUserControl1
             // 
@@ -804,7 +1258,7 @@
             this.checkBoxTimeNoMadeProduct.Location = new System.Drawing.Point(6, 74);
             this.checkBoxTimeNoMadeProduct.Name = "checkBoxTimeNoMadeProduct";
             this.checkBoxTimeNoMadeProduct.Size = new System.Drawing.Size(101, 25);
-            this.checkBoxTimeNoMadeProduct.Style = MetroFramework.MetroColorStyle.Orange;
+            this.checkBoxTimeNoMadeProduct.Style = MetroFramework.MetroColorStyle.Lime;
             this.checkBoxTimeNoMadeProduct.TabIndex = 2;
             this.checkBoxTimeNoMadeProduct.Text = "Окончен";
             this.checkBoxTimeNoMadeProduct.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -820,7 +1274,7 @@
             this.checkBoxTimeLessMadeProduct.Location = new System.Drawing.Point(6, 50);
             this.checkBoxTimeLessMadeProduct.Name = "checkBoxTimeLessMadeProduct";
             this.checkBoxTimeLessMadeProduct.Size = new System.Drawing.Size(156, 25);
-            this.checkBoxTimeLessMadeProduct.Style = MetroFramework.MetroColorStyle.Orange;
+            this.checkBoxTimeLessMadeProduct.Style = MetroFramework.MetroColorStyle.Lime;
             this.checkBoxTimeLessMadeProduct.TabIndex = 1;
             this.checkBoxTimeLessMadeProduct.Text = "Вот-вот истечёт";
             this.checkBoxTimeLessMadeProduct.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -836,7 +1290,7 @@
             this.checkBoxTimeIsMadeProduct.Location = new System.Drawing.Point(6, 25);
             this.checkBoxTimeIsMadeProduct.Name = "checkBoxTimeIsMadeProduct";
             this.checkBoxTimeIsMadeProduct.Size = new System.Drawing.Size(156, 25);
-            this.checkBoxTimeIsMadeProduct.Style = MetroFramework.MetroColorStyle.Orange;
+            this.checkBoxTimeIsMadeProduct.Style = MetroFramework.MetroColorStyle.Lime;
             this.checkBoxTimeIsMadeProduct.TabIndex = 0;
             this.checkBoxTimeIsMadeProduct.Text = "Ещё есть время";
             this.checkBoxTimeIsMadeProduct.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -928,7 +1382,7 @@
             // 
             // 
             this.txtSearchMadeProduct.CustomButton.Image = null;
-            this.txtSearchMadeProduct.CustomButton.Location = new System.Drawing.Point(665, 2);
+            this.txtSearchMadeProduct.CustomButton.Location = new System.Drawing.Point(345, 2);
             this.txtSearchMadeProduct.CustomButton.Name = "";
             this.txtSearchMadeProduct.CustomButton.Size = new System.Drawing.Size(25, 25);
             this.txtSearchMadeProduct.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -948,7 +1402,7 @@
             this.txtSearchMadeProduct.SelectionLength = 0;
             this.txtSearchMadeProduct.SelectionStart = 0;
             this.txtSearchMadeProduct.ShortcutsEnabled = true;
-            this.txtSearchMadeProduct.Size = new System.Drawing.Size(693, 30);
+            this.txtSearchMadeProduct.Size = new System.Drawing.Size(373, 30);
             this.txtSearchMadeProduct.TabIndex = 37;
             this.txtSearchMadeProduct.UseSelectable = true;
             this.txtSearchMadeProduct.WaterMark = "Поиск";
@@ -1047,6 +1501,8 @@
             // 
             // tabCustomer
             // 
+            this.tabCustomer.Controls.Add(this.label9);
+            this.tabCustomer.Controls.Add(this.comboBoxSearchCustomers);
             this.tabCustomer.Controls.Add(this.txtSearchCustomer);
             this.tabCustomer.Controls.Add(this.btnReportCustomer);
             this.tabCustomer.Controls.Add(this.btnDeleteCustomer);
@@ -1066,13 +1522,42 @@
             this.tabCustomer.VerticalScrollbarHighlightOnWheel = false;
             this.tabCustomer.VerticalScrollbarSize = 10;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.label9.Location = new System.Drawing.Point(593, 16);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(81, 20);
+            this.label9.TabIndex = 81;
+            this.label9.Text = "Поиск по:";
+            // 
+            // comboBoxSearchCustomers
+            // 
+            this.comboBoxSearchCustomers.ItemHeight = 23;
+            this.comboBoxSearchCustomers.Items.AddRange(new object[] {
+            "Общий поиск",
+            "Наименование",
+            "ФИО_руководителя",
+            "Юридический адрес",
+            "Фактический_адрес"});
+            this.comboBoxSearchCustomers.Location = new System.Drawing.Point(680, 11);
+            this.comboBoxSearchCustomers.Name = "comboBoxSearchCustomers";
+            this.comboBoxSearchCustomers.Size = new System.Drawing.Size(227, 29);
+            this.comboBoxSearchCustomers.Style = MetroFramework.MetroColorStyle.Lime;
+            this.comboBoxSearchCustomers.TabIndex = 80;
+            this.comboBoxSearchCustomers.UseSelectable = true;
+            this.comboBoxSearchCustomers.SelectedIndexChanged += new System.EventHandler(this.txtSearchCustomer_TextChanged);
+            // 
             // txtSearchCustomer
             // 
             // 
             // 
             // 
             this.txtSearchCustomer.CustomButton.Image = null;
-            this.txtSearchCustomer.CustomButton.Location = new System.Drawing.Point(879, 2);
+            this.txtSearchCustomer.CustomButton.Location = new System.Drawing.Point(559, 2);
             this.txtSearchCustomer.CustomButton.Name = "";
             this.txtSearchCustomer.CustomButton.Size = new System.Drawing.Size(25, 25);
             this.txtSearchCustomer.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -1092,7 +1577,7 @@
             this.txtSearchCustomer.SelectionLength = 0;
             this.txtSearchCustomer.SelectionStart = 0;
             this.txtSearchCustomer.ShortcutsEnabled = true;
-            this.txtSearchCustomer.Size = new System.Drawing.Size(907, 30);
+            this.txtSearchCustomer.Size = new System.Drawing.Size(587, 30);
             this.txtSearchCustomer.TabIndex = 28;
             this.txtSearchCustomer.UseSelectable = true;
             this.txtSearchCustomer.WaterMark = "Поиск";
@@ -1173,6 +1658,8 @@
             // 
             // tabOrders
             // 
+            this.tabOrders.Controls.Add(this.label10);
+            this.tabOrders.Controls.Add(this.comboBoxSearchOrders);
             this.tabOrders.Controls.Add(this.groupBoxFilterOrders);
             this.tabOrders.Controls.Add(this.txtSearchOrders);
             this.tabOrders.Controls.Add(this.btnReportOrders);
@@ -1191,6 +1678,34 @@
             this.tabOrders.VerticalScrollbarBarColor = true;
             this.tabOrders.VerticalScrollbarHighlightOnWheel = false;
             this.tabOrders.VerticalScrollbarSize = 10;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.label10.Location = new System.Drawing.Point(379, 19);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(81, 20);
+            this.label10.TabIndex = 81;
+            this.label10.Text = "Поиск по:";
+            // 
+            // comboBoxSearchOrders
+            // 
+            this.comboBoxSearchOrders.ItemHeight = 23;
+            this.comboBoxSearchOrders.Items.AddRange(new object[] {
+            "Общий поиск",
+            "Наименование продукции",
+            "Наименование заказчика",
+            "Дата заказа"});
+            this.comboBoxSearchOrders.Location = new System.Drawing.Point(466, 14);
+            this.comboBoxSearchOrders.Name = "comboBoxSearchOrders";
+            this.comboBoxSearchOrders.Size = new System.Drawing.Size(227, 29);
+            this.comboBoxSearchOrders.Style = MetroFramework.MetroColorStyle.Lime;
+            this.comboBoxSearchOrders.TabIndex = 80;
+            this.comboBoxSearchOrders.UseSelectable = true;
+            this.comboBoxSearchOrders.SelectedIndexChanged += new System.EventHandler(this.txtSearchOrders_TextChanged);
             // 
             // groupBoxFilterOrders
             // 
@@ -1369,7 +1884,7 @@
             // 
             // 
             this.txtSearchOrders.CustomButton.Image = null;
-            this.txtSearchOrders.CustomButton.Location = new System.Drawing.Point(665, 2);
+            this.txtSearchOrders.CustomButton.Location = new System.Drawing.Point(345, 2);
             this.txtSearchOrders.CustomButton.Name = "";
             this.txtSearchOrders.CustomButton.Size = new System.Drawing.Size(25, 25);
             this.txtSearchOrders.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -1389,7 +1904,7 @@
             this.txtSearchOrders.SelectionLength = 0;
             this.txtSearchOrders.SelectionStart = 0;
             this.txtSearchOrders.ShortcutsEnabled = true;
-            this.txtSearchOrders.Size = new System.Drawing.Size(693, 30);
+            this.txtSearchOrders.Size = new System.Drawing.Size(373, 30);
             this.txtSearchOrders.TabIndex = 37;
             this.txtSearchOrders.UseSelectable = true;
             this.txtSearchOrders.WaterMark = "Поиск";
@@ -1541,15 +2056,22 @@
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "ManagerMainForm";
             this.Resizable = false;
-            this.Style = MetroFramework.MetroColorStyle.Orange;
+            this.Style = MetroFramework.MetroColorStyle.Lime;
             this.Text = "Таблицы";
             this.tabControll.ResumeLayout(false);
             this.tabEmployees.ResumeLayout(false);
+            this.tabEmployees.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridEmployee)).EndInit();
+            this.tabMaterial.ResumeLayout(false);
+            this.tabMaterial.PerformLayout();
+            this.groupBoxFilterMaterial.ResumeLayout(false);
+            this.groupBoxPriceMaterial.ResumeLayout(false);
+            this.groupBoxCountMaterial.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridMaterial)).EndInit();
             this.tabProducts.ResumeLayout(false);
+            this.tabProducts.PerformLayout();
             this.groupBoxFilter.ResumeLayout(false);
             this.groupBoxWeight.ResumeLayout(false);
             this.groupBoxRealPrice.ResumeLayout(false);
@@ -1563,8 +2085,10 @@
             this.groupBoxCountMadeProduct.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridMadeProduct)).EndInit();
             this.tabCustomer.ResumeLayout(false);
+            this.tabCustomer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCustomer)).EndInit();
             this.tabOrders.ResumeLayout(false);
+            this.tabOrders.PerformLayout();
             this.groupBoxFilterOrders.ResumeLayout(false);
             this.groupBoxPriceOrders.ResumeLayout(false);
             this.groupBoxCountOrders.ResumeLayout(false);
@@ -1655,5 +2179,31 @@
         private System.Windows.Forms.DataGridView dataGridOrders;
         private System.Windows.Forms.Button btnGetDBFromCopy;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private MetroFramework.Controls.MetroTabPage tabMaterial;
+        private System.Windows.Forms.GroupBox groupBoxFilterMaterial;
+        private System.Windows.Forms.GroupBox groupBoxPriceMaterial;
+        private MetroFramework.Controls.MetroTextBox txtToPriceMaterial;
+        private MetroFramework.Controls.MetroTextBox txtFromPriceMaterial;
+        private System.Windows.Forms.GroupBox groupBoxCountMaterial;
+        private MetroFramework.Controls.MetroTextBox txtToCountMaterial;
+        private MetroFramework.Controls.MetroTextBox txtFromCountMaterial;
+        private MetroFramework.Controls.MetroTextBox txtSearchMaterial;
+        private System.Windows.Forms.Button btnReportMaterial;
+        private System.Windows.Forms.Button btnDeleteMaterial;
+        private System.Windows.Forms.Button btnChangeMaterial;
+        private System.Windows.Forms.Button btnAddMaterial;
+        private System.Windows.Forms.DataGridView dataGridMaterial;
+        private MetroFramework.Controls.MetroComboBox comboBoxSearchMaterial;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private MetroFramework.Controls.MetroComboBox comboBoxSearchEmployee;
+        private System.Windows.Forms.Label label7;
+        private MetroFramework.Controls.MetroComboBox comboBoxSearchProduct;
+        private System.Windows.Forms.Label label8;
+        private MetroFramework.Controls.MetroComboBox comboBoxSearchMadeProduct;
+        private System.Windows.Forms.Label label9;
+        private MetroFramework.Controls.MetroComboBox comboBoxSearchCustomers;
+        private System.Windows.Forms.Label label10;
+        private MetroFramework.Controls.MetroComboBox comboBoxSearchOrders;
     }
 }

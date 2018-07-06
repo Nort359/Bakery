@@ -37,6 +37,10 @@ namespace Bakery
         public static int idCurrentRowOrder = -1;
         public static bool flagChangeCurrentOrder = false;
 
+        // Переменные для таблицы Сырьё
+        public static int idCurrentRowMaterial = -1;
+        public static bool flagChangeCurrentMaterial = false;
+
         private void makeReport(DataGridView dataGrid, string tableName)
         {
             using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "PDF file|*.pdf", ValidateNames = true })
@@ -159,23 +163,34 @@ namespace Bakery
 
         private void fillDataGridEmployee()
         {
-            string selectQuery = @"SELECT Код_личного_дела, Фамилия, Имя, Отчество,
+            string selectQuery = @"SELECT Код_личного_дела,
+                                          Фамилия,
+                                          Имя,
+                                          Отчество,
                                           Должности.Должность,
                                           Дата_рождения AS `Дата рождения`,
                                           Номер_паспорта AS `Номер паспорта`,
-                                          Серия_паспорта AS `Серия паспорта`, ИНН,
-                                          Стаж_работы AS `Стаж работы`, Образование,
-                                          Телефон, Страны.Название AS `Страна`,
-                                          Города.Название AS `Город`, Сотрудники.Адрес
-                                    FROM Сотрудники, Должности, Страны, Города
+                                          Серия_паспорта AS `Серия паспорта`,
+                                          ИНН,
+                                          Стаж_работы AS `Стаж работы`,
+                                          Образование.Название AS `Образование`,
+                                          Телефон,
+                                          Страны.Название AS `Страна`,
+                                          Города.Название AS `Город`,
+                                          Сотрудники.Адрес
+                                    FROM Сотрудники, Должности, Страны, Города, Образование
                                         WHERE
                                             (Сотрудники.Должность = Должности.Код_должности)
                                                 AND
+                                            (Сотрудники.Код_образования = Образование.Код)
+                                                AND 
                                             (Сотрудники.Код_страны = Страны.Код)
                                                 AND
                                             (Сотрудники.Код_города = Города.Код)";
 
             fillDataGrid(selectQuery, dataGridEmployee, 124);
+
+            comboBoxSearchEmployee.SelectedIndex = 0;
         }
 
         private void fillDataGridProduct()
@@ -190,6 +205,8 @@ namespace Bakery
                                             (Сотрудники.Код_личного_дела = Продукция.Код_сотрудника)";
 
             fillDataGrid(selectQuery, dataGridProduct, 108);
+
+            comboBoxSearchProduct.SelectedIndex = 0;
         }
 
         private void fillDataGridMadeProduct()
@@ -215,6 +232,8 @@ namespace Bakery
                                             (Приготовления.Код_типа = Типы.Код)";
 
             fillDataGrid(selectQuery, dataGridMadeProduct, 108);
+
+            comboBoxSearchMadeProduct.SelectedIndex = 0;
         }
 
         private void fillDataGridCustomer()
@@ -229,6 +248,8 @@ namespace Bakery
                                     FROM Заказчики";
 
             fillDataGrid(selectQuery, dataGridCustomer, 144);
+
+            comboBoxSearchCustomers.SelectedIndex = 0;
         }
 
         private void fillDataGridOrders()
@@ -249,6 +270,28 @@ namespace Bakery
                                                (Приготовления.Код_продукции = Продукция.Код_продукции)";
 
             fillDataGrid(selectQuery, dataGridOrders, 108);
+
+            comboBoxSearchOrders.SelectedIndex = 0;
+        }
+
+        private void fillDataGridMaterial()
+        {
+            string selectQuery = @"SELECT Сырьё.Код_сырья,
+                                          Сырьё.Наименование AS `Наименование сырья`,
+                                          Сырьё.Количество,
+                                          Сырьё.Срок_годности_в_днях AS `Срок годности в днях`,
+                                          Сырьё.Общая_стоимость AS `Общая стоимость`,
+                                          Сырьё.Дата_заказа AS `Дата заказа`,
+                                          Типы.Название AS `Тип измерения`,
+                                          Продукция.Наименование AS `Наименование продукции`
+                                      FROM Сырьё, Типы, Продукция
+                                          WHERE (Сырьё.Код_типа = Типы.Код)
+                                              AND
+                                          (Сырьё.Код_продукции = Продукция.Код_продукции)";
+
+            fillDataGrid(selectQuery, dataGridMaterial, 108);
+
+            comboBoxSearchMaterial.SelectedIndex = 0;
         }
 
         public ManagerMainForm()
@@ -270,6 +313,7 @@ namespace Bakery
             flagChangeCurrentMadeProduct = false;
             flagChangeCurrentCustomer = false;
             flagChangeCurrentOrder = false;
+            flagChangeCurrentMaterial = false;
 
             // Заполнение dataGrid Сотрудники данными из БД
             fillDataGridEmployee();
@@ -286,12 +330,16 @@ namespace Bakery
             // Заполнение dataGrid Заказы данными из БД
             fillDataGridOrders();
 
+            // Заполнение dataGrid Сырьё данными из БД
+            fillDataGridMaterial();
+
             // Значение id по умолчанию
             try { int.TryParse(dataGridEmployee.Rows[0].Cells[0].Value.ToString(), out idCurrentRowEmployee); } catch(Exception e) { }
             try { int.TryParse(dataGridProduct.Rows[0].Cells[0].Value.ToString(), out idCurrentRowProduct); } catch (Exception e) { }
             try { int.TryParse(dataGridMadeProduct.Rows[0].Cells[0].Value.ToString(), out idCurrentRowMadeProduct); } catch(Exception e) { }
             try { int.TryParse(dataGridCustomer.Rows[0].Cells[0].Value.ToString(), out idCurrentRowCustomer); } catch (Exception e) { }
             try { int.TryParse(dataGridOrders.Rows[0].Cells[0].Value.ToString(), out idCurrentRowOrder); } catch (Exception e) { }
+            try { int.TryParse(dataGridMaterial.Rows[0].Cells[0].Value.ToString(), out idCurrentRowMaterial); } catch (Exception e) { }
 
             tabControll.TabPages[0].Select();
 
@@ -425,7 +473,7 @@ namespace Bakery
         private void btnAddEmployee_MouseMove(object sender, MouseEventArgs e)
         {
             Button btn = (Button)sender;
-            btn.BackColor = Color.FromArgb(244, 133, 72);
+            btn.BackColor = Color.FromArgb(133, 156, 42);
             btn.ForeColor = Color.FromName("ControlLightLight");
         }
 
@@ -455,27 +503,65 @@ namespace Bakery
         {
             string search = txtSearchEmployee.Text;
 
-            string selectQuery = @"SELECT Код_личного_дела, Фамилия, Имя, Отчество,
+            string selectQuery = @"SELECT Код_личного_дела,
+                                          Фамилия,
+                                          Имя,
+                                          Отчество,
                                           Должности.Должность,
                                           Дата_рождения AS `Дата рождения`,
                                           Номер_паспорта AS `Номер паспорта`,
-                                          Серия_паспорта AS `Серия паспорта`, ИНН,
-                                          Стаж_работы AS `Стаж работы`, Образование,
-                                          Телефон, Страны.Название AS `Страна`,
-                                          Города.Название AS `Город`, Сотрудники.Адрес
-                                    FROM Сотрудники, Должности, Страны, Города
+                                          Серия_паспорта AS `Серия паспорта`,
+                                          ИНН,
+                                          Стаж_работы AS `Стаж работы`,
+                                          Образование.Название AS `Образование`,
+                                          Телефон,
+                                          Страны.Название AS `Страна`,
+                                          Города.Название AS `Город`,
+                                          Сотрудники.Адрес
+                                    FROM Сотрудники, Должности, Страны, Города, Образование
                                         WHERE
                                             (Сотрудники.Должность = Должности.Код_должности)
                                                 AND
+                                            (Сотрудники.Код_образования = Образование.Код)
+                                                AND 
                                             (Сотрудники.Код_страны = Страны.Код)
                                                 AND
-                                            (Сотрудники.Код_города = Города.Код)
-                                                AND
-                                            ((Фамилия LIKE '%" + search + "%')" +
-                                            "   OR" +
-                                            "(Имя LIKE '%" + search + "%')" +
-                                            "   OR" +
-                                            "(Отчество LIKE '%" + search + "%'))";
+                                            (Сотрудники.Код_города = Города.Код)";
+
+            switch (comboBoxSearchEmployee.SelectedIndex)
+            {
+                case 0:
+                    {
+                        selectQuery += "    AND " +
+                                       "((Фамилия LIKE '%" + search + "%')" +
+                                       "   OR" +
+                                       "(Имя LIKE '%" + search + "%')" +
+                                       "   OR" +
+                                       "(Отчество LIKE '%" + search + "%'))";
+                    }
+                    break;
+
+                case 1:
+                    {
+                        selectQuery += "    AND " +
+                                       "(Фамилия LIKE '%" + search + "%')";
+                    }
+                    break;
+
+                case 2:
+                    {
+                        selectQuery += "    AND " +
+                                       "(Имя LIKE '%" + search + "%')";
+                    }
+                    break;
+
+                case 3:
+                    {
+                        selectQuery += "    AND " +
+                                       "(Отчество LIKE '%" + search + "%')";
+                    }
+                    break;
+            }
 
             fillDataGrid(selectQuery, dataGridEmployee, 124);
         }
@@ -566,15 +652,51 @@ namespace Bakery
                                             "   AND " +
                                             "((Продукция.Оптимальная_стоимость >= " + fromWeight + ")" +
                                             "   AND " +
-                                            "(Продукция.Оптимальная_стоимость <= " + toWeight + "))" +
-                                            "   AND " +
-                                            "((Сотрудники.Фамилия LIKE '%" + search + "%')" +
-                                            "   OR " +
-                                            "(Сотрудники.Имя LIKE '%" + search + "%')" +
-                                            "   OR " +
-                                            "(Сотрудники.Отчество LIKE '%" + search + "%')" +
-                                            "   OR " +
-                                            "(Продукция.Наименование LIKE '%" + search + "%'))";
+                                            "(Продукция.Оптимальная_стоимость <= " + toWeight + "))";
+
+            switch(comboBoxSearchProduct.SelectedIndex)
+            {
+                case 0:
+                    {
+                        selectQuery += "    AND " +
+                                       "((Сотрудники.Фамилия LIKE '%" + search + "%')" +
+                                       "   OR " +
+                                       "(Сотрудники.Имя LIKE '%" + search + "%')" +
+                                       "   OR " +
+                                       "(Сотрудники.Отчество LIKE '%" + search + "%')" +
+                                       "   OR " +
+                                       "(Продукция.Наименование LIKE '%" + search + "%'))";
+                    }
+                    break;
+
+                case 1:
+                    {
+                        selectQuery += "    AND " +
+                                       "(Продукция.Наименование LIKE '%" + search + "%')";
+                    }
+                    break;
+
+                case 2:
+                    {
+                        selectQuery += "    AND " +
+                                       "(Сотрудники.Фамилия LIKE '%" + search + "%')";
+                    }
+                    break;
+
+                case 3:
+                    {
+                        selectQuery += "    AND " +
+                                       "(Сотрудники.Имя LIKE '%" + search + "%')";
+                    }
+                    break;
+
+                case 4:
+                    {
+                        selectQuery += "    AND " +
+                                       "(Сотрудники.Отчество LIKE '%" + search + "%')";
+                    }
+                    break;
+            }
 
             fillDataGrid(selectQuery, dataGridProduct, 108);
         }
@@ -591,30 +713,37 @@ namespace Bakery
 
         private void btnDeleteProduct_Click(object sender, EventArgs e)
         {
-            // Получание удаляемого сотрудника
-            string selectQuery = @"SELECT Наименование
+            try
+            {
+                // Получание удаляемого сотрудника
+                string selectQuery = @"SELECT Наименование
                                     FROM Продукция
                                         WHERE Код_продукции = " + idCurrentRowProduct.ToString();
 
-            OleDbCommand command = new OleDbCommand(selectQuery, Connection.getConnection());
-            OleDbDataReader reader = command.ExecuteReader();
-            reader.Read();
+                OleDbCommand command = new OleDbCommand(selectQuery, Connection.getConnection());
+                OleDbDataReader reader = command.ExecuteReader();
+                reader.Read();
 
-            string title = reader[0].ToString();
+                string title = reader[0].ToString();
 
-            // Вставка данных
-            string deleteQuery = @"DELETE FROM Продукция WHERE Код_продукции = " + idCurrentRowProduct.ToString();
+                // Вставка данных
+                string deleteQuery = @"DELETE FROM Продукция WHERE Код_продукции = " + idCurrentRowProduct.ToString();
 
-            OleDbCommand deleteCommand = new OleDbCommand(deleteQuery, Connection.getConnection());
+                OleDbCommand deleteCommand = new OleDbCommand(deleteQuery, Connection.getConnection());
 
-            DialogResult dialogResult = MessageBox.Show("Вы действительно собираетесь удалить продукцию: '" + title + "' из БД?",
-                                                            "Предупреждение", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult dialogResult = MessageBox.Show("Вы действительно собираетесь удалить продукцию: '" + title + "' из БД?",
+                                                                "Предупреждение", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-            if (dialogResult == DialogResult.Yes)
+                if (dialogResult == DialogResult.Yes)
+                {
+                    // Удаляем запись и обновляем dataGrid
+                    deleteCommand.ExecuteNonQuery();
+                    fillDataGridProduct();
+                }
+            }
+            catch (Exception ex)
             {
-                // Удаляем запись и обновляем dataGrid
-                deleteCommand.ExecuteNonQuery();
-                fillDataGridProduct();
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -791,15 +920,51 @@ namespace Bakery
                                                 AND 
                                             ((Приготовления.Количество >= " + fromCount + ")" +
                                             "   AND " +
-                                            "(Приготовления.Количество <= " + toCount + "))" +
-                                            "   AND " +
-                                            "((Сотрудники.Фамилия LIKE '%" + search + "%')" +
-                                            "   OR " +
-                                            "(Сотрудники.Имя LIKE '%" + search + "%')" +
-                                            "   OR " +
-                                            "(Сотрудники.Отчество LIKE '%" + search + "%')" +
-                                            "   OR " +
-                                            "(Продукция.Наименование LIKE '%" + search + "%'))";
+                                            "(Приготовления.Количество <= " + toCount + "))";
+
+            switch(comboBoxSearchMadeProduct.SelectedIndex)
+            {
+                case 0:
+                    {
+                        selectQuery += "    AND " +
+                                       "((Сотрудники.Фамилия LIKE '%" + search + "%')" +
+                                       "   OR " +
+                                       "(Сотрудники.Имя LIKE '%" + search + "%')" +
+                                       "   OR " +
+                                       "(Сотрудники.Отчество LIKE '%" + search + "%')" +
+                                       "   OR " +
+                                       "(Продукция.Наименование LIKE '%" + search + "%'))";
+                    }
+                    break;
+
+                case 1:
+                    {
+                        selectQuery += "    AND " +
+                                       "(Продукция.Наименование LIKE '%" + search + "%')";
+                    }
+                    break;
+
+                case 2:
+                    {
+                        selectQuery += "    AND " +
+                                       "(Сотрудники.Фамилия LIKE '%" + search + "%')";
+                    }
+                    break;
+
+                case 3:
+                    {
+                        selectQuery += "    AND " +
+                                       "(Сотрудники.Имя LIKE '%" + search + "%')";
+                    }
+                    break;
+
+                case 4:
+                    {
+                        selectQuery += "    AND " +
+                                       "(Сотрудники.Отчество LIKE '%" + search + "%')";
+                    }
+                    break;
+            }
 
             fillDataGrid(selectQuery, dataGridMadeProduct, 108);
         }
@@ -900,14 +1065,46 @@ namespace Bakery
                                           ФИО_руководителя AS `ФИО_руководителя`,
                                           Телефон,
                                           Электронная_почта AS `Электронная почта`
-                                    FROM Заказчики
-                                        WHERE ((Наименование LIKE '%" + search + "%')" +
-                                            "   OR " +
-                                            "(ФИО_руководителя LIKE '%" + search + "%')" +
-                                            "   OR " +
-                                            "(Юридический_адрес LIKE '%" + search + "%')" +
-                                            "   OR " +
-                                            "(Фактический_адрес LIKE '%" + search + "%'))";
+                                    FROM Заказчики";
+
+            switch(comboBoxSearchCustomers.SelectedIndex)
+            {
+                case 0:
+                    {
+                        selectQuery += " WHERE ((Наименование LIKE '%" + search + "%')" +
+                                       "   OR " +
+                                       "(ФИО_руководителя LIKE '%" + search + "%')" +
+                                       "   OR " +
+                                       "(Юридический_адрес LIKE '%" + search + "%')" +
+                                       "   OR " +
+                                       "(Фактический_адрес LIKE '%" + search + "%'))";
+                    }
+                    break;
+
+                case 1:
+                    {
+                        selectQuery += " WHERE (Наименование LIKE '%" + search + "%')";
+                    }
+                    break;
+
+                case 2:
+                    {
+                        selectQuery += " WHERE (ФИО_руководителя LIKE '%" + search + "%')";
+                    }
+                    break;
+
+                case 3:
+                    {
+                        selectQuery += " WHERE (Юридический_адрес LIKE '%" + search + "%')";
+                    }
+                    break;
+
+                case 4:
+                    {
+                        selectQuery += " WHERE (Фактический_адрес LIKE '%" + search + "%')";
+                    }
+                    break;
+            }
 
             fillDataGrid(selectQuery, dataGridCustomer, 144);
         }
@@ -1037,15 +1234,223 @@ namespace Bakery
                                             "   AND " +
                                             "((Заказы.Стоимость >= " + fromPrice + ")" +
                                             "   AND " +
-                                            "(Заказы.Стоимость <= " + toPrice + "))" +
-                                            "   AND " +
-                                            "((Продукция.Наименование LIKE '%" + search + "%')" +
-                                            "   OR " +
-                                            "(Заказчики.Наименование LIKE '%" + search + "%')" +
-                                            "   OR " +
-                                            "(Заказы.Дата LIKE '%" + search + "%'))";
+                                            "(Заказы.Стоимость <= " + toPrice + "))";
+
+            switch(comboBoxSearchOrders.SelectedIndex)
+            {
+                case 0:
+                    {
+                        selectQuery += "    AND " +
+                                       "((Продукция.Наименование LIKE '%" + search + "%')" +
+                                       "   OR " +
+                                       "(Заказчики.Наименование LIKE '%" + search + "%')" +
+                                       "   OR " +
+                                       "(Заказы.Дата LIKE '%" + search + "%'))";
+                    }
+                    break;
+
+                case 1:
+                    {
+                        selectQuery += "    AND " +
+                                       "(Продукция.Наименование LIKE '%" + search + "%')";
+                    }
+                    break;
+
+                case 2:
+                    {
+                        selectQuery += "    AND " +
+                                       "(Заказчики.Наименование LIKE '%" + search + "%')";
+                    }
+                    break;
+
+                case 3:
+                    {
+                        selectQuery += "    AND " +
+                                       "(Заказы.Дата LIKE '%" + search + "%')";
+                    }
+                    break;
+            }
 
             fillDataGrid(selectQuery, dataGridOrders, 108);
+        }
+        #endregion
+
+        #region Material
+        private void btnAddMaterial_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Connection.getConnection().Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            Program.Context.MainForm = new AddChangeMaterial();
+
+            Close();
+
+            Program.Context.MainForm.Show();
+        }
+
+        private void btnChangeMaterial_Click(object sender, EventArgs e)
+        {
+            flagChangeCurrentMaterial = true;
+
+            try
+            {
+                Connection.getConnection().Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            Program.Context.MainForm = new AddChangeMaterial();
+
+            Close();
+
+            Program.Context.MainForm.Show();
+        }
+
+        private void btnDeleteMaterial_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Получание удаляемого сырья
+                string selectQuery = @"SELECT Наименование
+                                         FROM Сырьё
+                                             WHERE Код_сырья = " + idCurrentRowMaterial.ToString();
+
+                OleDbCommand command = new OleDbCommand(selectQuery, Connection.getConnection());
+                OleDbDataReader reader = command.ExecuteReader();
+                reader.Read();
+
+                string title = reader[0].ToString();
+
+                // Вставка данных
+                string deleteQuery = @"DELETE FROM Сырьё WHERE Код_сырья = " + idCurrentRowMaterial.ToString();
+
+                OleDbCommand deleteCommand = new OleDbCommand(deleteQuery, Connection.getConnection());
+
+                DialogResult dialogResult = MessageBox.Show("Вы действительно собираетесь удалить сырьё: '" + title + "' из БД?",
+                                                                "Предупреждение", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    // Удаляем запись и обновляем dataGrid
+                    deleteCommand.ExecuteNonQuery();
+                    fillDataGridMaterial();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnReportMaterial_Click(object sender, EventArgs e)
+        {
+            makeReport(dataGridMaterial, "Таблица сырья");
+        }
+
+        private void dataGridMaterial_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dataGridMaterial.Rows[e.RowIndex];
+
+                int.TryParse(row.Cells[0].Value.ToString(), out idCurrentRowMaterial);
+            }
+        }
+
+        private void txtSearchMaterial_TextChanged(object sender, EventArgs e)
+        {
+            string fromCount = txtFromCountMaterial.Text != "".Trim() ? txtFromCountMaterial.Text : "0";
+            string toCount = txtToCountMaterial.Text != "".Trim() ? txtToCountMaterial.Text : "999999999";
+
+            string fromPrice = txtFromPriceMaterial.Text != "".Trim() ? txtFromPriceMaterial.Text : "0";
+            string toPrice = txtToPriceMaterial.Text != "".Trim() ? txtToPriceMaterial.Text : "999999999";
+
+            string search = txtSearchMaterial.Text;
+
+            string selectQuery = @"SELECT Сырьё.Код_сырья,
+                                          Сырьё.Наименование AS `Наименование сырья`,
+                                          Сырьё.Количество,
+                                          Сырьё.Срок_годности_в_днях AS `Срок годности в днях`,
+                                          Сырьё.Общая_стоимость AS `Общая стоимость`,
+                                          Сырьё.Дата_заказа AS `Дата заказа`,
+                                          Типы.Название AS `Тип измерения`,
+                                          Продукция.Наименование AS `Наименование продукции`
+                                      FROM Сырьё, Типы, Продукция
+                                          WHERE ((Сырьё.Код_типа = Типы.Код)
+                                              AND
+                                          (Сырьё.Код_продукции = Продукция.Код_продукции))
+                                              AND 
+                                          ((Сырьё.Количество >= " + fromCount + ")" +
+                                          "   AND " +
+                                          "(Сырьё.Количество <= " + toCount + "))" +
+                                          "   AND " +
+                                          "((Сырьё.Общая_стоимость >= " + fromPrice + ")" +
+                                          "   AND " +
+                                          "(Сырьё.Общая_стоимость <= " + toPrice + "))";
+
+            switch (comboBoxSearchMaterial.SelectedIndex)
+            {
+                case 0:
+                    {
+                        // По всем полям, которые не вошли в фильтрацию
+                        selectQuery += " AND " +
+                                       "((Сырьё.Наименование LIKE  '%" + search + "%')";
+
+                        selectQuery += " OR " +
+                                       "(Сырьё.Срок_годности_в_днях LIKE  '%" + search + "%')";
+
+                        selectQuery += " OR " +
+                                       "(Сырьё.Дата_заказа LIKE  '%" + search + "%'))";
+                    }
+                    break;
+
+                case 1:
+                    {
+                        // По Названию
+                        selectQuery += " AND " +
+                                       "(Сырьё.Наименование LIKE  '%" + search + "%')";
+                    }
+                    break;
+
+                case 2:
+                    {
+                        // По Количество
+                        selectQuery += " AND " +
+                                       "(Сырьё.Количество LIKE  '%" + search + "%')";
+                    }
+                    break;
+
+                case 3:
+                    {
+                        selectQuery += " AND " +
+                                       "(Сырьё.Срок_годности_в_днях LIKE  '%" + search + "%')";
+                    }
+                    break;
+
+                case 4:
+                    {
+                        selectQuery += " AND " +
+                                       "(Сырьё.Общая_стоимость LIKE  '%" + search + "%')";
+                    }
+                    break;
+
+                case 5:
+                    {
+                        selectQuery += " AND " +
+                                       "(Сырьё.Дата_заказа LIKE  '%" + search + "%')";
+                    }
+                    break;
+            }
+
+            fillDataGrid(selectQuery, dataGridMaterial, 108);
         }
         #endregion
     }

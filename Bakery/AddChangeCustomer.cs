@@ -162,8 +162,8 @@ namespace Bakery
                     if (i != adressRealArray.Length - 1) adressReal += ",";
                 }
 
-                txtLawAddressCustomer.Text = adressLaw;
-                txtRealAddressCustomer.Text = adressReal;
+                txtLawAddressCustomer.Text = adressLaw.Trim();
+                txtRealAddressCustomer.Text = adressReal.Trim();
 
                 txtTitleCustomer.Text = reader["Наименование"].ToString();
                 txtEmailCustomer.Text = reader["Электронная почта"].ToString();
@@ -409,6 +409,48 @@ namespace Bakery
         private void comboBoxRealCountryAddressCustomer_SelectedValueChanged(object sender, EventArgs e)
         {
             getCities(comboBoxRealCountryAddressCustomer, comboBoxRealCityAddressCustomer);
+        }
+
+        private void comboBoxLawCountryAddressCustomer_Enter(object sender, EventArgs e)
+        {
+            try
+            {
+                Control control = (Control)sender;
+
+                int index = 0;
+                int.TryParse(control.TabIndex.ToString(), out index);
+
+                Control next = Controls.OfType<Control>()
+                                       .Where(c => c.TabIndex == index + 1)
+                                       .First();
+
+                Helper.PaintLabelUp(next);
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void comboBoxLawCountryAddressCustomer_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                Control control = (Control)sender;
+
+                int index = 0;
+                int.TryParse(control.TabIndex.ToString(), out index);
+
+                Control next = Controls.OfType<Control>()
+                                       .Where(c => c.TabIndex == index + 1)
+                                       .First();
+
+                Helper.PaintLabelDown(next);
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show(ex.Message);
+            }
         }
     }
 }

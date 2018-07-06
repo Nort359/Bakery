@@ -35,7 +35,7 @@ namespace Bakery
                 connectionString.Provider = "Microsoft.Jet.OLEDB.4.0";
                 connectionString.DataSource = dbName;
 
-                connection = new OleDbConnection(connectionString.ConnectionString + ";Jet OLEDB:Database Password=admin");
+                connection = new OleDbConnection(connectionString.ConnectionString + ";Jet OLEDB:Database Password=203040");
 
                 return connection;
             }

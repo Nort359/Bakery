@@ -299,5 +299,47 @@ namespace Bakery
             if ((e.KeyChar <= 47 || e.KeyChar >= 59) && e.KeyChar != 8)
                 e.Handled = true;
         }
+
+        private void txtTitleProduct_Enter(object sender, EventArgs e)
+        {
+            try
+            {
+                Control control = (Control)sender;
+
+                int index = 0;
+                int.TryParse(control.TabIndex.ToString(), out index);
+
+                Control next = Controls.OfType<Control>()
+                                       .Where(c => c.TabIndex == index + 1)
+                                       .First();
+
+                Helper.PaintLabelUp(next);
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void txtTitleProduct_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                Control control = (Control)sender;
+
+                int index = 0;
+                int.TryParse(control.TabIndex.ToString(), out index);
+
+                Control next = Controls.OfType<Control>()
+                                       .Where(c => c.TabIndex == index + 1)
+                                       .First();
+
+                Helper.PaintLabelDown(next);
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

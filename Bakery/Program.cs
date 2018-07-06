@@ -19,7 +19,7 @@ namespace Bakery
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Context = new ApplicationContext(new ManagerMainForm());
+            Context = new ApplicationContext(new LogIn());
 
             Application.Run(Context);
         }

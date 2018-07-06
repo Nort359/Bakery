@@ -267,5 +267,47 @@ namespace Bakery
 
             Program.Context.MainForm.Show();
         }
+
+        private void txtCountMadeProduct_Enter(object sender, EventArgs e)
+        {
+            try
+            {
+                Control control = (Control)sender;
+
+                int index = 0;
+                int.TryParse(control.TabIndex.ToString(), out index);
+
+                Control next = Controls.OfType<Control>()
+                                       .Where(c => c.TabIndex == index + 1)
+                                       .First();
+
+                Helper.PaintLabelUp(next);
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void txtCountMadeProduct_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                Control control = (Control)sender;
+
+                int index = 0;
+                int.TryParse(control.TabIndex.ToString(), out index);
+
+                Control next = Controls.OfType<Control>()
+                                       .Where(c => c.TabIndex == index + 1)
+                                       .First();
+
+                Helper.PaintLabelDown(next);
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

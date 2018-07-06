@@ -38,18 +38,28 @@
             this.txtINNEmployee = new MetroFramework.Controls.MetroTextBox();
             this.txtSerialNumberEmployee = new MetroFramework.Controls.MetroTextBox();
             this.txtPassportNumberEmployee = new MetroFramework.Controls.MetroTextBox();
-            this.txtPhoneNumberEmployee = new MetroFramework.Controls.MetroTextBox();
-            this.txtEducationEmployee = new MetroFramework.Controls.MetroTextBox();
             this.txtExpirienceEmployee = new MetroFramework.Controls.MetroTextBox();
             this.comboBoxPositionEmployee = new MetroFramework.Controls.MetroComboBox();
             this.comboBoxCountryEmployee = new MetroFramework.Controls.MetroComboBox();
-            this.lblLogin = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.comboBoxCityEmployee = new MetroFramework.Controls.MetroComboBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.txtAddressEmployee = new MetroFramework.Controls.MetroTextBox();
             this.btnChangeEmployee = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.txtPhoneNumberEmployee = new System.Windows.Forms.MaskedTextBox();
+            this.lblPhoneNumber = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.lblSurname = new System.Windows.Forms.Label();
+            this.lblMiddleName = new System.Windows.Forms.Label();
+            this.lblPosition = new System.Windows.Forms.Label();
+            this.lblBirthday = new System.Windows.Forms.Label();
+            this.lblPassportNumber = new System.Windows.Forms.Label();
+            this.lblSerialPassport = new System.Windows.Forms.Label();
+            this.lblINN = new System.Windows.Forms.Label();
+            this.lblExpirience = new System.Windows.Forms.Label();
+            this.lblEducation = new System.Windows.Forms.Label();
+            this.lblCountry = new System.Windows.Forms.Label();
+            this.lblCity = new System.Windows.Forms.Label();
+            this.lblAddress = new System.Windows.Forms.Label();
+            this.txtEducationEmployee = new MetroFramework.Controls.MetroComboBox();
             this.SuspendLayout();
             // 
             // txtNameEmployee
@@ -68,8 +78,8 @@
             this.txtNameEmployee.CustomButton.Visible = false;
             this.txtNameEmployee.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtNameEmployee.Lines = new string[0];
-            this.txtNameEmployee.Location = new System.Drawing.Point(23, 134);
-            this.txtNameEmployee.MaxLength = 32767;
+            this.txtNameEmployee.Location = new System.Drawing.Point(23, 137);
+            this.txtNameEmployee.MaxLength = 15;
             this.txtNameEmployee.Name = "txtNameEmployee";
             this.txtNameEmployee.PasswordChar = '\0';
             this.txtNameEmployee.PromptText = "Имя";
@@ -84,7 +94,9 @@
             this.txtNameEmployee.WaterMark = "Имя";
             this.txtNameEmployee.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtNameEmployee.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtNameEmployee.Enter += new System.EventHandler(this.txtNameEmployee_Enter);
             this.txtNameEmployee.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMiddleNameEmployee_KeyPress);
+            this.txtNameEmployee.Leave += new System.EventHandler(this.txtNameEmployee_Leave);
             // 
             // lblMainEmployee
             // 
@@ -94,7 +106,7 @@
             this.lblMainEmployee.Location = new System.Drawing.Point(18, 82);
             this.lblMainEmployee.Name = "lblMainEmployee";
             this.lblMainEmployee.Size = new System.Drawing.Size(504, 25);
-            this.lblMainEmployee.TabIndex = 14;
+            this.lblMainEmployee.TabIndex = 31;
             this.lblMainEmployee.Text = "Введите все необходимые данные о сотруднике:";
             // 
             // txtSurnameEmployee
@@ -113,8 +125,8 @@
             this.txtSurnameEmployee.CustomButton.Visible = false;
             this.txtSurnameEmployee.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtSurnameEmployee.Lines = new string[0];
-            this.txtSurnameEmployee.Location = new System.Drawing.Point(23, 170);
-            this.txtSurnameEmployee.MaxLength = 32767;
+            this.txtSurnameEmployee.Location = new System.Drawing.Point(23, 191);
+            this.txtSurnameEmployee.MaxLength = 15;
             this.txtSurnameEmployee.Name = "txtSurnameEmployee";
             this.txtSurnameEmployee.PasswordChar = '\0';
             this.txtSurnameEmployee.PromptText = "Фамилия";
@@ -124,12 +136,14 @@
             this.txtSurnameEmployee.SelectionStart = 0;
             this.txtSurnameEmployee.ShortcutsEnabled = true;
             this.txtSurnameEmployee.Size = new System.Drawing.Size(263, 30);
-            this.txtSurnameEmployee.TabIndex = 16;
+            this.txtSurnameEmployee.TabIndex = 2;
             this.txtSurnameEmployee.UseSelectable = true;
             this.txtSurnameEmployee.WaterMark = "Фамилия";
             this.txtSurnameEmployee.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtSurnameEmployee.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtSurnameEmployee.Enter += new System.EventHandler(this.txtNameEmployee_Enter);
             this.txtSurnameEmployee.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMiddleNameEmployee_KeyPress);
+            this.txtSurnameEmployee.Leave += new System.EventHandler(this.txtNameEmployee_Leave);
             // 
             // txtMiddleNameEmployee
             // 
@@ -147,8 +161,8 @@
             this.txtMiddleNameEmployee.CustomButton.Visible = false;
             this.txtMiddleNameEmployee.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtMiddleNameEmployee.Lines = new string[0];
-            this.txtMiddleNameEmployee.Location = new System.Drawing.Point(23, 206);
-            this.txtMiddleNameEmployee.MaxLength = 32767;
+            this.txtMiddleNameEmployee.Location = new System.Drawing.Point(23, 245);
+            this.txtMiddleNameEmployee.MaxLength = 15;
             this.txtMiddleNameEmployee.Name = "txtMiddleNameEmployee";
             this.txtMiddleNameEmployee.PasswordChar = '\0';
             this.txtMiddleNameEmployee.PromptText = "Отчество";
@@ -158,12 +172,14 @@
             this.txtMiddleNameEmployee.SelectionStart = 0;
             this.txtMiddleNameEmployee.ShortcutsEnabled = true;
             this.txtMiddleNameEmployee.Size = new System.Drawing.Size(263, 30);
-            this.txtMiddleNameEmployee.TabIndex = 17;
+            this.txtMiddleNameEmployee.TabIndex = 4;
             this.txtMiddleNameEmployee.UseSelectable = true;
             this.txtMiddleNameEmployee.WaterMark = "Отчество";
             this.txtMiddleNameEmployee.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtMiddleNameEmployee.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtMiddleNameEmployee.Enter += new System.EventHandler(this.txtNameEmployee_Enter);
             this.txtMiddleNameEmployee.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMiddleNameEmployee_KeyPress);
+            this.txtMiddleNameEmployee.Leave += new System.EventHandler(this.txtNameEmployee_Leave);
             // 
             // btnClose
             // 
@@ -172,25 +188,25 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.btnClose.Location = new System.Drawing.Point(364, 474);
+            this.btnClose.Location = new System.Drawing.Point(364, 505);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(227, 48);
-            this.btnClose.TabIndex = 19;
+            this.btnClose.TabIndex = 30;
             this.btnClose.Text = "Отмена";
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnAdd
             // 
-            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(133)))), ((int)(((byte)(72)))));
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(156)))), ((int)(((byte)(42)))));
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnAdd.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAdd.Location = new System.Drawing.Point(131, 474);
+            this.btnAdd.Location = new System.Drawing.Point(131, 505);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(227, 48);
-            this.btnAdd.TabIndex = 18;
+            this.btnAdd.TabIndex = 28;
             this.btnAdd.Text = "Добавить";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -198,11 +214,13 @@
             // txtBirthDayEmployee
             // 
             this.txtBirthDayEmployee.CustomFormat = "";
-            this.txtBirthDayEmployee.Location = new System.Drawing.Point(23, 317);
+            this.txtBirthDayEmployee.Location = new System.Drawing.Point(23, 352);
             this.txtBirthDayEmployee.MinimumSize = new System.Drawing.Size(0, 29);
             this.txtBirthDayEmployee.Name = "txtBirthDayEmployee";
             this.txtBirthDayEmployee.Size = new System.Drawing.Size(263, 29);
-            this.txtBirthDayEmployee.TabIndex = 21;
+            this.txtBirthDayEmployee.TabIndex = 8;
+            this.txtBirthDayEmployee.Enter += new System.EventHandler(this.txtNameEmployee_Enter);
+            this.txtBirthDayEmployee.Leave += new System.EventHandler(this.txtNameEmployee_Leave);
             // 
             // txtINNEmployee
             // 
@@ -220,8 +238,8 @@
             this.txtINNEmployee.CustomButton.Visible = false;
             this.txtINNEmployee.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtINNEmployee.Lines = new string[0];
-            this.txtINNEmployee.Location = new System.Drawing.Point(328, 134);
-            this.txtINNEmployee.MaxLength = 32767;
+            this.txtINNEmployee.Location = new System.Drawing.Point(328, 137);
+            this.txtINNEmployee.MaxLength = 12;
             this.txtINNEmployee.Name = "txtINNEmployee";
             this.txtINNEmployee.PasswordChar = '\0';
             this.txtINNEmployee.PromptText = "ИНН";
@@ -231,12 +249,14 @@
             this.txtINNEmployee.SelectionStart = 0;
             this.txtINNEmployee.ShortcutsEnabled = true;
             this.txtINNEmployee.Size = new System.Drawing.Size(263, 30);
-            this.txtINNEmployee.TabIndex = 24;
+            this.txtINNEmployee.TabIndex = 14;
             this.txtINNEmployee.UseSelectable = true;
             this.txtINNEmployee.WaterMark = "ИНН";
             this.txtINNEmployee.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtINNEmployee.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtINNEmployee.Enter += new System.EventHandler(this.txtNameEmployee_Enter);
             this.txtINNEmployee.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassportNumberEmployee_KeyPress);
+            this.txtINNEmployee.Leave += new System.EventHandler(this.txtNameEmployee_Leave);
             // 
             // txtSerialNumberEmployee
             // 
@@ -254,8 +274,8 @@
             this.txtSerialNumberEmployee.CustomButton.Visible = false;
             this.txtSerialNumberEmployee.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtSerialNumberEmployee.Lines = new string[0];
-            this.txtSerialNumberEmployee.Location = new System.Drawing.Point(23, 388);
-            this.txtSerialNumberEmployee.MaxLength = 32767;
+            this.txtSerialNumberEmployee.Location = new System.Drawing.Point(23, 459);
+            this.txtSerialNumberEmployee.MaxLength = 6;
             this.txtSerialNumberEmployee.Name = "txtSerialNumberEmployee";
             this.txtSerialNumberEmployee.PasswordChar = '\0';
             this.txtSerialNumberEmployee.PromptText = "Серия паспорта";
@@ -265,12 +285,14 @@
             this.txtSerialNumberEmployee.SelectionStart = 0;
             this.txtSerialNumberEmployee.ShortcutsEnabled = true;
             this.txtSerialNumberEmployee.Size = new System.Drawing.Size(263, 30);
-            this.txtSerialNumberEmployee.TabIndex = 23;
+            this.txtSerialNumberEmployee.TabIndex = 12;
             this.txtSerialNumberEmployee.UseSelectable = true;
             this.txtSerialNumberEmployee.WaterMark = "Серия паспорта";
             this.txtSerialNumberEmployee.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtSerialNumberEmployee.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtSerialNumberEmployee.Enter += new System.EventHandler(this.txtNameEmployee_Enter);
             this.txtSerialNumberEmployee.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassportNumberEmployee_KeyPress);
+            this.txtSerialNumberEmployee.Leave += new System.EventHandler(this.txtNameEmployee_Leave);
             // 
             // txtPassportNumberEmployee
             // 
@@ -288,8 +310,8 @@
             this.txtPassportNumberEmployee.CustomButton.Visible = false;
             this.txtPassportNumberEmployee.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtPassportNumberEmployee.Lines = new string[0];
-            this.txtPassportNumberEmployee.Location = new System.Drawing.Point(23, 352);
-            this.txtPassportNumberEmployee.MaxLength = 32767;
+            this.txtPassportNumberEmployee.Location = new System.Drawing.Point(23, 405);
+            this.txtPassportNumberEmployee.MaxLength = 4;
             this.txtPassportNumberEmployee.Name = "txtPassportNumberEmployee";
             this.txtPassportNumberEmployee.PasswordChar = '\0';
             this.txtPassportNumberEmployee.PromptText = "Номер паспорта";
@@ -299,80 +321,14 @@
             this.txtPassportNumberEmployee.SelectionStart = 0;
             this.txtPassportNumberEmployee.ShortcutsEnabled = true;
             this.txtPassportNumberEmployee.Size = new System.Drawing.Size(263, 30);
-            this.txtPassportNumberEmployee.TabIndex = 22;
+            this.txtPassportNumberEmployee.TabIndex = 10;
             this.txtPassportNumberEmployee.UseSelectable = true;
             this.txtPassportNumberEmployee.WaterMark = "Номер паспорта";
             this.txtPassportNumberEmployee.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtPassportNumberEmployee.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtPassportNumberEmployee.Enter += new System.EventHandler(this.txtNameEmployee_Enter);
             this.txtPassportNumberEmployee.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassportNumberEmployee_KeyPress);
-            // 
-            // txtPhoneNumberEmployee
-            // 
-            // 
-            // 
-            // 
-            this.txtPhoneNumberEmployee.CustomButton.Image = null;
-            this.txtPhoneNumberEmployee.CustomButton.Location = new System.Drawing.Point(235, 2);
-            this.txtPhoneNumberEmployee.CustomButton.Name = "";
-            this.txtPhoneNumberEmployee.CustomButton.Size = new System.Drawing.Size(25, 25);
-            this.txtPhoneNumberEmployee.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtPhoneNumberEmployee.CustomButton.TabIndex = 1;
-            this.txtPhoneNumberEmployee.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtPhoneNumberEmployee.CustomButton.UseSelectable = true;
-            this.txtPhoneNumberEmployee.CustomButton.Visible = false;
-            this.txtPhoneNumberEmployee.FontSize = MetroFramework.MetroTextBoxSize.Medium;
-            this.txtPhoneNumberEmployee.Lines = new string[0];
-            this.txtPhoneNumberEmployee.Location = new System.Drawing.Point(23, 424);
-            this.txtPhoneNumberEmployee.MaxLength = 32767;
-            this.txtPhoneNumberEmployee.Name = "txtPhoneNumberEmployee";
-            this.txtPhoneNumberEmployee.PasswordChar = '\0';
-            this.txtPhoneNumberEmployee.PromptText = "Телефон";
-            this.txtPhoneNumberEmployee.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtPhoneNumberEmployee.SelectedText = "";
-            this.txtPhoneNumberEmployee.SelectionLength = 0;
-            this.txtPhoneNumberEmployee.SelectionStart = 0;
-            this.txtPhoneNumberEmployee.ShortcutsEnabled = true;
-            this.txtPhoneNumberEmployee.Size = new System.Drawing.Size(263, 30);
-            this.txtPhoneNumberEmployee.TabIndex = 27;
-            this.txtPhoneNumberEmployee.UseSelectable = true;
-            this.txtPhoneNumberEmployee.WaterMark = "Телефон";
-            this.txtPhoneNumberEmployee.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtPhoneNumberEmployee.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txtPhoneNumberEmployee.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassportNumberEmployee_KeyPress);
-            // 
-            // txtEducationEmployee
-            // 
-            // 
-            // 
-            // 
-            this.txtEducationEmployee.CustomButton.Image = null;
-            this.txtEducationEmployee.CustomButton.Location = new System.Drawing.Point(235, 2);
-            this.txtEducationEmployee.CustomButton.Name = "";
-            this.txtEducationEmployee.CustomButton.Size = new System.Drawing.Size(25, 25);
-            this.txtEducationEmployee.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtEducationEmployee.CustomButton.TabIndex = 1;
-            this.txtEducationEmployee.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtEducationEmployee.CustomButton.UseSelectable = true;
-            this.txtEducationEmployee.CustomButton.Visible = false;
-            this.txtEducationEmployee.FontSize = MetroFramework.MetroTextBoxSize.Medium;
-            this.txtEducationEmployee.Lines = new string[0];
-            this.txtEducationEmployee.Location = new System.Drawing.Point(328, 206);
-            this.txtEducationEmployee.MaxLength = 32767;
-            this.txtEducationEmployee.Name = "txtEducationEmployee";
-            this.txtEducationEmployee.PasswordChar = '\0';
-            this.txtEducationEmployee.PromptText = "Образование";
-            this.txtEducationEmployee.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtEducationEmployee.SelectedText = "";
-            this.txtEducationEmployee.SelectionLength = 0;
-            this.txtEducationEmployee.SelectionStart = 0;
-            this.txtEducationEmployee.ShortcutsEnabled = true;
-            this.txtEducationEmployee.Size = new System.Drawing.Size(263, 30);
-            this.txtEducationEmployee.TabIndex = 26;
-            this.txtEducationEmployee.UseSelectable = true;
-            this.txtEducationEmployee.WaterMark = "Образование";
-            this.txtEducationEmployee.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtEducationEmployee.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txtEducationEmployee.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMiddleNameEmployee_KeyPress);
+            this.txtPassportNumberEmployee.Leave += new System.EventHandler(this.txtNameEmployee_Leave);
             // 
             // txtExpirienceEmployee
             // 
@@ -390,8 +346,8 @@
             this.txtExpirienceEmployee.CustomButton.Visible = false;
             this.txtExpirienceEmployee.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtExpirienceEmployee.Lines = new string[0];
-            this.txtExpirienceEmployee.Location = new System.Drawing.Point(328, 170);
-            this.txtExpirienceEmployee.MaxLength = 32767;
+            this.txtExpirienceEmployee.Location = new System.Drawing.Point(328, 191);
+            this.txtExpirienceEmployee.MaxLength = 2;
             this.txtExpirienceEmployee.Name = "txtExpirienceEmployee";
             this.txtExpirienceEmployee.PasswordChar = '\0';
             this.txtExpirienceEmployee.PromptText = "Стаж работы (г. необязательно)";
@@ -401,78 +357,53 @@
             this.txtExpirienceEmployee.SelectionStart = 0;
             this.txtExpirienceEmployee.ShortcutsEnabled = true;
             this.txtExpirienceEmployee.Size = new System.Drawing.Size(263, 30);
-            this.txtExpirienceEmployee.TabIndex = 25;
+            this.txtExpirienceEmployee.TabIndex = 16;
             this.txtExpirienceEmployee.UseSelectable = true;
             this.txtExpirienceEmployee.WaterMark = "Стаж работы (г. необязательно)";
             this.txtExpirienceEmployee.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtExpirienceEmployee.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtExpirienceEmployee.Enter += new System.EventHandler(this.txtNameEmployee_Enter);
             this.txtExpirienceEmployee.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassportNumberEmployee_KeyPress);
+            this.txtExpirienceEmployee.Leave += new System.EventHandler(this.txtNameEmployee_Leave);
             // 
             // comboBoxPositionEmployee
             // 
             this.comboBoxPositionEmployee.ItemHeight = 23;
-            this.comboBoxPositionEmployee.Location = new System.Drawing.Point(23, 262);
+            this.comboBoxPositionEmployee.Location = new System.Drawing.Point(23, 299);
             this.comboBoxPositionEmployee.Name = "comboBoxPositionEmployee";
             this.comboBoxPositionEmployee.Size = new System.Drawing.Size(263, 29);
-            this.comboBoxPositionEmployee.Style = MetroFramework.MetroColorStyle.Orange;
-            this.comboBoxPositionEmployee.TabIndex = 28;
+            this.comboBoxPositionEmployee.Style = MetroFramework.MetroColorStyle.Lime;
+            this.comboBoxPositionEmployee.TabIndex = 6;
             this.comboBoxPositionEmployee.UseSelectable = true;
+            this.comboBoxPositionEmployee.Enter += new System.EventHandler(this.txtNameEmployee_Enter);
+            this.comboBoxPositionEmployee.Leave += new System.EventHandler(this.txtNameEmployee_Leave);
             // 
             // comboBoxCountryEmployee
             // 
             this.comboBoxCountryEmployee.ItemHeight = 23;
-            this.comboBoxCountryEmployee.Location = new System.Drawing.Point(328, 262);
+            this.comboBoxCountryEmployee.Location = new System.Drawing.Point(328, 299);
             this.comboBoxCountryEmployee.MaxDropDownItems = 5;
             this.comboBoxCountryEmployee.Name = "comboBoxCountryEmployee";
             this.comboBoxCountryEmployee.Size = new System.Drawing.Size(263, 29);
-            this.comboBoxCountryEmployee.Style = MetroFramework.MetroColorStyle.Orange;
-            this.comboBoxCountryEmployee.TabIndex = 29;
+            this.comboBoxCountryEmployee.Style = MetroFramework.MetroColorStyle.Lime;
+            this.comboBoxCountryEmployee.TabIndex = 20;
             this.comboBoxCountryEmployee.UseSelectable = true;
             this.comboBoxCountryEmployee.SelectedValueChanged += new System.EventHandler(this.comboBoxCountryEmployee_SelectedValueChanged);
-            // 
-            // lblLogin
-            // 
-            this.lblLogin.AutoSize = true;
-            this.lblLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.lblLogin.Location = new System.Drawing.Point(324, 239);
-            this.lblLogin.Name = "lblLogin";
-            this.lblLogin.Size = new System.Drawing.Size(67, 20);
-            this.lblLogin.TabIndex = 30;
-            this.lblLogin.Text = "Страну:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.label1.Location = new System.Drawing.Point(324, 294);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 20);
-            this.label1.TabIndex = 32;
-            this.label1.Text = "Город:";
+            this.comboBoxCountryEmployee.Enter += new System.EventHandler(this.txtNameEmployee_Enter);
+            this.comboBoxCountryEmployee.Leave += new System.EventHandler(this.txtNameEmployee_Leave);
             // 
             // comboBoxCityEmployee
             // 
             this.comboBoxCityEmployee.ItemHeight = 23;
-            this.comboBoxCityEmployee.Location = new System.Drawing.Point(328, 317);
+            this.comboBoxCityEmployee.Location = new System.Drawing.Point(328, 352);
             this.comboBoxCityEmployee.MaxDropDownItems = 2;
             this.comboBoxCityEmployee.Name = "comboBoxCityEmployee";
             this.comboBoxCityEmployee.Size = new System.Drawing.Size(263, 29);
-            this.comboBoxCityEmployee.Style = MetroFramework.MetroColorStyle.Orange;
-            this.comboBoxCityEmployee.TabIndex = 31;
+            this.comboBoxCityEmployee.Style = MetroFramework.MetroColorStyle.Lime;
+            this.comboBoxCityEmployee.TabIndex = 22;
             this.comboBoxCityEmployee.UseSelectable = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.label3.Location = new System.Drawing.Point(19, 239);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(99, 20);
-            this.label3.TabIndex = 35;
-            this.label3.Text = "Должность:";
+            this.comboBoxCityEmployee.Enter += new System.EventHandler(this.txtNameEmployee_Enter);
+            this.comboBoxCityEmployee.Leave += new System.EventHandler(this.txtNameEmployee_Leave);
             // 
             // txtAddressEmployee
             // 
@@ -490,8 +421,8 @@
             this.txtAddressEmployee.CustomButton.Visible = false;
             this.txtAddressEmployee.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtAddressEmployee.Lines = new string[0];
-            this.txtAddressEmployee.Location = new System.Drawing.Point(328, 368);
-            this.txtAddressEmployee.MaxLength = 32767;
+            this.txtAddressEmployee.Location = new System.Drawing.Point(328, 405);
+            this.txtAddressEmployee.MaxLength = 50;
             this.txtAddressEmployee.Name = "txtAddressEmployee";
             this.txtAddressEmployee.PasswordChar = '\0';
             this.txtAddressEmployee.PromptText = "Адрес (ул. дом. кв.)";
@@ -501,55 +432,231 @@
             this.txtAddressEmployee.SelectionStart = 0;
             this.txtAddressEmployee.ShortcutsEnabled = true;
             this.txtAddressEmployee.Size = new System.Drawing.Size(263, 30);
-            this.txtAddressEmployee.TabIndex = 36;
+            this.txtAddressEmployee.TabIndex = 24;
             this.txtAddressEmployee.UseSelectable = true;
             this.txtAddressEmployee.WaterMark = "Адрес (ул. дом. кв.)";
             this.txtAddressEmployee.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtAddressEmployee.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txtAddressEmployee.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMiddleNameEmployee_KeyPress);
+            this.txtAddressEmployee.Enter += new System.EventHandler(this.txtNameEmployee_Enter);
+            this.txtAddressEmployee.Leave += new System.EventHandler(this.txtNameEmployee_Leave);
             // 
             // btnChangeEmployee
             // 
-            this.btnChangeEmployee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(133)))), ((int)(((byte)(72)))));
+            this.btnChangeEmployee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(156)))), ((int)(((byte)(42)))));
             this.btnChangeEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnChangeEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChangeEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnChangeEmployee.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnChangeEmployee.Location = new System.Drawing.Point(131, 474);
+            this.btnChangeEmployee.Location = new System.Drawing.Point(131, 506);
             this.btnChangeEmployee.Name = "btnChangeEmployee";
             this.btnChangeEmployee.Size = new System.Drawing.Size(227, 48);
-            this.btnChangeEmployee.TabIndex = 37;
+            this.btnChangeEmployee.TabIndex = 29;
             this.btnChangeEmployee.Text = "Изменить";
             this.btnChangeEmployee.UseVisualStyleBackColor = false;
             this.btnChangeEmployee.Click += new System.EventHandler(this.btnChangeEmployee_Click);
             // 
-            // label2
+            // txtPhoneNumberEmployee
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.label2.Location = new System.Drawing.Point(19, 294);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(132, 20);
-            this.label2.TabIndex = 38;
-            this.label2.Text = "Дата рождения:";
+            this.txtPhoneNumberEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtPhoneNumberEmployee.Location = new System.Drawing.Point(328, 459);
+            this.txtPhoneNumberEmployee.Mask = "+0-(000)-000-00-00";
+            this.txtPhoneNumberEmployee.Name = "txtPhoneNumberEmployee";
+            this.txtPhoneNumberEmployee.Size = new System.Drawing.Size(263, 29);
+            this.txtPhoneNumberEmployee.TabIndex = 26;
+            this.txtPhoneNumberEmployee.Enter += new System.EventHandler(this.txtNameEmployee_Enter);
+            this.txtPhoneNumberEmployee.Leave += new System.EventHandler(this.txtNameEmployee_Leave);
+            // 
+            // lblPhoneNumber
+            // 
+            this.lblPhoneNumber.AutoSize = true;
+            this.lblPhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblPhoneNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.lblPhoneNumber.Location = new System.Drawing.Point(325, 438);
+            this.lblPhoneNumber.Name = "lblPhoneNumber";
+            this.lblPhoneNumber.Size = new System.Drawing.Size(133, 18);
+            this.lblPhoneNumber.TabIndex = 27;
+            this.lblPhoneNumber.Text = "Номер телефона:";
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.lblName.Location = new System.Drawing.Point(20, 116);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(42, 18);
+            this.lblName.TabIndex = 1;
+            this.lblName.Text = "Имя:";
+            // 
+            // lblSurname
+            // 
+            this.lblSurname.AutoSize = true;
+            this.lblSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblSurname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.lblSurname.Location = new System.Drawing.Point(20, 170);
+            this.lblSurname.Name = "lblSurname";
+            this.lblSurname.Size = new System.Drawing.Size(77, 18);
+            this.lblSurname.TabIndex = 3;
+            this.lblSurname.Text = "Фамилия:";
+            // 
+            // lblMiddleName
+            // 
+            this.lblMiddleName.AutoSize = true;
+            this.lblMiddleName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblMiddleName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.lblMiddleName.Location = new System.Drawing.Point(20, 224);
+            this.lblMiddleName.Name = "lblMiddleName";
+            this.lblMiddleName.Size = new System.Drawing.Size(79, 18);
+            this.lblMiddleName.TabIndex = 5;
+            this.lblMiddleName.Text = "Отчество:";
+            // 
+            // lblPosition
+            // 
+            this.lblPosition.AutoSize = true;
+            this.lblPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblPosition.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.lblPosition.Location = new System.Drawing.Point(20, 278);
+            this.lblPosition.Name = "lblPosition";
+            this.lblPosition.Size = new System.Drawing.Size(93, 18);
+            this.lblPosition.TabIndex = 7;
+            this.lblPosition.Text = "Должность:";
+            // 
+            // lblBirthday
+            // 
+            this.lblBirthday.AutoSize = true;
+            this.lblBirthday.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblBirthday.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.lblBirthday.Location = new System.Drawing.Point(20, 331);
+            this.lblBirthday.Name = "lblBirthday";
+            this.lblBirthday.Size = new System.Drawing.Size(120, 18);
+            this.lblBirthday.TabIndex = 9;
+            this.lblBirthday.Text = "Дата рождения:";
+            // 
+            // lblPassportNumber
+            // 
+            this.lblPassportNumber.AutoSize = true;
+            this.lblPassportNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblPassportNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.lblPassportNumber.Location = new System.Drawing.Point(20, 384);
+            this.lblPassportNumber.Name = "lblPassportNumber";
+            this.lblPassportNumber.Size = new System.Drawing.Size(127, 18);
+            this.lblPassportNumber.TabIndex = 11;
+            this.lblPassportNumber.Text = "Номер паспорта:";
+            // 
+            // lblSerialPassport
+            // 
+            this.lblSerialPassport.AutoSize = true;
+            this.lblSerialPassport.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblSerialPassport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.lblSerialPassport.Location = new System.Drawing.Point(20, 438);
+            this.lblSerialPassport.Name = "lblSerialPassport";
+            this.lblSerialPassport.Size = new System.Drawing.Size(123, 18);
+            this.lblSerialPassport.TabIndex = 13;
+            this.lblSerialPassport.Text = "Серия паспорта:";
+            // 
+            // lblINN
+            // 
+            this.lblINN.AutoSize = true;
+            this.lblINN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblINN.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.lblINN.Location = new System.Drawing.Point(325, 116);
+            this.lblINN.Name = "lblINN";
+            this.lblINN.Size = new System.Drawing.Size(45, 18);
+            this.lblINN.TabIndex = 15;
+            this.lblINN.Text = "ИНН:";
+            // 
+            // lblExpirience
+            // 
+            this.lblExpirience.AutoSize = true;
+            this.lblExpirience.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblExpirience.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.lblExpirience.Location = new System.Drawing.Point(325, 170);
+            this.lblExpirience.Name = "lblExpirience";
+            this.lblExpirience.Size = new System.Drawing.Size(240, 18);
+            this.lblExpirience.TabIndex = 17;
+            this.lblExpirience.Text = "Стаж работы (г. необязательно):";
+            // 
+            // lblEducation
+            // 
+            this.lblEducation.AutoSize = true;
+            this.lblEducation.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblEducation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.lblEducation.Location = new System.Drawing.Point(325, 224);
+            this.lblEducation.Name = "lblEducation";
+            this.lblEducation.Size = new System.Drawing.Size(106, 18);
+            this.lblEducation.TabIndex = 19;
+            this.lblEducation.Text = "Образование:";
+            // 
+            // lblCountry
+            // 
+            this.lblCountry.AutoSize = true;
+            this.lblCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblCountry.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.lblCountry.Location = new System.Drawing.Point(325, 278);
+            this.lblCountry.Name = "lblCountry";
+            this.lblCountry.Size = new System.Drawing.Size(62, 18);
+            this.lblCountry.TabIndex = 21;
+            this.lblCountry.Text = "Страна:";
+            // 
+            // lblCity
+            // 
+            this.lblCity.AutoSize = true;
+            this.lblCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblCity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.lblCity.Location = new System.Drawing.Point(325, 331);
+            this.lblCity.Name = "lblCity";
+            this.lblCity.Size = new System.Drawing.Size(56, 18);
+            this.lblCity.TabIndex = 23;
+            this.lblCity.Text = "Город:";
+            // 
+            // lblAddress
+            // 
+            this.lblAddress.AutoSize = true;
+            this.lblAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.lblAddress.Location = new System.Drawing.Point(325, 384);
+            this.lblAddress.Name = "lblAddress";
+            this.lblAddress.Size = new System.Drawing.Size(149, 18);
+            this.lblAddress.TabIndex = 25;
+            this.lblAddress.Text = "Адрес (ул. дом. кв.):";
+            // 
+            // txtEducationEmployee
+            // 
+            this.txtEducationEmployee.ItemHeight = 23;
+            this.txtEducationEmployee.Location = new System.Drawing.Point(328, 246);
+            this.txtEducationEmployee.MaxDropDownItems = 2;
+            this.txtEducationEmployee.Name = "txtEducationEmployee";
+            this.txtEducationEmployee.Size = new System.Drawing.Size(263, 29);
+            this.txtEducationEmployee.Style = MetroFramework.MetroColorStyle.Lime;
+            this.txtEducationEmployee.TabIndex = 32;
+            this.txtEducationEmployee.UseSelectable = true;
             // 
             // AddChangeEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(645, 545);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(619, 578);
+            this.Controls.Add(this.txtEducationEmployee);
+            this.Controls.Add(this.lblAddress);
+            this.Controls.Add(this.lblCity);
+            this.Controls.Add(this.lblCountry);
+            this.Controls.Add(this.lblEducation);
+            this.Controls.Add(this.lblExpirience);
+            this.Controls.Add(this.lblINN);
+            this.Controls.Add(this.lblSerialPassport);
+            this.Controls.Add(this.lblPassportNumber);
+            this.Controls.Add(this.lblBirthday);
+            this.Controls.Add(this.lblPosition);
+            this.Controls.Add(this.lblMiddleName);
+            this.Controls.Add(this.lblSurname);
+            this.Controls.Add(this.lblName);
+            this.Controls.Add(this.lblPhoneNumber);
+            this.Controls.Add(this.txtPhoneNumberEmployee);
             this.Controls.Add(this.btnChangeEmployee);
             this.Controls.Add(this.txtAddressEmployee);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBoxCityEmployee);
-            this.Controls.Add(this.lblLogin);
             this.Controls.Add(this.comboBoxCountryEmployee);
             this.Controls.Add(this.comboBoxPositionEmployee);
-            this.Controls.Add(this.txtPhoneNumberEmployee);
-            this.Controls.Add(this.txtEducationEmployee);
             this.Controls.Add(this.txtExpirienceEmployee);
             this.Controls.Add(this.txtINNEmployee);
             this.Controls.Add(this.txtSerialNumberEmployee);
@@ -561,10 +668,13 @@
             this.Controls.Add(this.txtSurnameEmployee);
             this.Controls.Add(this.lblMainEmployee);
             this.Controls.Add(this.txtNameEmployee);
+            this.MaximizeBox = false;
             this.Name = "AddChangeEmployee";
             this.Resizable = false;
-            this.Style = MetroFramework.MetroColorStyle.Orange;
-            this.Text = "Добавление сотрудника";
+            this.Style = MetroFramework.MetroColorStyle.Lime;
+            this.Text = "Добавление/изменение сотрудника";
+            this.Enter += new System.EventHandler(this.txtNameEmployee_Enter);
+            this.Leave += new System.EventHandler(this.txtNameEmployee_Leave);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -582,17 +692,27 @@
         private MetroFramework.Controls.MetroTextBox txtINNEmployee;
         private MetroFramework.Controls.MetroTextBox txtSerialNumberEmployee;
         private MetroFramework.Controls.MetroTextBox txtPassportNumberEmployee;
-        private MetroFramework.Controls.MetroTextBox txtPhoneNumberEmployee;
-        private MetroFramework.Controls.MetroTextBox txtEducationEmployee;
         private MetroFramework.Controls.MetroTextBox txtExpirienceEmployee;
         private MetroFramework.Controls.MetroComboBox comboBoxPositionEmployee;
         private MetroFramework.Controls.MetroComboBox comboBoxCountryEmployee;
-        private System.Windows.Forms.Label lblLogin;
-        private System.Windows.Forms.Label label1;
         private MetroFramework.Controls.MetroComboBox comboBoxCityEmployee;
-        private System.Windows.Forms.Label label3;
         private MetroFramework.Controls.MetroTextBox txtAddressEmployee;
         private System.Windows.Forms.Button btnChangeEmployee;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.MaskedTextBox txtPhoneNumberEmployee;
+        private System.Windows.Forms.Label lblPhoneNumber;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label lblSurname;
+        private System.Windows.Forms.Label lblMiddleName;
+        private System.Windows.Forms.Label lblPosition;
+        private System.Windows.Forms.Label lblBirthday;
+        private System.Windows.Forms.Label lblPassportNumber;
+        private System.Windows.Forms.Label lblSerialPassport;
+        private System.Windows.Forms.Label lblINN;
+        private System.Windows.Forms.Label lblExpirience;
+        private System.Windows.Forms.Label lblEducation;
+        private System.Windows.Forms.Label lblCountry;
+        private System.Windows.Forms.Label lblCity;
+        private System.Windows.Forms.Label lblAddress;
+        private MetroFramework.Controls.MetroComboBox txtEducationEmployee;
     }
 }
