@@ -57,6 +57,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddChangeComposition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddChangeComposition.Designer.cs">
+      <DependentUpon>AddChangeComposition.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddChangeCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +115,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddChangeComposition.resx">
+      <DependentUpon>AddChangeComposition.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddChangeCustomer.resx">
       <DependentUpon>AddChangeCustomer.cs</DependentUpon>
     </EmbeddedResource>

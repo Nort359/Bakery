@@ -646,13 +646,13 @@ namespace Bakery
                                             "   AND " +
                                             "(Продукция.Оптимальная_стоимость <= " + toOptimalPrice + "))" +
                                             "   AND " +
-                                            "((Продукция.Оптимальная_стоимость >= " + fromRealPrice + ")" +
+                                            "((Продукция.Розничная_стоимость >= " + fromRealPrice + ")" +
                                             "   AND " +
-                                            "(Продукция.Оптимальная_стоимость <= " + toRealPrice + "))" +
+                                            "(Продукция.Розничная_стоимость <= " + toRealPrice + "))" +
                                             "   AND " +
-                                            "((Продукция.Оптимальная_стоимость >= " + fromWeight + ")" +
+                                            "((Продукция.Вес_гр >= " + fromWeight + ")" +
                                             "   AND " +
-                                            "(Продукция.Оптимальная_стоимость <= " + toWeight + "))";
+                                            "(Продукция.Вес_гр <= " + toWeight + "))";
 
             switch(comboBoxSearchProduct.SelectedIndex)
             {
@@ -1453,5 +1453,38 @@ namespace Bakery
             fillDataGrid(selectQuery, dataGridMaterial, 108);
         }
         #endregion
+
+        private void btnAddComposition_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Connection.getConnection().Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            Program.Context.MainForm = new AddChangeComposition();
+
+            Close();
+
+            Program.Context.MainForm.Show();
+        }
+
+        private void btnChangeComposition_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDeleteComposition_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReportComposition_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

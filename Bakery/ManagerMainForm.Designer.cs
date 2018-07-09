@@ -131,6 +131,22 @@
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.tabComposition = new MetroFramework.Controls.MetroTabPage();
+            this.label11 = new System.Windows.Forms.Label();
+            this.comboBoxSearchComposition = new MetroFramework.Controls.MetroComboBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
+            this.metroTextBox2 = new MetroFramework.Controls.MetroTextBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.metroTextBox3 = new MetroFramework.Controls.MetroTextBox();
+            this.metroTextBox4 = new MetroFramework.Controls.MetroTextBox();
+            this.txtSearchComposition = new MetroFramework.Controls.MetroTextBox();
+            this.btnReportComposition = new System.Windows.Forms.Button();
+            this.btnDeleteComposition = new System.Windows.Forms.Button();
+            this.btnChangeComposition = new System.Windows.Forms.Button();
+            this.btnAddComposition = new System.Windows.Forms.Button();
+            this.dataGridComposition = new System.Windows.Forms.DataGridView();
             this.tabControll.SuspendLayout();
             this.tabEmployees.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridEmployee)).BeginInit();
@@ -159,6 +175,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridOrders)).BeginInit();
             this.tabAdminPanel.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.tabComposition.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridComposition)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControll
@@ -166,13 +187,14 @@
             this.tabControll.Controls.Add(this.tabEmployees);
             this.tabControll.Controls.Add(this.tabMaterial);
             this.tabControll.Controls.Add(this.tabProducts);
+            this.tabControll.Controls.Add(this.tabComposition);
             this.tabControll.Controls.Add(this.tabMadeProducts);
             this.tabControll.Controls.Add(this.tabCustomer);
             this.tabControll.Controls.Add(this.tabOrders);
             this.tabControll.Controls.Add(this.tabAdminPanel);
             this.tabControll.Location = new System.Drawing.Point(33, 85);
             this.tabControll.Name = "tabControll";
-            this.tabControll.SelectedIndex = 0;
+            this.tabControll.SelectedIndex = 3;
             this.tabControll.Size = new System.Drawing.Size(956, 472);
             this.tabControll.Style = MetroFramework.MetroColorStyle.Lime;
             this.tabControll.TabIndex = 0;
@@ -2046,6 +2068,328 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // tabComposition
+            // 
+            this.tabComposition.Controls.Add(this.label11);
+            this.tabComposition.Controls.Add(this.comboBoxSearchComposition);
+            this.tabComposition.Controls.Add(this.groupBox2);
+            this.tabComposition.Controls.Add(this.txtSearchComposition);
+            this.tabComposition.Controls.Add(this.btnReportComposition);
+            this.tabComposition.Controls.Add(this.btnDeleteComposition);
+            this.tabComposition.Controls.Add(this.btnChangeComposition);
+            this.tabComposition.Controls.Add(this.btnAddComposition);
+            this.tabComposition.Controls.Add(this.dataGridComposition);
+            this.tabComposition.HorizontalScrollbarBarColor = true;
+            this.tabComposition.HorizontalScrollbarHighlightOnWheel = false;
+            this.tabComposition.HorizontalScrollbarSize = 10;
+            this.tabComposition.Location = new System.Drawing.Point(4, 38);
+            this.tabComposition.Name = "tabComposition";
+            this.tabComposition.Size = new System.Drawing.Size(948, 430);
+            this.tabComposition.TabIndex = 7;
+            this.tabComposition.Text = "Состав";
+            this.tabComposition.VerticalScrollbarBarColor = true;
+            this.tabComposition.VerticalScrollbarHighlightOnWheel = false;
+            this.tabComposition.VerticalScrollbarSize = 10;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.label11.Location = new System.Drawing.Point(379, 17);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(81, 20);
+            this.label11.TabIndex = 82;
+            this.label11.Text = "Поиск по:";
+            // 
+            // comboBoxSearchComposition
+            // 
+            this.comboBoxSearchComposition.ItemHeight = 23;
+            this.comboBoxSearchComposition.Items.AddRange(new object[] {
+            "Общий поиск",
+            "Наименование",
+            "Количеству",
+            "Срок годности в днях",
+            "Общая стоимость",
+            "Дата заказа"});
+            this.comboBoxSearchComposition.Location = new System.Drawing.Point(466, 12);
+            this.comboBoxSearchComposition.Name = "comboBoxSearchComposition";
+            this.comboBoxSearchComposition.Size = new System.Drawing.Size(227, 29);
+            this.comboBoxSearchComposition.Style = MetroFramework.MetroColorStyle.Lime;
+            this.comboBoxSearchComposition.TabIndex = 81;
+            this.comboBoxSearchComposition.UseSelectable = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.groupBox2.Controls.Add(this.groupBox3);
+            this.groupBox2.Controls.Add(this.groupBox4);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBox2.Location = new System.Drawing.Point(699, 12);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(227, 337);
+            this.groupBox2.TabIndex = 80;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Фильтрация";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.metroTextBox1);
+            this.groupBox3.Controls.Add(this.metroTextBox2);
+            this.groupBox3.Location = new System.Drawing.Point(0, 141);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(227, 99);
+            this.groupBox3.TabIndex = 41;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "По общей цене:";
+            // 
+            // metroTextBox1
+            // 
+            // 
+            // 
+            // 
+            this.metroTextBox1.CustomButton.Image = null;
+            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(166, 2);
+            this.metroTextBox1.CustomButton.Name = "";
+            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTextBox1.CustomButton.TabIndex = 1;
+            this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroTextBox1.CustomButton.UseSelectable = true;
+            this.metroTextBox1.CustomButton.Visible = false;
+            this.metroTextBox1.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.metroTextBox1.Lines = new string[0];
+            this.metroTextBox1.Location = new System.Drawing.Point(6, 61);
+            this.metroTextBox1.MaxLength = 32767;
+            this.metroTextBox1.Name = "metroTextBox1";
+            this.metroTextBox1.PasswordChar = '\0';
+            this.metroTextBox1.PromptText = "Максимум";
+            this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.metroTextBox1.SelectedText = "";
+            this.metroTextBox1.SelectionLength = 0;
+            this.metroTextBox1.SelectionStart = 0;
+            this.metroTextBox1.ShortcutsEnabled = true;
+            this.metroTextBox1.Size = new System.Drawing.Size(194, 30);
+            this.metroTextBox1.TabIndex = 40;
+            this.metroTextBox1.UseSelectable = true;
+            this.metroTextBox1.WaterMark = "Максимум";
+            this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            // 
+            // metroTextBox2
+            // 
+            // 
+            // 
+            // 
+            this.metroTextBox2.CustomButton.Image = null;
+            this.metroTextBox2.CustomButton.Location = new System.Drawing.Point(166, 2);
+            this.metroTextBox2.CustomButton.Name = "";
+            this.metroTextBox2.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.metroTextBox2.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTextBox2.CustomButton.TabIndex = 1;
+            this.metroTextBox2.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroTextBox2.CustomButton.UseSelectable = true;
+            this.metroTextBox2.CustomButton.Visible = false;
+            this.metroTextBox2.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.metroTextBox2.Lines = new string[0];
+            this.metroTextBox2.Location = new System.Drawing.Point(6, 25);
+            this.metroTextBox2.MaxLength = 32767;
+            this.metroTextBox2.Name = "metroTextBox2";
+            this.metroTextBox2.PasswordChar = '\0';
+            this.metroTextBox2.PromptText = "Минимум";
+            this.metroTextBox2.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.metroTextBox2.SelectedText = "";
+            this.metroTextBox2.SelectionLength = 0;
+            this.metroTextBox2.SelectionStart = 0;
+            this.metroTextBox2.ShortcutsEnabled = true;
+            this.metroTextBox2.Size = new System.Drawing.Size(194, 30);
+            this.metroTextBox2.TabIndex = 39;
+            this.metroTextBox2.UseSelectable = true;
+            this.metroTextBox2.WaterMark = "Минимум";
+            this.metroTextBox2.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.metroTextBox2.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.metroTextBox3);
+            this.groupBox4.Controls.Add(this.metroTextBox4);
+            this.groupBox4.Location = new System.Drawing.Point(0, 36);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(227, 99);
+            this.groupBox4.TabIndex = 0;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "По количеству:";
+            // 
+            // metroTextBox3
+            // 
+            // 
+            // 
+            // 
+            this.metroTextBox3.CustomButton.Image = null;
+            this.metroTextBox3.CustomButton.Location = new System.Drawing.Point(166, 2);
+            this.metroTextBox3.CustomButton.Name = "";
+            this.metroTextBox3.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.metroTextBox3.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTextBox3.CustomButton.TabIndex = 1;
+            this.metroTextBox3.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroTextBox3.CustomButton.UseSelectable = true;
+            this.metroTextBox3.CustomButton.Visible = false;
+            this.metroTextBox3.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.metroTextBox3.Lines = new string[0];
+            this.metroTextBox3.Location = new System.Drawing.Point(6, 61);
+            this.metroTextBox3.MaxLength = 32767;
+            this.metroTextBox3.Name = "metroTextBox3";
+            this.metroTextBox3.PasswordChar = '\0';
+            this.metroTextBox3.PromptText = "Максимум";
+            this.metroTextBox3.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.metroTextBox3.SelectedText = "";
+            this.metroTextBox3.SelectionLength = 0;
+            this.metroTextBox3.SelectionStart = 0;
+            this.metroTextBox3.ShortcutsEnabled = true;
+            this.metroTextBox3.Size = new System.Drawing.Size(194, 30);
+            this.metroTextBox3.TabIndex = 40;
+            this.metroTextBox3.UseSelectable = true;
+            this.metroTextBox3.WaterMark = "Максимум";
+            this.metroTextBox3.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.metroTextBox3.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            // 
+            // metroTextBox4
+            // 
+            // 
+            // 
+            // 
+            this.metroTextBox4.CustomButton.Image = null;
+            this.metroTextBox4.CustomButton.Location = new System.Drawing.Point(166, 2);
+            this.metroTextBox4.CustomButton.Name = "";
+            this.metroTextBox4.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.metroTextBox4.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTextBox4.CustomButton.TabIndex = 1;
+            this.metroTextBox4.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroTextBox4.CustomButton.UseSelectable = true;
+            this.metroTextBox4.CustomButton.Visible = false;
+            this.metroTextBox4.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.metroTextBox4.Lines = new string[0];
+            this.metroTextBox4.Location = new System.Drawing.Point(6, 25);
+            this.metroTextBox4.MaxLength = 32767;
+            this.metroTextBox4.Name = "metroTextBox4";
+            this.metroTextBox4.PasswordChar = '\0';
+            this.metroTextBox4.PromptText = "Минимум";
+            this.metroTextBox4.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.metroTextBox4.SelectedText = "";
+            this.metroTextBox4.SelectionLength = 0;
+            this.metroTextBox4.SelectionStart = 0;
+            this.metroTextBox4.ShortcutsEnabled = true;
+            this.metroTextBox4.Size = new System.Drawing.Size(194, 30);
+            this.metroTextBox4.TabIndex = 39;
+            this.metroTextBox4.UseSelectable = true;
+            this.metroTextBox4.WaterMark = "Минимум";
+            this.metroTextBox4.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.metroTextBox4.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            // 
+            // txtSearchComposition
+            // 
+            // 
+            // 
+            // 
+            this.txtSearchComposition.CustomButton.Image = null;
+            this.txtSearchComposition.CustomButton.Location = new System.Drawing.Point(345, 2);
+            this.txtSearchComposition.CustomButton.Name = "";
+            this.txtSearchComposition.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.txtSearchComposition.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtSearchComposition.CustomButton.TabIndex = 1;
+            this.txtSearchComposition.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtSearchComposition.CustomButton.UseSelectable = true;
+            this.txtSearchComposition.CustomButton.Visible = false;
+            this.txtSearchComposition.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.txtSearchComposition.Lines = new string[0];
+            this.txtSearchComposition.Location = new System.Drawing.Point(0, 12);
+            this.txtSearchComposition.MaxLength = 32767;
+            this.txtSearchComposition.Name = "txtSearchComposition";
+            this.txtSearchComposition.PasswordChar = '\0';
+            this.txtSearchComposition.PromptText = "Поиск";
+            this.txtSearchComposition.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtSearchComposition.SelectedText = "";
+            this.txtSearchComposition.SelectionLength = 0;
+            this.txtSearchComposition.SelectionStart = 0;
+            this.txtSearchComposition.ShortcutsEnabled = true;
+            this.txtSearchComposition.Size = new System.Drawing.Size(373, 30);
+            this.txtSearchComposition.TabIndex = 79;
+            this.txtSearchComposition.UseSelectable = true;
+            this.txtSearchComposition.WaterMark = "Поиск";
+            this.txtSearchComposition.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtSearchComposition.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            // 
+            // btnReportComposition
+            // 
+            this.btnReportComposition.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnReportComposition.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReportComposition.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportComposition.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnReportComposition.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btnReportComposition.Location = new System.Drawing.Point(699, 355);
+            this.btnReportComposition.Name = "btnReportComposition";
+            this.btnReportComposition.Size = new System.Drawing.Size(227, 48);
+            this.btnReportComposition.TabIndex = 78;
+            this.btnReportComposition.Text = "Отчёт";
+            this.btnReportComposition.UseVisualStyleBackColor = false;
+            this.btnReportComposition.Click += new System.EventHandler(this.btnReportComposition_Click);
+            // 
+            // btnDeleteComposition
+            // 
+            this.btnDeleteComposition.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnDeleteComposition.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeleteComposition.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteComposition.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnDeleteComposition.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btnDeleteComposition.Location = new System.Drawing.Point(466, 355);
+            this.btnDeleteComposition.Name = "btnDeleteComposition";
+            this.btnDeleteComposition.Size = new System.Drawing.Size(227, 48);
+            this.btnDeleteComposition.TabIndex = 77;
+            this.btnDeleteComposition.Text = "Удалить";
+            this.btnDeleteComposition.UseVisualStyleBackColor = false;
+            this.btnDeleteComposition.Click += new System.EventHandler(this.btnDeleteComposition_Click);
+            // 
+            // btnChangeComposition
+            // 
+            this.btnChangeComposition.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnChangeComposition.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnChangeComposition.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangeComposition.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnChangeComposition.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btnChangeComposition.Location = new System.Drawing.Point(233, 355);
+            this.btnChangeComposition.Name = "btnChangeComposition";
+            this.btnChangeComposition.Size = new System.Drawing.Size(227, 48);
+            this.btnChangeComposition.TabIndex = 76;
+            this.btnChangeComposition.Text = "Изменить";
+            this.btnChangeComposition.UseVisualStyleBackColor = false;
+            this.btnChangeComposition.Click += new System.EventHandler(this.btnChangeComposition_Click);
+            // 
+            // btnAddComposition
+            // 
+            this.btnAddComposition.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAddComposition.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddComposition.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddComposition.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnAddComposition.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btnAddComposition.Location = new System.Drawing.Point(0, 355);
+            this.btnAddComposition.Name = "btnAddComposition";
+            this.btnAddComposition.Size = new System.Drawing.Size(227, 48);
+            this.btnAddComposition.TabIndex = 75;
+            this.btnAddComposition.Text = "Добавить";
+            this.btnAddComposition.UseVisualStyleBackColor = false;
+            this.btnAddComposition.Click += new System.EventHandler(this.btnAddComposition_Click);
+            // 
+            // dataGridComposition
+            // 
+            this.dataGridComposition.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dataGridComposition.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridComposition.Location = new System.Drawing.Point(0, 48);
+            this.dataGridComposition.Name = "dataGridComposition";
+            this.dataGridComposition.ReadOnly = true;
+            this.dataGridComposition.Size = new System.Drawing.Size(693, 301);
+            this.dataGridComposition.TabIndex = 74;
+            // 
             // ManagerMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2096,6 +2440,12 @@
             this.tabAdminPanel.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.tabComposition.ResumeLayout(false);
+            this.tabComposition.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridComposition)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2205,5 +2555,21 @@
         private MetroFramework.Controls.MetroComboBox comboBoxSearchCustomers;
         private System.Windows.Forms.Label label10;
         private MetroFramework.Controls.MetroComboBox comboBoxSearchOrders;
+        private MetroFramework.Controls.MetroTabPage tabComposition;
+        private System.Windows.Forms.Label label11;
+        private MetroFramework.Controls.MetroComboBox comboBoxSearchComposition;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private MetroFramework.Controls.MetroTextBox metroTextBox1;
+        private MetroFramework.Controls.MetroTextBox metroTextBox2;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private MetroFramework.Controls.MetroTextBox metroTextBox3;
+        private MetroFramework.Controls.MetroTextBox metroTextBox4;
+        private MetroFramework.Controls.MetroTextBox txtSearchComposition;
+        private System.Windows.Forms.Button btnReportComposition;
+        private System.Windows.Forms.Button btnDeleteComposition;
+        private System.Windows.Forms.Button btnChangeComposition;
+        private System.Windows.Forms.Button btnAddComposition;
+        private System.Windows.Forms.DataGridView dataGridComposition;
     }
 }
