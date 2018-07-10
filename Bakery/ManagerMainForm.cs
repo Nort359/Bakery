@@ -41,6 +41,10 @@ namespace Bakery
         public static int idCurrentRowMaterial = -1;
         public static bool flagChangeCurrentMaterial = false;
 
+        // Переменные для таблицы Сырьё
+        public static int idCurrentRowComposition = -1;
+        public static bool flagChangeCurrentComposition = false;
+
         private void makeReport(DataGridView dataGrid, string tableName)
         {
             using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "PDF file|*.pdf", ValidateNames = true })
@@ -294,6 +298,25 @@ namespace Bakery
             comboBoxSearchMaterial.SelectedIndex = 0;
         }
 
+        private void fillDataGridComposition()
+        {
+            string selectQuery = @"SELECT Состав.Код,
+                                          Сырьё.Наименование AS `Наименование сырья`,
+                                          Продукция.Наименование AS `Наименование продукции`,
+                                          Типы.Название AS `Тип измерения`,
+                                          Состав.Количество
+                                      FROM Состав, Сырьё, Типы, Продукция
+                                          WHERE (Состав.Код_типа = Типы.Код)
+                                              AND
+                                          (Состав.Код_продукции = Продукция.Код_продукции)
+                                              AND
+                                          (Состав.Код_сырья = Сырьё.Код_сырья)";
+
+            fillDataGrid(selectQuery, dataGridComposition, 108);
+
+            comboBoxSearchComposition.SelectedIndex = 0;
+        }
+
         public ManagerMainForm()
         {
             InitializeComponent();
@@ -314,6 +337,7 @@ namespace Bakery
             flagChangeCurrentCustomer = false;
             flagChangeCurrentOrder = false;
             flagChangeCurrentMaterial = false;
+            flagChangeCurrentComposition = false;
 
             // Заполнение dataGrid Сотрудники данными из БД
             fillDataGridEmployee();
@@ -333,6 +357,9 @@ namespace Bakery
             // Заполнение dataGrid Сырьё данными из БД
             fillDataGridMaterial();
 
+            // Заполнение dataGrid Состав данными из БД
+            fillDataGridComposition();
+
             // Значение id по умолчанию
             try { int.TryParse(dataGridEmployee.Rows[0].Cells[0].Value.ToString(), out idCurrentRowEmployee); } catch(Exception e) { }
             try { int.TryParse(dataGridProduct.Rows[0].Cells[0].Value.ToString(), out idCurrentRowProduct); } catch (Exception e) { }
@@ -340,6 +367,7 @@ namespace Bakery
             try { int.TryParse(dataGridCustomer.Rows[0].Cells[0].Value.ToString(), out idCurrentRowCustomer); } catch (Exception e) { }
             try { int.TryParse(dataGridOrders.Rows[0].Cells[0].Value.ToString(), out idCurrentRowOrder); } catch (Exception e) { }
             try { int.TryParse(dataGridMaterial.Rows[0].Cells[0].Value.ToString(), out idCurrentRowMaterial); } catch (Exception e) { }
+            try { int.TryParse(dataGridComposition.Rows[0].Cells[0].Value.ToString(), out idCurrentRowComposition); } catch (Exception e) { }
 
             tabControll.TabPages[0].Select();
 
@@ -567,7 +595,6 @@ namespace Bakery
         }
 
         #endregion
-
 
         private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -1454,6 +1481,7 @@ namespace Bakery
         }
         #endregion
 
+        #region Composition
         private void btnAddComposition_Click(object sender, EventArgs e)
         {
             try
@@ -1474,17 +1502,144 @@ namespace Bakery
 
         private void btnChangeComposition_Click(object sender, EventArgs e)
         {
+            flagChangeCurrentComposition = true;
 
+            try
+            {
+                Connection.getConnection().Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            Program.Context.MainForm = new AddChangeComposition();
+
+            Close();
+
+            Program.Context.MainForm.Show();
         }
 
         private void btnDeleteComposition_Click(object sender, EventArgs e)
         {
+            try
+            {
+                // Получание удаляемого сотрудника
+                string selectQuery = @"SELECT Наименование
+                                          FROM Состав
+                                              WHERE Код = " + idCurrentRowComposition.ToString();
 
+                OleDbCommand command = new OleDbCommand(selectQuery, Connection.getConnection());
+                OleDbDataReader reader = command.ExecuteReader();
+                reader.Read();
+
+                string title = reader[0].ToString();
+
+                // Вставка данных
+                string deleteQuery = @"DELETE FROM Состав WHERE Код = " + idCurrentRowComposition.ToString();
+
+                OleDbCommand deleteCommand = new OleDbCommand(deleteQuery, Connection.getConnection());
+
+                DialogResult dialogResult = MessageBox.Show("Вы действительно собираетесь удалить запись о составе: '" + title + "' из БД?",
+                                                                "Предупреждение", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    // Удаляем запись и обновляем dataGrid
+                    deleteCommand.ExecuteNonQuery();
+                    fillDataGridComposition();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnReportComposition_Click(object sender, EventArgs e)
         {
-
+            makeReport(dataGridComposition, "Таблица состава");
         }
+
+        private void dataGridComposition_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dataGridComposition.Rows[e.RowIndex];
+
+                int.TryParse(row.Cells[0].Value.ToString(), out idCurrentRowComposition);
+            }
+        }
+
+        private void txtSearchComposition_TextChanged(object sender, EventArgs e)
+        {
+            string fromCount = txtFromCountComposition.Text != "".Trim() ? txtFromCountComposition.Text : "0";
+            string toCount = txtToCountComposition.Text != "".Trim() ? txtToCountComposition.Text : "999999999";
+
+            string search = txtSearchComposition.Text;
+
+            string selectQuery = @"SELECT Состав.Код,
+                                          Сырьё.Наименование AS `Наименование сырья`,
+                                          Продукция.Наименование AS `Наименование продукции`,
+                                          Типы.Название AS `Тип измерения`,
+                                          Состав.Количество
+                                      FROM Состав, Сырьё, Типы, Продукция
+                                          WHERE (Состав.Код_типа = Типы.Код)
+                                              AND
+                                          (Состав.Код_продукции = Продукция.Код_продукции)
+                                              AND
+                                          (Состав.Код_сырья = Сырьё.Код_сырья)
+                                              AND 
+                                          ((Состав.Количество >= " + fromCount + ")" +
+                                          "   AND " +
+                                          "(Состав.Количество <= " + toCount + "))";
+
+            switch (comboBoxSearchComposition.SelectedIndex)
+            {
+                case 0:
+                    {
+                        selectQuery += "    AND " +
+                                       "((Сырьё.Наименование LIKE '%" + search + "%')" +
+                                       "   OR " +
+                                       "(Продукция.Наименование LIKE '%" + search + "%')" +
+                                       "   OR " +
+                                       "(Типы.Название LIKE '%" + search + "%')" +
+                                       "   OR " +
+                                       "(Состав.Количество LIKE '%" + search + "%'))";
+                    }
+                    break;
+
+                case 1:
+                    {
+                        selectQuery += "    AND " +
+                                       "(Сырьё.Наименование LIKE '%" + search + "%')";
+                    }
+                    break;
+
+                case 2:
+                    {
+                        selectQuery += "    AND " +
+                                       "(Продукция.Наименование LIKE '%" + search + "%')";
+                    }
+                    break;
+
+                case 3:
+                    {
+                        selectQuery += "    AND " +
+                                       "(Типы.Название LIKE '%" + search + "%')";
+                    }
+                    break;
+
+                case 4:
+                    {
+                        selectQuery += "    AND " +
+                                       "(Состав.Количество LIKE '%" + search + "%')";
+                    }
+                    break;
+            }
+
+            fillDataGrid(selectQuery, dataGridComposition, 108);
+        }
+        #endregion
     }
 }

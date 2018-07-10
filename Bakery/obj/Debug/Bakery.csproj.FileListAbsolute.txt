@@ -37,27 +37,3 @@ C:\Users\Nort3\Desktop\Bakery\Bakery\obj\Debug\Bakery.AddChangeCustomer.resource
 C:\Users\Nort3\Desktop\Bakery\Bakery\obj\Debug\Bakery.AddChangeOrder.resources
 C:\Users\Nort3\Desktop\Bakery\Bakery\obj\Debug\Bakery.AddChangeMaterial.resources
 C:\Users\Nort3\Desktop\Bakery\Bakery\obj\Debug\Bakery.AddChangeComposition.resources
-C:\Users\Nort3\Desktop\Bakery v8 Composition\Bakery\bin\Debug\Bakery.exe.config
-C:\Users\Nort3\Desktop\Bakery v8 Composition\Bakery\bin\Debug\Bakery.exe
-C:\Users\Nort3\Desktop\Bakery v8 Composition\Bakery\bin\Debug\Bakery.pdb
-C:\Users\Nort3\Desktop\Bakery v8 Composition\Bakery\bin\Debug\itextsharp.dll
-C:\Users\Nort3\Desktop\Bakery v8 Composition\Bakery\bin\Debug\MetroFramework.Design.dll
-C:\Users\Nort3\Desktop\Bakery v8 Composition\Bakery\bin\Debug\MetroFramework.dll
-C:\Users\Nort3\Desktop\Bakery v8 Composition\Bakery\bin\Debug\MetroFramework.Fonts.dll
-C:\Users\Nort3\Desktop\Bakery v8 Composition\Bakery\bin\Debug\itextsharp.xml
-C:\Users\Nort3\Desktop\Bakery v8 Composition\Bakery\obj\Debug\Bakery.csprojAssemblyReference.cache
-C:\Users\Nort3\Desktop\Bakery v8 Composition\Bakery\obj\Debug\Bakery.AddChangeComposition.resources
-C:\Users\Nort3\Desktop\Bakery v8 Composition\Bakery\obj\Debug\Bakery.AddChangeCustomer.resources
-C:\Users\Nort3\Desktop\Bakery v8 Composition\Bakery\obj\Debug\Bakery.AddChangeEmployee.resources
-C:\Users\Nort3\Desktop\Bakery v8 Composition\Bakery\obj\Debug\Bakery.AddChangeMadeProduct.resources
-C:\Users\Nort3\Desktop\Bakery v8 Composition\Bakery\obj\Debug\Bakery.AddChangeMaterial.resources
-C:\Users\Nort3\Desktop\Bakery v8 Composition\Bakery\obj\Debug\Bakery.AddChangeOrder.resources
-C:\Users\Nort3\Desktop\Bakery v8 Composition\Bakery\obj\Debug\Bakery.AddChangeProduct.resources
-C:\Users\Nort3\Desktop\Bakery v8 Composition\Bakery\obj\Debug\Bakery.LogIn.resources
-C:\Users\Nort3\Desktop\Bakery v8 Composition\Bakery\obj\Debug\Bakery.ManagerMainForm.resources
-C:\Users\Nort3\Desktop\Bakery v8 Composition\Bakery\obj\Debug\Bakery.Properties.Resources.resources
-C:\Users\Nort3\Desktop\Bakery v8 Composition\Bakery\obj\Debug\Bakery.csproj.GenerateResource.cache
-C:\Users\Nort3\Desktop\Bakery v8 Composition\Bakery\obj\Debug\Bakery.csproj.CoreCompileInputs.cache
-C:\Users\Nort3\Desktop\Bakery v8 Composition\Bakery\obj\Debug\Bakery.csproj.CopyComplete
-C:\Users\Nort3\Desktop\Bakery v8 Composition\Bakery\obj\Debug\Bakery.exe
-C:\Users\Nort3\Desktop\Bakery v8 Composition\Bakery\obj\Debug\Bakery.pdb
