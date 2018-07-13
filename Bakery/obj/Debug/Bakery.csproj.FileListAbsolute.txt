@@ -37,3 +37,6 @@ C:\Users\Nort3\Desktop\Bakery\Bakery\obj\Debug\Bakery.AddChangeCustomer.resource
 C:\Users\Nort3\Desktop\Bakery\Bakery\obj\Debug\Bakery.AddChangeOrder.resources
 C:\Users\Nort3\Desktop\Bakery\Bakery\obj\Debug\Bakery.AddChangeMaterial.resources
 C:\Users\Nort3\Desktop\Bakery\Bakery\obj\Debug\Bakery.AddChangeComposition.resources
+C:\Users\Nort3\Desktop\Bakery\Bakery\obj\Debug\Bakery.AddChangeType.resources
+C:\Users\Nort3\Desktop\Bakery\Bakery\obj\Debug\Bakery.AddChangeCountry.resources
+C:\Users\Nort3\Desktop\Bakery\Bakery\obj\Debug\Bakery.AddChangeCity.resources

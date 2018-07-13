@@ -45,6 +45,18 @@ namespace Bakery
         public static int idCurrentRowComposition = -1;
         public static bool flagChangeCurrentComposition = false;
 
+        // Переменные для таблицы Типы
+        public static int idCurrentRowType = -1;
+        public static bool flagChangeCurrentType = false;
+
+        // Переменные для таблицы Стране
+        public static int idCurrentRowCountry = -1;
+        public static bool flagChangeCurrentCountry = false;
+
+        // Переменные для таблицы Города
+        public static int idCurrentRowCity = -1;
+        public static bool flagChangeCurrentCity = false;
+
         private void makeReport(DataGridView dataGrid, string tableName)
         {
             using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "PDF file|*.pdf", ValidateNames = true })
@@ -317,6 +329,33 @@ namespace Bakery
             comboBoxSearchComposition.SelectedIndex = 0;
         }
 
+        private void fillDataGridType()
+        {
+            string selectQuery = @"SELECT Код, Название
+                                        FROM Типы";
+
+            fillDataGrid(selectQuery, dataGridType, 124);
+        }
+
+        private void fillDataGridCountry()
+        {
+            string selectQuery = @"SELECT Код, Название
+                                        FROM Страны";
+
+            fillDataGrid(selectQuery, dataGridCountry, 124);
+        }
+
+        private void fillDataGridCity()
+        {
+            string selectQuery = @"SELECT Города.Код,
+                                          Города.Название AS `Название города`,
+                                          Страны.Название AS `Название страны`
+                                      FROM Города, Страны
+                                           WHERE Страны.Код = Города.Код_страны";
+
+            fillDataGrid(selectQuery, dataGridCity, 124);
+        }
+
         public ManagerMainForm()
         {
             InitializeComponent();
@@ -338,27 +377,31 @@ namespace Bakery
             flagChangeCurrentOrder = false;
             flagChangeCurrentMaterial = false;
             flagChangeCurrentComposition = false;
+            // Для админ части
+            flagChangeCurrentType = false;
+            flagChangeCurrentCountry = false;
+            flagChangeCurrentCity = false;
 
             // Заполнение dataGrid Сотрудники данными из БД
             fillDataGridEmployee();
-
             // Заполнение dataGrid Продукции данными из БД
             fillDataGridProduct();
-
             // Заполнение dataGrid Приготовления данными из БД
             fillDataGridMadeProduct();
-
             // Заполнение dataGrid Заказчики данными из БД
             fillDataGridCustomer();
-
             // Заполнение dataGrid Заказы данными из БД
             fillDataGridOrders();
-
             // Заполнение dataGrid Сырьё данными из БД
             fillDataGridMaterial();
-
             // Заполнение dataGrid Состав данными из БД
             fillDataGridComposition();
+            // Заполнение dataGrid Типы данными из БД
+            fillDataGridType();
+            // Заполнение dataGrid Страны данными из БД
+            fillDataGridCountry();
+            // Заполнение dataGrid Города данными из БД
+            fillDataGridCity();
 
             // Значение id по умолчанию
             try { int.TryParse(dataGridEmployee.Rows[0].Cells[0].Value.ToString(), out idCurrentRowEmployee); } catch(Exception e) { }
@@ -368,6 +411,10 @@ namespace Bakery
             try { int.TryParse(dataGridOrders.Rows[0].Cells[0].Value.ToString(), out idCurrentRowOrder); } catch (Exception e) { }
             try { int.TryParse(dataGridMaterial.Rows[0].Cells[0].Value.ToString(), out idCurrentRowMaterial); } catch (Exception e) { }
             try { int.TryParse(dataGridComposition.Rows[0].Cells[0].Value.ToString(), out idCurrentRowComposition); } catch (Exception e) { }
+            // Для админ части
+            try { int.TryParse(dataGridType.Rows[0].Cells[0].Value.ToString(), out idCurrentRowType); } catch (Exception e) { }
+            try { int.TryParse(dataGridCountry.Rows[0].Cells[0].Value.ToString(), out idCurrentRowCountry); } catch (Exception e) { }
+            try { int.TryParse(dataGridCity.Rows[0].Cells[0].Value.ToString(), out idCurrentRowCity); } catch (Exception e) { }
 
             tabControll.TabPages[0].Select();
 
@@ -1639,6 +1686,262 @@ namespace Bakery
             }
 
             fillDataGrid(selectQuery, dataGridComposition, 108);
+        }
+        #endregion
+
+        #region Type
+        private void btnAddType_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Connection.getConnection().Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            Program.Context.MainForm = new AddChangeType();
+
+            Close();
+
+            Program.Context.MainForm.Show();
+        }
+
+        private void btnChangeType_Click(object sender, EventArgs e)
+        {
+            flagChangeCurrentType = true;
+
+            try
+            {
+                Connection.getConnection().Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            Program.Context.MainForm = new AddChangeType();
+
+            Close();
+
+            Program.Context.MainForm.Show();
+        }
+
+        private void btnDeleteType_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Получание удаляемого сотрудника
+                string selectQuery = @"SELECT Название
+                                          FROM Типы
+                                              WHERE Код = " + idCurrentRowType.ToString();
+
+                OleDbCommand command = new OleDbCommand(selectQuery, Connection.getConnection());
+                OleDbDataReader reader = command.ExecuteReader();
+                reader.Read();
+
+                string title = reader[0].ToString();
+
+                // Вставка данных
+                string deleteQuery = @"DELETE FROM Типы WHERE Код = " + idCurrentRowType.ToString();
+
+                OleDbCommand deleteCommand = new OleDbCommand(deleteQuery, Connection.getConnection());
+
+                DialogResult dialogResult = MessageBox.Show("Вы действительно собираетесь удалить запись о типе: '" + title + "' из БД?",
+                                                                "Предупреждение", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    // Удаляем запись и обновляем dataGrid
+                    deleteCommand.ExecuteNonQuery();
+                    fillDataGridType();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dataGridType_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dataGridType.Rows[e.RowIndex];
+
+                int.TryParse(row.Cells[0].Value.ToString(), out idCurrentRowType);
+            }
+        }
+        #endregion
+
+        #region Country
+        private void btnAddCountry_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Connection.getConnection().Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            Program.Context.MainForm = new AddChangeCountry();
+
+            Close();
+
+            Program.Context.MainForm.Show();
+        }
+
+        private void btnChangeCountry_Click(object sender, EventArgs e)
+        {
+            flagChangeCurrentCountry = true;
+
+            try
+            {
+                Connection.getConnection().Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            Program.Context.MainForm = new AddChangeCountry();
+
+            Close();
+
+            Program.Context.MainForm.Show();
+        }
+
+        private void btnDeleteCountry_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Получание удаляемого сотрудника
+                string selectQuery = @"SELECT Название
+                                          FROM Страны
+                                              WHERE Код = " + idCurrentRowCountry.ToString();
+
+                OleDbCommand command = new OleDbCommand(selectQuery, Connection.getConnection());
+                OleDbDataReader reader = command.ExecuteReader();
+                reader.Read();
+
+                string title = reader[0].ToString();
+
+                // Вставка данных
+                string deleteQuery = @"DELETE FROM Страны WHERE Код = " + idCurrentRowCountry.ToString();
+
+                OleDbCommand deleteCommand = new OleDbCommand(deleteQuery, Connection.getConnection());
+
+                DialogResult dialogResult = MessageBox.Show("Вы действительно собираетесь удалить запись о стране '" + title + "' из БД?",
+                                                                "Предупреждение", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    // Удаляем запись и обновляем dataGrid
+                    deleteCommand.ExecuteNonQuery();
+                    fillDataGridCountry();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dataGridCountry_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dataGridCountry.Rows[e.RowIndex];
+                int.TryParse(row.Cells[0].Value.ToString(), out idCurrentRowCountry);
+            }
+        }
+        #endregion
+
+        #region City
+        private void btnAddCity_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Connection.getConnection().Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            Program.Context.MainForm = new AddChangeCity();
+
+            Close();
+
+            Program.Context.MainForm.Show();
+        }
+
+        private void btnChangeCity_Click(object sender, EventArgs e)
+        {
+            flagChangeCurrentCity = true;
+
+            try
+            {
+                Connection.getConnection().Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            Program.Context.MainForm = new AddChangeCity();
+
+            Close();
+
+            Program.Context.MainForm.Show();
+        }
+
+        private void btnDeleteCity_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Получание удаляемого сотрудника
+                string selectQuery = @"SELECT Название
+                                          FROM Города
+                                              WHERE Код = " + idCurrentRowCity.ToString();
+
+                OleDbCommand command = new OleDbCommand(selectQuery, Connection.getConnection());
+                OleDbDataReader reader = command.ExecuteReader();
+                reader.Read();
+
+                string title = reader[0].ToString();
+
+                // Вставка данных
+                string deleteQuery = @"DELETE FROM Города WHERE Код = " + idCurrentRowCity.ToString();
+
+                OleDbCommand deleteCommand = new OleDbCommand(deleteQuery, Connection.getConnection());
+
+                DialogResult dialogResult = MessageBox.Show("Вы действительно собираетесь удалить запись о городе '" + title + "' из БД?",
+                                                                "Предупреждение", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    // Удаляем запись и обновляем dataGrid
+                    deleteCommand.ExecuteNonQuery();
+                    fillDataGridCity();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dataGridCity_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dataGridCity.Rows[e.RowIndex];
+                int.TryParse(row.Cells[0].Value.ToString(), out idCurrentRowCity);
+            }
         }
         #endregion
     }

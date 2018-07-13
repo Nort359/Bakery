@@ -59,15 +59,6 @@ namespace Bakery
             }
         }
 
-        public static async Task SetInterval(Action action, TimeSpan timeout)
-        {
-            await Task.Delay(timeout).ConfigureAwait(false);
-
-            action();
-
-            SetInterval(action, timeout);
-        }
-
         public AddChangeCustomer()
         {
             InitializeComponent();

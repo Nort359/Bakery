@@ -57,11 +57,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddChangeCity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddChangeCity.Designer.cs">
+      <DependentUpon>AddChangeCity.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddChangeComposition.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AddChangeComposition.Designer.cs">
       <DependentUpon>AddChangeComposition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddChangeCountry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddChangeCountry.Designer.cs">
+      <DependentUpon>AddChangeCountry.cs</DependentUpon>
     </Compile>
     <Compile Include="AddChangeCustomer.cs">
       <SubType>Form</SubType>
@@ -93,6 +105,12 @@
     <Compile Include="AddChangeProduct.Designer.cs">
       <DependentUpon>AddChangeProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddChangeType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddChangeType.Designer.cs">
+      <DependentUpon>AddChangeType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Connection.cs" />
     <Compile Include="AddChangeEmployee.cs">
       <SubType>Form</SubType>
@@ -115,8 +133,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddChangeCity.resx">
+      <DependentUpon>AddChangeCity.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddChangeComposition.resx">
       <DependentUpon>AddChangeComposition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddChangeCountry.resx">
+      <DependentUpon>AddChangeCountry.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddChangeCustomer.resx">
       <DependentUpon>AddChangeCustomer.cs</DependentUpon>
@@ -135,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddChangeProduct.resx">
       <DependentUpon>AddChangeProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddChangeType.resx">
+      <DependentUpon>AddChangeType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>

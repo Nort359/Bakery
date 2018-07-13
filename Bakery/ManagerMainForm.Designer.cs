@@ -139,11 +139,26 @@
             this.tabAdminPanel = new MetroFramework.Controls.MetroTabPage();
             this.btnGetDBFromCopy = new System.Windows.Forms.Button();
             this.btnMakeBackUpBD = new System.Windows.Forms.Button();
+            this.tabDirectoryType = new MetroFramework.Controls.MetroTabPage();
+            this.btnDeleteType = new System.Windows.Forms.Button();
+            this.btnChangeType = new System.Windows.Forms.Button();
+            this.btnAddType = new System.Windows.Forms.Button();
+            this.dataGridType = new System.Windows.Forms.DataGridView();
+            this.tabDirectoryCountry = new MetroFramework.Controls.MetroTabPage();
+            this.tabDirectoryCity = new MetroFramework.Controls.MetroTabPage();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.помощьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.btnDeleteCountry = new System.Windows.Forms.Button();
+            this.btnChangeCountry = new System.Windows.Forms.Button();
+            this.btnAddCountry = new System.Windows.Forms.Button();
+            this.dataGridCountry = new System.Windows.Forms.DataGridView();
+            this.btnDeleteCity = new System.Windows.Forms.Button();
+            this.btnChangeCity = new System.Windows.Forms.Button();
+            this.btnAddCity = new System.Windows.Forms.Button();
+            this.dataGridCity = new System.Windows.Forms.DataGridView();
             this.tabControll.SuspendLayout();
             this.tabEmployees.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridEmployee)).BeginInit();
@@ -175,7 +190,13 @@
             this.groupBoxCountOrders.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridOrders)).BeginInit();
             this.tabAdminPanel.SuspendLayout();
+            this.tabDirectoryType.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridType)).BeginInit();
+            this.tabDirectoryCountry.SuspendLayout();
+            this.tabDirectoryCity.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridCountry)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridCity)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControll
@@ -188,9 +209,12 @@
             this.tabControll.Controls.Add(this.tabCustomer);
             this.tabControll.Controls.Add(this.tabOrders);
             this.tabControll.Controls.Add(this.tabAdminPanel);
+            this.tabControll.Controls.Add(this.tabDirectoryType);
+            this.tabControll.Controls.Add(this.tabDirectoryCountry);
+            this.tabControll.Controls.Add(this.tabDirectoryCity);
             this.tabControll.Location = new System.Drawing.Point(33, 85);
             this.tabControll.Name = "tabControll";
-            this.tabControll.SelectedIndex = 3;
+            this.tabControll.SelectedIndex = 10;
             this.tabControll.Size = new System.Drawing.Size(956, 472);
             this.tabControll.Style = MetroFramework.MetroColorStyle.Lime;
             this.tabControll.TabIndex = 0;
@@ -2259,7 +2283,7 @@
             this.btnGetDBFromCopy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGetDBFromCopy.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnGetDBFromCopy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.btnGetDBFromCopy.Location = new System.Drawing.Point(3, 81);
+            this.btnGetDBFromCopy.Location = new System.Drawing.Point(466, 150);
             this.btnGetDBFromCopy.Name = "btnGetDBFromCopy";
             this.btnGetDBFromCopy.Size = new System.Drawing.Size(208, 48);
             this.btnGetDBFromCopy.TabIndex = 21;
@@ -2274,7 +2298,7 @@
             this.btnMakeBackUpBD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMakeBackUpBD.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnMakeBackUpBD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.btnMakeBackUpBD.Location = new System.Drawing.Point(3, 27);
+            this.btnMakeBackUpBD.Location = new System.Drawing.Point(252, 150);
             this.btnMakeBackUpBD.Name = "btnMakeBackUpBD";
             this.btnMakeBackUpBD.Size = new System.Drawing.Size(208, 48);
             this.btnMakeBackUpBD.TabIndex = 20;
@@ -2283,6 +2307,116 @@
             this.btnMakeBackUpBD.Click += new System.EventHandler(this.btnMakeBackUpBD_Click);
             this.btnMakeBackUpBD.MouseLeave += new System.EventHandler(this.btnAddEmployee_MouseLeave);
             this.btnMakeBackUpBD.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnAddEmployee_MouseMove);
+            // 
+            // tabDirectoryType
+            // 
+            this.tabDirectoryType.Controls.Add(this.btnDeleteType);
+            this.tabDirectoryType.Controls.Add(this.btnChangeType);
+            this.tabDirectoryType.Controls.Add(this.btnAddType);
+            this.tabDirectoryType.Controls.Add(this.dataGridType);
+            this.tabDirectoryType.HorizontalScrollbarBarColor = true;
+            this.tabDirectoryType.HorizontalScrollbarHighlightOnWheel = false;
+            this.tabDirectoryType.HorizontalScrollbarSize = 10;
+            this.tabDirectoryType.Location = new System.Drawing.Point(4, 38);
+            this.tabDirectoryType.Name = "tabDirectoryType";
+            this.tabDirectoryType.Size = new System.Drawing.Size(948, 430);
+            this.tabDirectoryType.TabIndex = 8;
+            this.tabDirectoryType.Text = "Типы";
+            this.tabDirectoryType.VerticalScrollbarBarColor = true;
+            this.tabDirectoryType.VerticalScrollbarHighlightOnWheel = false;
+            this.tabDirectoryType.VerticalScrollbarSize = 10;
+            // 
+            // btnDeleteType
+            // 
+            this.btnDeleteType.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnDeleteType.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeleteType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnDeleteType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btnDeleteType.Location = new System.Drawing.Point(469, 322);
+            this.btnDeleteType.Name = "btnDeleteType";
+            this.btnDeleteType.Size = new System.Drawing.Size(227, 48);
+            this.btnDeleteType.TabIndex = 22;
+            this.btnDeleteType.Text = "Удалить";
+            this.btnDeleteType.UseVisualStyleBackColor = false;
+            this.btnDeleteType.Click += new System.EventHandler(this.btnDeleteType_Click);
+            // 
+            // btnChangeType
+            // 
+            this.btnChangeType.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnChangeType.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnChangeType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangeType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnChangeType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btnChangeType.Location = new System.Drawing.Point(236, 322);
+            this.btnChangeType.Name = "btnChangeType";
+            this.btnChangeType.Size = new System.Drawing.Size(227, 48);
+            this.btnChangeType.TabIndex = 21;
+            this.btnChangeType.Text = "Изменить";
+            this.btnChangeType.UseVisualStyleBackColor = false;
+            this.btnChangeType.Click += new System.EventHandler(this.btnChangeType_Click);
+            // 
+            // btnAddType
+            // 
+            this.btnAddType.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAddType.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnAddType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btnAddType.Location = new System.Drawing.Point(3, 322);
+            this.btnAddType.Name = "btnAddType";
+            this.btnAddType.Size = new System.Drawing.Size(227, 48);
+            this.btnAddType.TabIndex = 20;
+            this.btnAddType.Text = "Добавить";
+            this.btnAddType.UseVisualStyleBackColor = false;
+            this.btnAddType.Click += new System.EventHandler(this.btnAddType_Click);
+            // 
+            // dataGridType
+            // 
+            this.dataGridType.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dataGridType.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridType.Location = new System.Drawing.Point(3, 15);
+            this.dataGridType.Name = "dataGridType";
+            this.dataGridType.ReadOnly = true;
+            this.dataGridType.Size = new System.Drawing.Size(907, 301);
+            this.dataGridType.TabIndex = 5;
+            this.dataGridType.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridType_CellClick);
+            // 
+            // tabDirectoryCountry
+            // 
+            this.tabDirectoryCountry.Controls.Add(this.btnDeleteCountry);
+            this.tabDirectoryCountry.Controls.Add(this.btnChangeCountry);
+            this.tabDirectoryCountry.Controls.Add(this.btnAddCountry);
+            this.tabDirectoryCountry.Controls.Add(this.dataGridCountry);
+            this.tabDirectoryCountry.HorizontalScrollbarBarColor = true;
+            this.tabDirectoryCountry.HorizontalScrollbarHighlightOnWheel = false;
+            this.tabDirectoryCountry.HorizontalScrollbarSize = 10;
+            this.tabDirectoryCountry.Location = new System.Drawing.Point(4, 38);
+            this.tabDirectoryCountry.Name = "tabDirectoryCountry";
+            this.tabDirectoryCountry.Size = new System.Drawing.Size(948, 430);
+            this.tabDirectoryCountry.TabIndex = 9;
+            this.tabDirectoryCountry.Text = "Страны";
+            this.tabDirectoryCountry.VerticalScrollbarBarColor = true;
+            this.tabDirectoryCountry.VerticalScrollbarHighlightOnWheel = false;
+            this.tabDirectoryCountry.VerticalScrollbarSize = 10;
+            // 
+            // tabDirectoryCity
+            // 
+            this.tabDirectoryCity.Controls.Add(this.btnDeleteCity);
+            this.tabDirectoryCity.Controls.Add(this.btnChangeCity);
+            this.tabDirectoryCity.Controls.Add(this.btnAddCity);
+            this.tabDirectoryCity.Controls.Add(this.dataGridCity);
+            this.tabDirectoryCity.HorizontalScrollbarBarColor = true;
+            this.tabDirectoryCity.HorizontalScrollbarHighlightOnWheel = false;
+            this.tabDirectoryCity.HorizontalScrollbarSize = 10;
+            this.tabDirectoryCity.Location = new System.Drawing.Point(4, 38);
+            this.tabDirectoryCity.Name = "tabDirectoryCity";
+            this.tabDirectoryCity.Size = new System.Drawing.Size(948, 430);
+            this.tabDirectoryCity.TabIndex = 10;
+            this.tabDirectoryCity.Text = "Города";
+            this.tabDirectoryCity.VerticalScrollbarBarColor = true;
+            this.tabDirectoryCity.VerticalScrollbarHighlightOnWheel = false;
+            this.tabDirectoryCity.VerticalScrollbarSize = 10;
             // 
             // menuStrip1
             // 
@@ -2312,6 +2446,118 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // btnDeleteCountry
+            // 
+            this.btnDeleteCountry.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnDeleteCountry.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeleteCountry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnDeleteCountry.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btnDeleteCountry.Location = new System.Drawing.Point(466, 330);
+            this.btnDeleteCountry.Name = "btnDeleteCountry";
+            this.btnDeleteCountry.Size = new System.Drawing.Size(227, 48);
+            this.btnDeleteCountry.TabIndex = 26;
+            this.btnDeleteCountry.Text = "Удалить";
+            this.btnDeleteCountry.UseVisualStyleBackColor = false;
+            this.btnDeleteCountry.Click += new System.EventHandler(this.btnDeleteCountry_Click);
+            // 
+            // btnChangeCountry
+            // 
+            this.btnChangeCountry.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnChangeCountry.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnChangeCountry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangeCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnChangeCountry.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btnChangeCountry.Location = new System.Drawing.Point(233, 330);
+            this.btnChangeCountry.Name = "btnChangeCountry";
+            this.btnChangeCountry.Size = new System.Drawing.Size(227, 48);
+            this.btnChangeCountry.TabIndex = 25;
+            this.btnChangeCountry.Text = "Изменить";
+            this.btnChangeCountry.UseVisualStyleBackColor = false;
+            this.btnChangeCountry.Click += new System.EventHandler(this.btnChangeCountry_Click);
+            // 
+            // btnAddCountry
+            // 
+            this.btnAddCountry.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAddCountry.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddCountry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnAddCountry.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btnAddCountry.Location = new System.Drawing.Point(0, 330);
+            this.btnAddCountry.Name = "btnAddCountry";
+            this.btnAddCountry.Size = new System.Drawing.Size(227, 48);
+            this.btnAddCountry.TabIndex = 24;
+            this.btnAddCountry.Text = "Добавить";
+            this.btnAddCountry.UseVisualStyleBackColor = false;
+            this.btnAddCountry.Click += new System.EventHandler(this.btnAddCountry_Click);
+            // 
+            // dataGridCountry
+            // 
+            this.dataGridCountry.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dataGridCountry.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridCountry.Location = new System.Drawing.Point(0, 23);
+            this.dataGridCountry.Name = "dataGridCountry";
+            this.dataGridCountry.ReadOnly = true;
+            this.dataGridCountry.Size = new System.Drawing.Size(907, 301);
+            this.dataGridCountry.TabIndex = 23;
+            this.dataGridCountry.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridCountry_CellClick);
+            // 
+            // btnDeleteCity
+            // 
+            this.btnDeleteCity.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnDeleteCity.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeleteCity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnDeleteCity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btnDeleteCity.Location = new System.Drawing.Point(466, 327);
+            this.btnDeleteCity.Name = "btnDeleteCity";
+            this.btnDeleteCity.Size = new System.Drawing.Size(227, 48);
+            this.btnDeleteCity.TabIndex = 30;
+            this.btnDeleteCity.Text = "Удалить";
+            this.btnDeleteCity.UseVisualStyleBackColor = false;
+            this.btnDeleteCity.Click += new System.EventHandler(this.btnDeleteCity_Click);
+            // 
+            // btnChangeCity
+            // 
+            this.btnChangeCity.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnChangeCity.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnChangeCity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangeCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnChangeCity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btnChangeCity.Location = new System.Drawing.Point(233, 327);
+            this.btnChangeCity.Name = "btnChangeCity";
+            this.btnChangeCity.Size = new System.Drawing.Size(227, 48);
+            this.btnChangeCity.TabIndex = 29;
+            this.btnChangeCity.Text = "Изменить";
+            this.btnChangeCity.UseVisualStyleBackColor = false;
+            this.btnChangeCity.Click += new System.EventHandler(this.btnChangeCity_Click);
+            // 
+            // btnAddCity
+            // 
+            this.btnAddCity.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAddCity.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddCity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnAddCity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btnAddCity.Location = new System.Drawing.Point(0, 327);
+            this.btnAddCity.Name = "btnAddCity";
+            this.btnAddCity.Size = new System.Drawing.Size(227, 48);
+            this.btnAddCity.TabIndex = 28;
+            this.btnAddCity.Text = "Добавить";
+            this.btnAddCity.UseVisualStyleBackColor = false;
+            this.btnAddCity.Click += new System.EventHandler(this.btnAddCity_Click);
+            // 
+            // dataGridCity
+            // 
+            this.dataGridCity.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dataGridCity.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridCity.Location = new System.Drawing.Point(0, 20);
+            this.dataGridCity.Name = "dataGridCity";
+            this.dataGridCity.ReadOnly = true;
+            this.dataGridCity.Size = new System.Drawing.Size(907, 301);
+            this.dataGridCity.TabIndex = 27;
+            this.dataGridCity.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridCity_CellClick);
             // 
             // ManagerMainForm
             // 
@@ -2366,8 +2612,14 @@
             this.groupBoxCountOrders.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridOrders)).EndInit();
             this.tabAdminPanel.ResumeLayout(false);
+            this.tabDirectoryType.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridType)).EndInit();
+            this.tabDirectoryCountry.ResumeLayout(false);
+            this.tabDirectoryCity.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridCountry)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridCity)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2490,5 +2742,20 @@
         private System.Windows.Forms.Button btnChangeComposition;
         private System.Windows.Forms.Button btnAddComposition;
         private System.Windows.Forms.DataGridView dataGridComposition;
+        private MetroFramework.Controls.MetroTabPage tabDirectoryType;
+        private System.Windows.Forms.Button btnDeleteType;
+        private System.Windows.Forms.Button btnChangeType;
+        private System.Windows.Forms.Button btnAddType;
+        private System.Windows.Forms.DataGridView dataGridType;
+        private MetroFramework.Controls.MetroTabPage tabDirectoryCountry;
+        private MetroFramework.Controls.MetroTabPage tabDirectoryCity;
+        private System.Windows.Forms.Button btnDeleteCountry;
+        private System.Windows.Forms.Button btnChangeCountry;
+        private System.Windows.Forms.Button btnAddCountry;
+        private System.Windows.Forms.DataGridView dataGridCountry;
+        private System.Windows.Forms.Button btnDeleteCity;
+        private System.Windows.Forms.Button btnChangeCity;
+        private System.Windows.Forms.Button btnAddCity;
+        private System.Windows.Forms.DataGridView dataGridCity;
     }
 }
